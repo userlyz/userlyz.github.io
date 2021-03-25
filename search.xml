@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>图片上传</title>
+      <link href="2021/03/25/tu-pian-shang-chuan/"/>
+      <url>2021/03/25/tu-pian-shang-chuan/</url>
+      
+        <content type="html"><![CDATA[<p>�����ϴ�ͼƬ�Ѿ�������Ҫ����ģ���ҵ�������������<br>����˵��Ҫ����һ������Ϊa.jbg��ͼƬ�Ϳ���ֱ��</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">{</span>% asset_img a.jpg <span class="token punctuation">[</span>ͼƬ����<span class="token punctuation">]</span> %<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/.com//03/25/tu-pian-shang-chuan/a.png" class title="[ͼƬ����]">]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python��pycharm����װqrcode��ģ��ʧ��</title>
+      <link href="2021/03/25/python-an-zhuang-qrcode-mo-kuai/"/>
+      <url>2021/03/25/python-an-zhuang-qrcode-mo-kuai/</url>
+      
+        <content type="html"><![CDATA[<p>���˽�<br><a href="https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py">https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py</a><br>�ļ����Ƶ�pycharm֮������Ҫ����qrcode �� coloramaģ���ڰ�װʱֱ��ʹ��<br>pip insall qrcodeʱ������<br>Could not find a version that satisfies the requirement PIL<br>����csdn֮����Ҫ����</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> qrcode  -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>python��װqrcodeʱ��ͼ����</p><img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/a.png" class title="[ͼƬ����]"><p>��װcolorama</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> colorama<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/b.png" class title="[ͼƬ����]"><p>ʹ��</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/c.png" class title="[ͼƬ����]"><p>��ʱ��ֱ�ӽ���pycharm�����ܲ��ܵ����������صĿ�<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/d.png" class title="[ͼƬ����]"><br>�տ�ʼ��Ҳ�ǲ��ܵ���ģ���������ʧ�������ҾͶ�����������Ū����python���ºã�Ȼ���뵽pycharm�У�����·;���ǲ�˳��һֱ�����ٲ��ɹ�������ұ��Ǹ����ý��뵽��ͼ�����������Ǹ�Existing environmeent,Ȼ��ֱ��ѡ���������ص�python�е�python.exe�ļ��Ϳ���ֱ�Ӱ���ղ����ص�qrcodeѽɶ�ĵ��뷢��pycharm֮��<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/e.png" class title="[ͼƬ����]"><br>�����ʱ�����ղ�python���صĿ�ֱ�ӾͿ�����pycharm����ʹ����</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>安装包地址</title>
       <link href="2021/03/25/an-zhuang-bao-di-zhi/"/>
       <url>2021/03/25/an-zhuang-bao-di-zhi/</url>
