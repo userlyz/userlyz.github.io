@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>鍥剧墖涓婁紶</title>
+      <title>hexo图片上传</title>
       <link href="2021/03/25/tu-pian-shang-chuan/"/>
       <url>2021/03/25/tu-pian-shang-chuan/</url>
       
-        <content type="html"><![CDATA[<p>现在上传图片已经不再需要导入模块我的理解是这样的<br>比如说你要导入一个名字为a.jbg的图片就可以直接</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>a.jpg<span class="token punctuation">]</span><span class="token punctuation">(</span>a.jpg<span class="token punctuation">)</span>to instert a.jpg.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="/2021/03/25/tu-pian-shang-chuan/a.jpg" alt="a.jpg">to instert a.jpg.</p>]]></content>
+        <content type="html"><![CDATA[<p>现在上传图片已经不再需要导入模块我的理解是这样的<br>比如说你要导入一个名字为a.jbg的图片就可以直接</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>a.jpg<span class="token punctuation">]</span><span class="token punctuation">(</span>a.jpg<span class="token punctuation">)</span>to instert a.jpg.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><img src="/2021/03/25/tu-pian-shang-chuan/b.jpg" alt="b.jpg">to instert b.jpg.<br><img src="/2021/03/25/tu-pian-shang-chuan/a.jpg" alt="a.jpg">to instert a.jpg.</p>]]></content>
       
       
       
