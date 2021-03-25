@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-25T08:12:48.340Z</updated>
+  <updated>2021-03-25T08:32:09.308Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>图片上传</title>
+    <title>鍥剧墖涓婁紶</title>
     <link href="http://example.com/2021/03/25/tu-pian-shang-chuan/"/>
     <id>http://example.com/2021/03/25/tu-pian-shang-chuan/</id>
     <published>2021-03-25T08:07:07.000Z</published>
-    <updated>2021-03-25T08:12:48.340Z</updated>
+    <updated>2021-03-25T08:32:09.308Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;�����ϴ�ͼƬ�Ѿ�������Ҫ����ģ���ҵ�������������&lt;br&gt;����˵��Ҫ����һ������Ϊa.jbg��ͼƬ�Ϳ���ֱ��&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
+    <summary type="html">&lt;p&gt;现在上传图片已经不再需要导入模块我的理解是这样的&lt;br&gt;比如说你要导入一个名字为a.jbg的图片就可以直接&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot; data-language=&quot;bash&quot;&gt;&lt;code</summary>
         
       
     
@@ -39,18 +39,18 @@
   </entry>
   
   <entry>
-    <title>python��pycharm����װqrcode��ģ��ʧ��</title>
+    <title>python（pycharm）安装qrcode等模块失败</title>
     <link href="http://example.com/2021/03/25/python-an-zhuang-qrcode-mo-kuai/"/>
     <id>http://example.com/2021/03/25/python-an-zhuang-qrcode-mo-kuai/</id>
     <published>2021-03-25T07:09:45.000Z</published>
-    <updated>2021-03-25T08:12:36.784Z</updated>
+    <updated>2021-03-25T08:31:51.306Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;���˽�&lt;br&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;在了解&lt;br&gt;&lt;a</summary>
         
       
     

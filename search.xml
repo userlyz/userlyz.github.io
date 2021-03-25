@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>图片上传</title>
+      <title>鍥剧墖涓婁紶</title>
       <link href="2021/03/25/tu-pian-shang-chuan/"/>
       <url>2021/03/25/tu-pian-shang-chuan/</url>
       
-        <content type="html"><![CDATA[<p>�����ϴ�ͼƬ�Ѿ�������Ҫ����ģ���ҵ�������������<br>����˵��Ҫ����һ������Ϊa.jbg��ͼƬ�Ϳ���ֱ��</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">{</span>% asset_img a.jpg <span class="token punctuation">[</span>ͼƬ����<span class="token punctuation">]</span> %<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/.com//03/25/tu-pian-shang-chuan/a.png" class="" title="[ͼƬ����]">]]></content>
+        <content type="html"><![CDATA[<p>现在上传图片已经不再需要导入模块我的理解是这样的<br>比如说你要导入一个名字为a.jbg的图片就可以直接</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">{</span>% asset_img a.jpg <span class="token punctuation">[</span>图片描述<span class="token punctuation">]</span> %<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><img src="/.com//03/25/tu-pian-shang-chuan/a.png" class="" title="[图片描述]">]]></content>
       
       
       
@@ -17,11 +17,11 @@
     
     
     <entry>
-      <title>python��pycharm����װqrcode��ģ��ʧ��</title>
+      <title>python（pycharm）安装qrcode等模块失败</title>
       <link href="2021/03/25/python-an-zhuang-qrcode-mo-kuai/"/>
       <url>2021/03/25/python-an-zhuang-qrcode-mo-kuai/</url>
       
-        <content type="html"><![CDATA[<p>���˽�<br><a href="https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py">https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py</a><br>�ļ����Ƶ�pycharm֮������Ҫ����qrcode �� coloramaģ���ڰ�װʱֱ��ʹ��<br>pip insall qrcodeʱ������<br>Could not find a version that satisfies the requirement PIL<br>����csdn֮����Ҫ����</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> qrcode  -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>python��װqrcodeʱ��ͼ����</p><img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/a.png" class="" title="[ͼƬ����]"><p>��װcolorama</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> colorama<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/b.png" class="" title="[ͼƬ����]"><p>ʹ��</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/c.png" class="" title="[ͼƬ����]"><p>��ʱ��ֱ�ӽ���pycharm�����ܲ��ܵ����������صĿ�<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/d.png" class="" title="[ͼƬ����]"><br>�տ�ʼ��Ҳ�ǲ��ܵ���ģ���������ʧ�������ҾͶ�����������Ū����python���ºã�Ȼ���뵽pycharm�У�����·;���ǲ�˳��һֱ�����ٲ��ɹ�������ұ��Ǹ����ý��뵽��ͼ�����������Ǹ�Existing environmeent,Ȼ��ֱ��ѡ���������ص�python�е�python.exe�ļ��Ϳ���ֱ�Ӱ���ղ����ص�qrcodeѽɶ�ĵ��뷢��pycharm֮��<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/e.png" class="" title="[ͼƬ����]"><br>�����ʱ�����ղ�python���صĿ�ֱ�ӾͿ�����pycharm����ʹ����</p>]]></content>
+        <content type="html"><![CDATA[<p>在了解<br><a href="https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py">https://github.com/sdushantha/wifipassword/blob/master/wifi_password/wifi_password.py</a><br>文件复制到pycharm之后发现需要导入qrcode 和 colorama模块在安装时直接使用<br>pip insall qrcode时候会出现<br>Could not find a version that satisfies the requirement PIL<br>查阅csdn之后发现要输入</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> qrcode  -i http://pypi.douban.com/simple/ --trusted-host pypi.douban.com<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>python安装qrcode时截图如下</p><img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/a.jpg" class="" title="[图片描述]"><p>安装colorama</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip <span class="token function">install</span> colorama<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/b.jpg" class="" title="[图片描述]"><p>使用</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">pip list<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/c.jpg" class="" title="[图片描述]"><p>这时候直接进入pycharm看看能不能导入两个下载的库<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/d.jpg" class="" title="[图片描述]"><br>刚开始他也是不能导入的，老是下载失败于是我就都搜索到上卖弄的在python中下好，然后导入到pycharm中，但是路途还是不顺，一直都下再不成功，点击右边那个设置进入到如图界面点击下面那个Existing environmeent,然后直接选择你所下载的python中的python.exe文件就可以直接把你刚才下载的qrcode呀啥的导入发到pycharm之中<br> <img src="/.com//03/25/python-an-zhuang-qrcode-mo-kuai/e.jpg" class="" title="[图片描述]"><br>这就算时吧您刚才python下载的库直接就可以再pycharm当中使用了</p>]]></content>
       
       
       
@@ -96,9 +96,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="about/index.html"/>
-      <url>about/index.html</url>
+      <title>categories</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -107,9 +107,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
+      <title>about</title>
+      <link href="about/index.html"/>
+      <url>about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
