@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>小瘦猴</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-03-23T12:29:37.603Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>小瘦猴</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://example.com/2021/03/23/hello-world/"/>
+    <id>http://example.com/2021/03/23/hello-world/</id>
+    <published>2021-03-23T12:29:37.603Z</published>
+    <updated>2021-03-23T12:29:37.603Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>string</title>
+    <link href="http://example.com/2021/03/23/string/"/>
+    <id>http://example.com/2021/03/23/string/</id>
+    <published>2021-03-23T08:05:54.000Z</published>
+    <updated>2021-03-23T12:29:37.637Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;python学习在字符串部分的学习代码:&lt;br&gt;    # 编写人：刘钰琢&lt;br&gt;    # 编写日期：2021/1/20 19:08&lt;br&gt;    #字符串的驻留机制&lt;br&gt;    a=’python’&lt;br&gt;    b=”python”&lt;br&gt;   </summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>my fristboke</title>
+    <link href="http://example.com/2021/03/22/my-fristboke/"/>
+    <id>http://example.com/2021/03/22/my-fristboke/</id>
+    <published>2021-03-22T12:54:36.000Z</published>
+    <updated>2021-03-23T12:29:37.637Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;第一篇博客:&lt;br&gt;        记录一下 计蒜客信息学题库做题&lt;br&gt;        python3.0+&lt;br&gt;    做题结果&lt;br&gt;    &lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
