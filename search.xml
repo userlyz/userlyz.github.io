@@ -85,9 +85,9 @@
     
     
     <entry>
-      <title>404</title>
-      <link href="404/index.html"/>
-      <url>404/index.html</url>
+      <title>about</title>
+      <link href="about/index.html"/>
+      <url>about/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -96,9 +96,9 @@
     
     
     <entry>
-      <title>about</title>
-      <link href="about/index.html"/>
-      <url>about/index.html</url>
+      <title>404</title>
+      <link href="404/index.html"/>
+      <url>404/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
