@@ -96,17 +96,6 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>about</title>
       <link href="about/index.html"/>
       <url>about/index.html</url>
@@ -121,6 +110,17 @@
       <title>contact</title>
       <link href="contact/index.html"/>
       <url>contact/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
