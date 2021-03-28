@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 小瘦猴">
+    <meta name="keywords" content="豆瓣电影分类排名爬取, 小瘦猴">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 小瘦猴</title>
+    <title>豆瓣电影分类排名爬取 | 小瘦猴</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">豆瓣电影分类排名爬取</h1>
                 </div>
             </div>
         </div>
@@ -539,9 +539,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">python爬虫学习</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -553,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-23
+                    2021-03-28
                 </div>
                 
 
@@ -577,19 +581,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <pre><code>今天晚上复习了一下python学习之百度翻译页面爬取
+复习成果已经写在上一个博客了
+这接下来就是requests模块学习之豆瓣电影分类排名进行数据爬取
+我本来以为这个学会之后就可以对豆瓣呀，网易云上面的歌曲进行爬取了
+开始学习之后标题给我整了一个豆瓣电影分类排名爬取
+但是还是太年轻了，原来事情没有那么简单
+下面就是一边听课一边编写的代码，后面有一个错误，以及解决过程
+# -*-coding=utf-8-*-
+# 编写时间2021/3/28;19:28
+# 编写：刘钰琢
+import requests
+import json
+if __name__=='__main__':
+    #url=''#制定url
+    #params={
+     #   'kw':kw
+    #}#在get函数中可以时制定kw关键字
+    #headers={
+     #   'User-Agent':''#对应ua检测的一个反反爬策略
+    #}
+    #response=requests.get(url=url,kwargs=kwargs,)
+    #接下来就是requests模块练习之爬取豆瓣电影分类排行
+    #import 模块时候已经添加完成
+    #指定URl
+    url='https://movie.douban.com/j/chart/top_list?'#问好后面的都是携带的参数i，我们可以使用字典的形式去添加参数
+    #这一步就是要添加参数，记得要用字典的形式去添加参数
+    param={
+        'type': '24',
+        'interval_id':'100:90',
+        'action':'' ,
+        'start': '1',#从豆瓣库中的第几部电影去取
+        'limit': '20',#表示一次请求取出的个数时20
+    }    
+    headers={
+        'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36 Edg/89.0.774.63'
+    }
+    response=requests.get(url=url,params=param,headers=headers)
+    #这个时候我们就获取到了响应对象 这个响应对象的格式时一个json的数据类型
+    lst_data=response.json()
+    fp=open('./douban.jdon','w',encoding='utf-8')
+    json.dump(lst_data,fp=fp,ensure_ascii=False)
+    print('over!!!')
+这个错误吧就是
+![11.jpg](11.jpg)
+经过对比老师的代码，我看了好多地方都发想一样的
+后来我就再次打开抓包工具 中间的user_agent后面的内容是不能有空格的所以才会有这个问题，删除空格之后
+![12.jpg](12.jpg)
+最后也是成功了，但是不知道怎么啦，爬取的内容是无法分布到多行的有往后边多看了一点发现要用
+https://www.bejson.com/这个去个格式化json代码最后也是成功显示
+![13.jpg](13.jpg)
+</code></pre>
 
                 
             </div>
@@ -616,7 +658,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/03/23/hello-world/">http://example.com/2021/03/23/hello-world/</a>
+                    <a href="http://example.com/2021/03/28/dou-ban-dian-ying-fen-lei-pai-ming-pa-qu/">http://example.com/2021/03/28/dou-ban-dian-ying-fen-lei-pai-ming-pa-qu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -653,7 +695,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">python爬虫学习</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -821,17 +867,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/25/an-zhuang-bao-di-zhi/">
+                <a href="/2021/03/28/dou-ban-dian-ying-fen-lei-pai-ming-pa-qu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="安装包地址">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="豆瓣电影分类排名爬取">
                         
-                        <span class="card-title">安装包地址</span>
+                        <span class="card-title">豆瓣电影分类排名爬取</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -841,9 +888,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -852,11 +899,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%AE%89%E8%A3%85/">
-                        <span class="chip bg-color">安装</span>
+                    <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python爬虫学习</span>
                     </a>
                     
                 </div>
@@ -870,13 +918,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/23/string/">
+                <a href="/2021/03/28/python-pa-chong-xue-xi-zhi-bai-du-fan-yi-wang-ye-po-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="string">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="python爬虫学习之百度翻译网页破解">
                         
-                        <span class="card-title">string</span>
+                        <span class="card-title">python爬虫学习之百度翻译网页破解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,7 +935,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-28
                             </span>
                         <span class="publish-author">
                             
@@ -900,8 +948,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">python学习</span>
+                    <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python爬虫学习</span>
                     </a>
                     
                 </div>
