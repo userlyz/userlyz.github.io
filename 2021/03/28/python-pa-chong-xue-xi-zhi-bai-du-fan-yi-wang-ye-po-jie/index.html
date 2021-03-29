@@ -581,7 +581,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+                <pre><code><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> json
 post_url<span class="token operator">=</span><span class="token string">'http://fanyi.baidu.com/sug'</span>
 kw_post<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -607,7 +607,7 @@ filename<span class="token operator">=</span>kw<span class="token operator">+</s
 fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./filename'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dic_obj<span class="token punctuation">,</span>fp<span class="token operator">=</span>fp<span class="token punctuation">,</span>ensure_ascli<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'over,网页已经爬取'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>下面是以dog为例子代码的运行结果
+下面是以dog为例子代码的运行结果
 ![1.jpg](1.jpg)
 如果返回出来的json代码是在一行的话直接ctrl+a 在Ctrl+alt+L
 对代码进行换行处理
