@@ -581,8 +581,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>下面就是我晚上复习百度翻译破解的代码：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
+                <p>下面就是我晚上复习百度翻译破解的代码：<br>    </p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> requests
 <span class="token keyword">import</span> json
 post_url<span class="token operator">=</span><span class="token string">'http://fanyi.baidu.com/sug'</span>
 kw_post<span class="token operator">=</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -607,21 +606,7 @@ dic_obj<span class="token operator">=</span>response<span class="token punctuati
 filename<span class="token operator">=</span>kw<span class="token operator">+</span><span class="token string">'.json'</span>
 fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'./filename'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
 json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dic_obj<span class="token punctuation">,</span>fp<span class="token operator">=</span>fp<span class="token punctuation">,</span>ensure_ascli<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'over,网页已经爬取'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<pre><code>下面是以dog为例子代码的运行结果
-![1.jpg](1.jpg)
-如果返回出来的json代码是在一行的话直接ctrl+a 在Ctrl+alt+L
-对代码进行换行处理
-如果在控制台输出的话直接点击换行按钮进行换行
-![2.jpg](2.jpg)
-在代码最后面会有
-json.dump(dic_obj,fp=fp,ensure_ascii=False)这一行应该是想
-with open（filename,'w',encoding='utf-8'）as file
-file.write(dic_obj)我感觉应该是一样的
-并没有太大的区别 
-至于那个json中的ensure_ascii=False就是不加输出就会是和你用text导出的时候是一样的都是都是一些ascii码
-所以这个是和encoding='utf-8'是差不多一个意思吧
-</code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'over,网页已经爬取'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>    下面是以dog为例子代码的运行结果<br>    <img src="/2021/03/28/python-pa-chong-xue-xi-zhi-bai-du-fan-yi-wang-ye-po-jie/1.jpg" alt="1.jpg"><br>    如果返回出来的json代码是在一行的话直接ctrl+a 在Ctrl+alt+L<br>    对代码进行换行处理<br>    如果在控制台输出的话直接点击换行按钮进行换行<br>    <img src="/2021/03/28/python-pa-chong-xue-xi-zhi-bai-du-fan-yi-wang-ye-po-jie/2.jpg" alt="2.jpg"><br>    在代码最后面会有<br>    json.dump(dic_obj,fp=fp,ensure_ascii=False)这一行应该是想<br>    with open（filename,’w’,encoding=’utf-8’）as file<br>    file.write(dic_obj)我感觉应该是一样的<br>    并没有太大的区别<br>    至于那个json中的ensure_ascii=False就是不加输出就会是和你用text导出的时候是一样的都是都是一些ascii码<br>    所以这个是和encoding=’utf-8’是差不多一个意思吧<p></p>
 
                 
             </div>
