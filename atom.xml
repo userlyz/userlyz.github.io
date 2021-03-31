@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-31T13:30:00.525Z</updated>
+  <updated>2021-03-31T13:43:07.235Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,11 +21,21 @@
     <link href="http://example.com/2021/03/31/ken-de-ji-pa-qu/"/>
     <id>http://example.com/2021/03/31/ken-de-ji-pa-qu/</id>
     <published>2021-03-31T13:30:00.000Z</published>
-    <updated>2021-03-31T13:30:00.525Z</updated>
+    <updated>2021-03-31T13:43:07.235Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天晚上搞了一个作业，作业要求是爬取肯德基的餐厅查询：&lt;br&gt;    代码如下：&lt;br&gt;    &lt;/p&gt;&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code</summary>
+        
+      
     
     
     
     
+    <category term="python爬虫学习" scheme="http://example.com/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
