@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-31T13:43:07.235Z</updated>
+  <updated>2021-04-05T11:13:02.695Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>药监总局</title>
+    <link href="http://example.com/2021/04/05/yao-jian-zong-ju/"/>
+    <id>http://example.com/2021/04/05/yao-jian-zong-ju/</id>
+    <published>2021-04-05T08:43:11.000Z</published>
+    <updated>2021-04-05T11:13:02.695Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天学习了爬取药品线管总局中的企业详细信息&lt;br&gt;    第一步就进行了网站的直接爬取代码如下：&lt;br&gt;    &lt;/p&gt;&lt;pre class=&quot;line-numbers language-python&quot; data-language=&quot;python&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python爬虫学习" scheme="http://example.com/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>肯德基爬取</title>
