@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="药监总局, 小瘦猴">
+    <meta name="keywords" content="元组, 小瘦猴">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>药监总局 | 小瘦猴</title>
+    <title>元组 | 小瘦猴</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">药监总局</h1>
+                    <h1 class="description center-align post-title">元组</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">python爬虫学习</span>
+                            <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">python学习</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-04-06
                 </div>
                 
 
@@ -581,53 +581,50 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>今天学习了爬取药品线管总局中的企业详细信息<br>    第一步就进行了网站的直接爬取代码如下：<br>    </p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 时间:2021/4/5;16:20</span>
-<span class="token comment"># 编写人:刘钰琢</span>
-<span class="token comment"># 药品监管总局</span>
-<span class="token keyword">import</span> requests
-url<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/'</span>
-headers<span class="token operator">=</span><span class="token punctuation">{</span>
-    <span class="token string">"User-Agent"</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.68'</span>
-<span class="token punctuation">}</span>
-response<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
-page_text<span class="token operator">=</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'药监总局.html'</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
-    <span class="token builtin">file</span><span class="token punctuation">.</span>write<span class="token punctuation">(</span>page_text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>    这一部分直接显现了<br>    <img src="/2021/04/05/yao-jian-zong-ju/1.jpg" alt="1.jpg"><br>    经过多次对比发现只有ID是不一样的<br>    <a target="_blank" rel="noopener" href="http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=5eb10afc74a2462c8e86652ec8d90a48">http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=5eb10afc74a2462c8e86652ec8d90a48</a><br>    所以用这个ID值可以从首页的ajax请求中的json串中获取<br>    <a target="_blank" rel="noopener" href="http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById">http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById</a><br>    这个是在网站的许可证详情页中抓包中找到的，而且这个URL只带了一组参数就是ID逐渐找到突破点<br>    还发现他是一个post传参 他的URL是一样的就只是ID的只是不一样的<br>    如果我们可以批量获取多家企业的ID后，就可以将ID和URL形成一个完整的详情页对应详情数据的Ajax请求的URL<br>    在这之后就进行了对比以及对详情那个页面进行抓包后发现他只携带一个参数而且每一个的url是一样的这就可以进行url和参数的拼接直接去爬取到想要的企业相关的详细信息<br>    <img src="/2021/04/05/yao-jian-zong-ju/2.jpg" alt="2.jpg"><br>    然后就是写代码了<br>    <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*-coding=utf-8-*-</span>
-<span class="token comment"># 时间:2021/4/5;17:15</span>
-<span class="token comment"># 编写人:刘钰琢</span>
-<span class="token keyword">import</span> requests
-<span class="token keyword">import</span> json
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    url<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsList'</span>
-    params<span class="token operator">=</span><span class="token punctuation">{</span>
-        <span class="token string">'on'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
-        <span class="token string">'page'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span><span class="token comment">#这个应该是第一页</span>
-        <span class="token string">'pageSize'</span><span class="token punctuation">:</span> <span class="token string">'15'</span><span class="token punctuation">,</span><span class="token comment">#一页显示了多少个数据这两个是可以修改的</span>
-        <span class="token string">'productName'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-        <span class="token string">'conditionType'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
-        <span class="token string">'applyname'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-        <span class="token string">'applysn'</span><span class="token punctuation">:</span><span class="token string">''</span>
-    <span class="token punctuation">}</span>
-    headers<span class="token operator">=</span><span class="token punctuation">{</span>
-        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.68'</span>
-    <span class="token punctuation">}</span>
-    response_json_ids<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>data<span class="token operator">=</span>params<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    id_lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> dic <span class="token keyword">in</span> response_json_ids<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        id_lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token string">'ID'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token comment">#获取企业下详情数据</span>
-    all_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    url_inf<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById'</span>
-    <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span> id_lst<span class="token punctuation">:</span>
-        data<span class="token operator">=</span><span class="token punctuation">{</span>
-            <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token builtin">id</span>
-        <span class="token punctuation">}</span>
-        response<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url_inf<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment">#print(response)</span>
-        all_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
-    fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'药监局2.json'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>all_list<span class="token punctuation">,</span>fp<span class="token operator">=</span>fp<span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"结束了！！"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>    这第一步就是在上图2中的打开了抓包工具直接发现的之后就是在这个json数据中收集ID一共下一步使用<br>    在接下来的企业详情页面中进行访问就可以进行爬取到要求的页面了，在json网站对相应的数据进行json解析就收集到了<br>    企业的详情信息，致此药监局化妆品生产许可证企业信息爬取就结束了<p></p>
+                <p>主要是元组的学习：<br>    </p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 编写人：刘钰琢</span>
+<span class="token comment"># 编写日期：2021/1/16 11:00</span>
+<span class="token comment">#不可变序列，可变序列 可变：列表，字典  两次的输出id是一样的</span>
+lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">)</span>
+lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>lst<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#不可变序列：字符串，元组  两次输出的id是不一样的</span>
+s<span class="token operator">=</span><span class="token string">'hello'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+s<span class="token operator">=</span>s<span class="token operator">+</span><span class="token string">'world'</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">id</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#元组的创建</span>
+t<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">)</span><span class="token comment">#括号是可以省略不写的</span>
+t3<span class="token operator">=</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token number">90</span>
+t4<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第一种创建'</span><span class="token punctuation">,</span>t<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第二次创建，省略小括号'</span><span class="token punctuation">,</span>t3<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t3<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第三次创建，单单一个元素时'</span><span class="token punctuation">,</span>t4<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t4<span class="token punctuation">)</span><span class="token punctuation">)</span>
+t1<span class="token operator">=</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'python'</span><span class="token punctuation">,</span><span class="token string">'hello'</span><span class="token punctuation">,</span><span class="token number">90</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#要有两重括号，</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第四次创建，用内置函数：'</span><span class="token punctuation">,</span>t1<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t1<span class="token punctuation">)</span><span class="token punctuation">)</span>
+t2<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token comment">#只有一个元素的时候要添加逗号</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第五次创建，单单一个元素时'</span><span class="token punctuation">,</span>t2<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#空列表，空字典，空元组的创建</span>
+<span class="token comment">#空列表</span>
+lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+lst1<span class="token operator">=</span><span class="token builtin">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#空字典</span>
+d<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+d1<span class="token operator">=</span><span class="token builtin">dict</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">#空元组</span>
+t6<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+t7<span class="token operator">=</span><span class="token builtin">tuple</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'空列表'</span><span class="token punctuation">,</span>lst<span class="token punctuation">,</span>lst1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'空字典'</span><span class="token punctuation">,</span>d<span class="token punctuation">,</span>d1<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'空元组'</span><span class="token punctuation">,</span>t6<span class="token punctuation">,</span>t7<span class="token punctuation">)</span>
+<span class="token comment">#元组的可变和不可变的部分</span>
+t<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">)</span><span class="token comment">#10，和40属于不可变部分，但是在【20，30】是一个可变的列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">,</span><span class="token builtin">type</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#所以说对[20，30]属于是可以进行增删改查操作的</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>t<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token comment">#增加还有extend</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'中间列表后面添加一个元素'</span><span class="token punctuation">,</span>t<span class="token punctuation">)</span>
+t<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span>sort<span class="token punctuation">(</span>reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token comment">#排序，还有删除pop()填入索引，remove()填入</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'对中间的列表进行逆序排序'</span><span class="token punctuation">,</span>t<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p></p>
 
                 
             </div>
@@ -654,7 +651,7 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/04/05/yao-jian-zong-ju/">http://example.com/2021/04/05/yao-jian-zong-ju/</a>
+                    <a href="http://example.com/2021/04/06/yuan-zu/">http://example.com/2021/04/06/yuan-zu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,8 +689,8 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">python爬虫学习</span>
+                                <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">python学习</span>
                                 </a>
                             
                         </div>
@@ -867,13 +864,13 @@ page_text<span class="token operator">=</span>response<span class="token punctua
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/04/06/ji-yu-opencv-python-de-ren-lian-shi-bie/">
+                <a href="/2021/04/06/lie-biao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="基于opencv+python的人脸识别">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="列表">
                         
-                        <span class="card-title">基于opencv+python的人脸识别</span>
+                        <span class="card-title">列表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -895,6 +892,14 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     </div>
                 </div>
                 
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python学习</span>
+                    </a>
+                    
+                </div>
+                
             </div>
         </div>
         
@@ -904,13 +909,13 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/31/ken-de-ji-pa-qu/">
+                <a href="/2021/04/06/ji-he-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="肯德基爬取">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="集合学习">
                         
-                        <span class="card-title">肯德基爬取</span>
+                        <span class="card-title">集合学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -921,7 +926,7 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
                             </span>
                         <span class="publish-author">
                             
@@ -934,8 +939,8 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">python爬虫学习</span>
+                    <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python学习</span>
                     </a>
                     
                 </div>
