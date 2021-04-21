@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="小瘦猴" type="application/atom+xml">
+
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
-<link rel="alternate" href="/atom.xml" title="小瘦猴" type="application/atom+xml">
 </head>
 
 
@@ -584,6 +584,8 @@
                 <p>现在上传图片已经不再需要导入模块我的理解是这样的<br>比如说你要导入一个名字为a.jbg的图片就可以直接</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>a.jpg<span class="token punctuation">]</span><span class="token punctuation">(</span>a.jpg<span class="token punctuation">)</span>to instert a.jpg.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><img src="/2021/03/25/tu-pian-shang-chuan/b.jpg" alt="b.jpg">to instert b.jpg.<br>可以看到插件实在<br>hexo的根目录\node_modules\hexo-asset-image<br><img src="/2021/03/25/tu-pian-shang-chuan/a.jpg" alt="a.jpg">to instert a.jpg.</p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>下面是打包文件<br>可以直接进行打包然后把程序所需要的直接放到一个文件夹里边就可以运行了<br>第二种方法是<br>def get_resource_path(relative_path):<br>    if getattr(sys,”frozen”,False):<br>        base_path=sys._MEIPASS#获取临时资源<br>    else:<br>        base_path=os.path.abspath(“.”)#获取当前路径<br>    return os.path.join(base_path,relative_path)<br>img1_path=get_resource_path(os.path.join(“resources”,”1.png”))<br>img2_path = get_resource_path(os.path.join(“resources”, “2.png”))<br>mp3_path = get_resource_path(os.path.join(“resources”, “background.mp3”))<br>这就是程序打包时要是需要其他文件时要进行的操作<br>当然要提前趣导入<br>import sys</p>
+<p>打包第一步 pyi-makespec -F .py文件<br><img src="/2021/03/25/tu-pian-shang-chuan/c.jpg" alt="c.jpg"><br>第二部直接打包身份成的.spec文件 pyinstaller -F .spec文件<br><img src="/2021/03/25/tu-pian-shang-chuan/d.jpg" alt="d.jpg"></p>
 
                 
             </div>
