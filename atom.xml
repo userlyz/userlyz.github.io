@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2021-04-25T11:54:46.800Z</updated>
+  <updated>2021-04-25T12:40:21.983Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>窗体显示</title>
+    <link href="http://userlyz.github.io/2021/04/25/chuang-ti-xian-shi/"/>
+    <id>http://userlyz.github.io/2021/04/25/chuang-ti-xian-shi/</id>
+    <published>2021-04-25T12:20:09.000Z</published>
+    <updated>2021-04-25T12:40:21.983Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;显示结果&lt;br&gt;&lt;img src=&quot;/2021/04/25/chuang-ti-xian-shi/1.jpg&quot; alt=&quot;1.jpg&quot;&gt;&lt;br&gt;button显示的是&lt;br&gt;&lt;img src=&quot;/2021/04/25/chuang-ti-xian-shi/2.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python学习" scheme="http://userlyz.github.io/tags/python%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>糗事百科图片爬取</title>

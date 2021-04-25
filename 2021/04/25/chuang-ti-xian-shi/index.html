@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="药监总局, 小瘦猴">
+    <meta name="keywords" content="窗体显示, 小瘦猴">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>药监总局 | 小瘦猴</title>
+    <title>窗体显示 | 小瘦猴</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">药监总局</h1>
+                    <h1 class="description center-align post-title">窗体显示</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">python爬虫学习</span>
+                            <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">python学习</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-04-25
                 </div>
                 
 
@@ -581,54 +581,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>今天学习了爬取药品线管总局中的企业详细信息<br>    第一步就进行了网站的直接爬取代码如下：<br>    </p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 时间:2021/4/5;16:20</span>
+                <p>显示结果<br><img src="/2021/04/25/chuang-ti-xian-shi/1.jpg" alt="1.jpg"><br>button显示的是<br><img src="/2021/04/25/chuang-ti-xian-shi/2.jpg" alt="2.jpg"><br>这个是可以点击的 主要是没有那个事件绑定所以没有啥事只有点击之后啥都没有啦<br>我每一部分都用的一个主程序<br>所以看着会比较乱但是不影响复习<br>源代码奉上</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*-coding=utf-8-*-</span>
+<span class="token comment"># 时间:2021/4/25;20:14</span>
 <span class="token comment"># 编写人:刘钰琢</span>
-<span class="token comment"># 药品监管总局</span>
-<span class="token keyword">import</span> requests
-url<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/'</span>
-headers<span class="token operator">=</span><span class="token punctuation">{</span>
-    <span class="token string">"User-Agent"</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.68'</span>
-<span class="token punctuation">}</span>
-response<span class="token operator">=</span>requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
-page_text<span class="token operator">=</span>response<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'药监总局.html'</span><span class="token punctuation">,</span><span class="token string">"w"</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token keyword">as</span> <span class="token builtin">file</span><span class="token punctuation">:</span>
-    <span class="token builtin">file</span><span class="token punctuation">.</span>write<span class="token punctuation">(</span>page_text<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>    这一部分直接显现了<br>    <img src="/2021/04/05/yao-jian-zong-ju/1.jpg" alt="1.jpg"><br>    经过多次对比发现只有ID是不一样的<br>    <a target="_blank" rel="noopener" href="http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=5eb10afc74a2462c8e86652ec8d90a48">http://scxk.nmpa.gov.cn:81/xk/itownet/portal/dzpz.jsp?id=5eb10afc74a2462c8e86652ec8d90a48</a><br>    所以用这个ID值可以从首页的ajax请求中的json串中获取<br>    <a target="_blank" rel="noopener" href="http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById">http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById</a><br>    这个是在网站的许可证详情页中抓包中找到的，而且这个URL只带了一组参数就是ID逐渐找到突破点<br>    还发现他是一个post传参 他的URL是一样的就只是ID的只是不一样的<br>    如果我们可以批量获取多家企业的ID后，就可以将ID和URL形成一个完整的详情页对应详情数据的Ajax请求的URL<br>    在这之后就进行了对比以及对详情那个页面进行抓包后发现他只携带一个参数而且每一个的url是一样的这就可以进行url和参数的拼接直接去爬取到想要的企业相关的详细信息<br>    <img src="/2021/04/05/yao-jian-zong-ju/2.jpg" alt="2.jpg"><br>    然后就是写代码了<br>    <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*-coding=utf-8-*-</span>
-<span class="token comment"># 时间:2021/4/5;17:15</span>
-<span class="token comment"># 编写人:刘钰琢</span>
-<span class="token keyword">import</span> requests
-<span class="token keyword">import</span> json
+<span class="token keyword">import</span> tkinter
+LOGO_PATH <span class="token operator">=</span> <span class="token string">'resources/2.ico'</span>  <span class="token comment"># 文件路径`</span>
+<span class="token comment"># LOGO_PATH='resources'+os.sep+'2.ico'</span>
+Img_path <span class="token operator">=</span> <span class="token string">'resources/tu.png'</span>
+<span class="token keyword">class</span> <span class="token class-name">MainForm</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># root=tkinter.Tk()</span>
+        <span class="token comment"># root.title("lyz")</span>
+        <span class="token comment"># root.mainloop()</span>
+        root <span class="token operator">=</span> tkinter<span class="token punctuation">.</span>Tk<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建一个窗体</span>
+        root<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'my frist tk'</span><span class="token punctuation">)</span>  <span class="token comment"># 标题</span>
+        root<span class="token punctuation">.</span>iconbitmap<span class="token punctuation">(</span>LOGO_PATH<span class="token punctuation">)</span>  <span class="token comment"># 设置logo资源</span>
+        <span class="token comment"># 这里的ico文件不能直接更高后缀 要通过转移网站进行转到ico文件才可已实现</span>
+        <span class="token comment"># 要不然能运行时能运行，只是logo那一块只是会变成一块白板</span>
+        root<span class="token punctuation">.</span>geometry<span class="token punctuation">(</span><span class="token string">'800x600'</span><span class="token punctuation">)</span>
+        root<span class="token punctuation">.</span>minsize<span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span>
+        root<span class="token punctuation">.</span>maxsize<span class="token punctuation">(</span><span class="token number">1750</span><span class="token punctuation">,</span> <span class="token number">883</span><span class="token punctuation">)</span>
+        root<span class="token punctuation">[</span><span class="token string">'background'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"LightSlateGray"</span>
+        <span class="token comment"># text = tkinter.Text(root, width=50, height=15, font=('微软雅黑', 20))</span>
+        <span class="token comment"># text.insert(tkinter.CURRENT, '刘钰琢：')  # tkinter.COURRENT="courent"</span>
+        <span class="token comment"># # 如果想要进行图片的加载一定要通过专属的组件类进行了路径的包装</span>
+        photo <span class="token operator">=</span> tkinter<span class="token punctuation">.</span>PhotoImage<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token operator">=</span>Img_path<span class="token punctuation">)</span>
+        <span class="token comment"># text.image_create('end', image=photo)</span>
+        <span class="token comment"># # # label_photo = tkinter.Label(root, resources=photo)</span>
+        <span class="token comment"># # # label_text.pack()</span>
+        <span class="token comment"># text.pack()</span>
+        <span class="token comment"># # label_photo.pack()</span>
+        <span class="token comment"># # label_text.pack()</span>
+        button<span class="token operator">=</span>tkinter<span class="token punctuation">.</span>Button<span class="token punctuation">(</span>root<span class="token punctuation">,</span>text<span class="token operator">=</span><span class="token string">"吐了"</span><span class="token punctuation">,</span>image<span class="token operator">=</span>photo<span class="token punctuation">,</span>compound<span class="token operator">=</span><span class="token string">"bottom"</span><span class="token punctuation">,</span>fg<span class="token operator">=</span><span class="token string">"black"</span><span class="token punctuation">,</span>font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"微软雅黑"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        button<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        root<span class="token punctuation">.</span>mainloop<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 显示窗体</span>
+        <span class="token comment"># 这个都属于是python的默认形式</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    MainForm<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    url<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsList'</span>
-    params<span class="token operator">=</span><span class="token punctuation">{</span>
-        <span class="token string">'on'</span><span class="token punctuation">:</span> <span class="token string">'true'</span><span class="token punctuation">,</span>
-        <span class="token string">'page'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span><span class="token comment">#这个应该是第一页</span>
-        <span class="token string">'pageSize'</span><span class="token punctuation">:</span> <span class="token string">'15'</span><span class="token punctuation">,</span><span class="token comment">#一页显示了多少个数据这两个是可以修改的</span>
-        <span class="token string">'productName'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-        <span class="token string">'conditionType'</span><span class="token punctuation">:</span> <span class="token string">'1'</span><span class="token punctuation">,</span>
-        <span class="token string">'applyname'</span><span class="token punctuation">:</span><span class="token string">''</span><span class="token punctuation">,</span>
-        <span class="token string">'applysn'</span><span class="token punctuation">:</span><span class="token string">''</span>
-    <span class="token punctuation">}</span>
-    headers<span class="token operator">=</span><span class="token punctuation">{</span>
-        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36 Edg/89.0.774.68'</span>
-    <span class="token punctuation">}</span>
-    response_json_ids<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url<span class="token punctuation">,</span>data<span class="token operator">=</span>params<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    id_lst<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> dic <span class="token keyword">in</span> response_json_ids<span class="token punctuation">[</span><span class="token string">'list'</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        id_lst<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dic<span class="token punctuation">[</span><span class="token string">'ID'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token comment">#获取企业下详情数据</span>
-    all_list<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
-    url_inf<span class="token operator">=</span><span class="token string">'http://scxk.nmpa.gov.cn:81/xk/itownet/portalAction.do?method=getXkzsById'</span>
-    <span class="token keyword">for</span> <span class="token builtin">id</span> <span class="token keyword">in</span> id_lst<span class="token punctuation">:</span>
-        data<span class="token operator">=</span><span class="token punctuation">{</span>
-            <span class="token string">'id'</span><span class="token punctuation">:</span><span class="token builtin">id</span>
-        <span class="token punctuation">}</span>
-        response<span class="token operator">=</span>requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token operator">=</span>url_inf<span class="token punctuation">,</span>data<span class="token operator">=</span>data<span class="token punctuation">,</span>headers<span class="token operator">=</span>headers<span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment">#print(response)</span>
-        all_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>response<span class="token punctuation">)</span>
-    fp<span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'药监局2.json'</span><span class="token punctuation">,</span><span class="token string">'w'</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
-    json<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>all_list<span class="token punctuation">,</span>fp<span class="token operator">=</span>fp<span class="token punctuation">,</span>ensure_ascii<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"结束了！！"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><br>    这第一步就是在上图2中的打开了抓包工具直接发现的之后就是在这个json数据中收集ID一共下一步使用<br>    在接下来的企业详情页面中进行访问就可以进行爬取到要求的页面了，在json网站对相应的数据进行json解析就收集到了<br>    企业的详情信息，致此药监局化妆品生产许可证企业信息爬取就结束了<p></p>
-
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
                 
             </div>
             <hr/>
@@ -654,7 +646,7 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2021/04/05/yao-jian-zong-ju/">http://userlyz.github.io/2021/04/05/yao-jian-zong-ju/</a>
+                    <a href="http://userlyz.github.io/2021/04/25/chuang-ti-xian-shi/">http://userlyz.github.io/2021/04/25/chuang-ti-xian-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -692,8 +684,8 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">python爬虫学习</span>
+                                <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">python学习</span>
                                 </a>
                             
                         </div>
@@ -863,17 +855,18 @@ page_text<span class="token operator">=</span>response<span class="token punctua
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/04/06/ji-yu-opencv-python-de-ren-lian-shi-bie/">
+                <a href="/2021/04/25/chuang-ti-xian-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="基于opencv+python的人脸识别">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="窗体显示">
                         
-                        <span class="card-title">基于opencv+python的人脸识别</span>
+                        <span class="card-title">窗体显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -883,9 +876,9 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -894,6 +887,7 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -912,13 +906,13 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/31/ken-de-ji-pa-qu/">
+                <a href="/2021/04/25/qiu-shi-bai-ke-tu-pian-pa-qu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="肯德基爬取">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="糗事百科图片爬取">
                         
-                        <span class="card-title">肯德基爬取</span>
+                        <span class="card-title">糗事百科图片爬取</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -929,7 +923,7 @@ page_text<span class="token operator">=</span>response<span class="token punctua
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-25
                             </span>
                         <span class="publish-author">
                             
