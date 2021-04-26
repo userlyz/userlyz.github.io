@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2021-04-25T12:40:21.983Z</updated>
+  <updated>2021-04-26T13:20:30.628Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>事件处理</title>
+    <link href="http://userlyz.github.io/2021/04/26/shi-jian-chu-li/"/>
+    <id>http://userlyz.github.io/2021/04/26/shi-jian-chu-li/</id>
+    <published>2021-04-26T13:11:35.000Z</published>
+    <updated>2021-04-26T13:20:30.628Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;事件处理总体上还是比较顺利的首先要导入一个tkinter.messagebox的一个类&lt;br&gt;用于显示提示信息，这一点尤为重要第一次他并没有去选择一个可以更改的一个messagebox显示的内容&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python学习" scheme="http://userlyz.github.io/tags/python%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>窗体显示</title>

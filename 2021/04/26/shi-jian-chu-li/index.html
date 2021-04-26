@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="hexo图片上传, 小瘦猴">
+    <meta name="keywords" content="事件处理, 小瘦猴">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo图片上传 | 小瘦猴</title>
+    <title>事件处理 | 小瘦猴</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo图片上传</h1>
+                    <h1 class="description center-align post-title">事件处理</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/hexo%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">hexo学习</span>
+                            <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">python学习</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-25
+                    2021-04-26
                 </div>
                 
 
@@ -581,11 +581,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>现在上传图片已经不再需要导入模块我的理解是这样的<br>比如说你要导入一个名字为a.jbg的图片就可以直接</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token operator">!</span><span class="token punctuation">[</span>a.jpg<span class="token punctuation">]</span><span class="token punctuation">(</span>a.jpg<span class="token punctuation">)</span>to instert a.jpg.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p><img src="/2021/03/25/tu-pian-shang-chuan/b.jpg" alt="b.jpg">to instert b.jpg.<br>可以看到插件实在<br>hexo的根目录\node_modules\hexo-asset-image<br><img src="/2021/03/25/tu-pian-shang-chuan/a.jpg" alt="a.jpg">to instert a.jpg.</p>
-<h3 id=""><a href="#" class="headerlink" title=""></a></h3><p>下面是打包文件<br>可以直接进行打包然后把程序所需要的直接放到一个文件夹里边就可以运行了<br>第二种方法是<br>def get_resource_path(relative_path):<br>    if getattr(sys,”frozen”,False):<br>        base_path=sys._MEIPASS#获取临时资源<br>    else:<br>        base_path=os.path.abspath(“.”)#获取当前路径<br>    return os.path.join(base_path,relative_path)<br>img1_path=get_resource_path(os.path.join(“resources”,”1.png”))<br>img2_path = get_resource_path(os.path.join(“resources”, “2.png”))<br>mp3_path = get_resource_path(os.path.join(“resources”, “background.mp3”))<br>这就是程序打包时要是需要其他文件时要进行的操作<br>当然要提前趣导入<br>import sys</p>
-<p>打包第一步 pyi-makespec -F .py文件<br><img src="/2021/03/25/tu-pian-shang-chuan/c.jpg" alt="c.jpg"><br>更改.spec文件中的datas中的内容一般建议是设置成一样的不进行更改<br><img src="/2021/03/25/tu-pian-shang-chuan/e.jpg" alt="e.jpg"><br>第二部直接打包身份成的.spec文件 pyinstaller -F .spec文件<br><img src="/2021/03/25/tu-pian-shang-chuan/d.jpg" alt="d.jpg"></p>
+                <p>事件处理总体上还是比较顺利的首先要导入一个tkinter.messagebox的一个类<br>用于显示提示信息，这一点尤为重要第一次他并没有去选择一个可以更改的一个messagebox显示的内容</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">tkinter.messagebox.showinfo<span class="token punctuation">(</span>title<span class="token operator">=</span><span class="token string">"事件处理呀"</span>, <span class="token assign-left variable">message</span><span class="token operator">=</span><span class="token string">"userlyz：userlyz.top!!!"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>就直接用的就是这一句话而且在那个类当中也并没有info<br>后来讲的就是显示的内容就是用的上面的传下来的一个info来显示主要就是这句代码</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">self.root.bind<span class="token punctuation">(</span><span class="token string">"&lt;Button-1&gt;"</span>,lambda event:self.event_header<span class="token punctuation">(</span>event,<span class="token string">"userlyz:userlyz.top"</span><span class="token punctuation">))</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这就是可以对想要显示的内容进行动态显示了我认为<br>还有就是他加了一个self这样就可以动态的添加某一些组件显示之外，还可以动态的取消某一些组件，或者修改某一些组件的内容<br>这也是一个比较方便的地方<br>源代码如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># -*-coding=utf-8-*-</span>
+<span class="token comment"># 时间:2021/4/25;20:14</span>
+<span class="token comment"># 编写人:刘钰琢</span>
+<span class="token keyword">import</span> tkinter
+<span class="token keyword">import</span> tkinter<span class="token punctuation">.</span>messagebox  <span class="token comment"># 实现提示框的一个组件</span>
+LOGO_PATH <span class="token operator">=</span> <span class="token string">'resources/2.ico'</span>  <span class="token comment"># 文件路径`</span>
+<span class="token comment"># LOGO_PATH='resources'+os.sep+'2.ico'</span>
+Img_path <span class="token operator">=</span> <span class="token string">'resources/tu.png'</span>
+<span class="token keyword">class</span> <span class="token class-name">MainForm</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># root=tkinter.Tk()</span>
+        <span class="token comment"># root.title("lyz")</span>
+        <span class="token comment"># root.mainloop()</span>
+        self<span class="token punctuation">.</span>root <span class="token operator">=</span> tkinter<span class="token punctuation">.</span>Tk<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 创建一个窗体</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>title<span class="token punctuation">(</span><span class="token string">'事件处理'</span><span class="token punctuation">)</span>  <span class="token comment"># 标题</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>iconbitmap<span class="token punctuation">(</span>LOGO_PATH<span class="token punctuation">)</span>  <span class="token comment"># 设置logo资源</span>
+        <span class="token comment"># 这里的ico文件不能直接更高后缀 要通过转移网站进行转到ico文件才可已实现</span>
+        <span class="token comment"># 要不然能运行时能运行，只是logo那一块只是会变成一块白板</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>geometry<span class="token punctuation">(</span><span class="token string">'800x600'</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>minsize<span class="token punctuation">(</span><span class="token number">800</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>maxsize<span class="token punctuation">(</span><span class="token number">1750</span><span class="token punctuation">,</span> <span class="token number">883</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">[</span><span class="token string">'background'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"LightSlateGray"</span>
+        <span class="token comment"># 绑定一个鼠标单击的一个按键编码“&lt;Button-1&gt;”,事件对象自动传入</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token string">"&lt;Button-1&gt;"</span><span class="token punctuation">,</span><span class="token keyword">lambda</span> event<span class="token punctuation">:</span>self<span class="token punctuation">.</span>event_header<span class="token punctuation">(</span>event<span class="token punctuation">,</span><span class="token string">"userlyz:userlyz.top"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>root<span class="token punctuation">.</span>mainloop<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment"># 显示窗体</span>
+        <span class="token comment"># 这个都属于是python的默认形式</span>
+    <span class="token keyword">def</span> <span class="token function">event_header</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> event<span class="token punctuation">,</span>info<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 事件处理方法</span>
+        Lable_text<span class="token operator">=</span>tkinter<span class="token punctuation">.</span>Label<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root<span class="token punctuation">,</span>text<span class="token operator">=</span><span class="token string">"userlyz:userlyz.top"</span><span class="token punctuation">,</span>
+                                 width<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span>height<span class="token operator">=</span><span class="token number">200</span><span class="token punctuation">,</span>bg<span class="token operator">=</span><span class="token string">"#223011"</span><span class="token punctuation">,</span>
+                                 font<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">"微软雅黑"</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">,</span>fg<span class="token operator">=</span><span class="token string">"#ffffff"</span><span class="token punctuation">)</span>
+        Lable_text<span class="token punctuation">.</span>pack<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#可以动态的添加某一些组件显示之外，还可以动态的取消某一些组件，或者修改某一些组件的内容</span>
+        tkinter<span class="token punctuation">.</span>messagebox<span class="token punctuation">.</span>showinfo<span class="token punctuation">(</span>title<span class="token operator">=</span><span class="token string">"事件处理1"</span><span class="token punctuation">,</span> message<span class="token operator">=</span>info<span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    MainForm<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>运行结果是<img src="/2021/04/26/shi-jian-chu-li/1.jpg" alt="1.jpg"><br>这最后就是<img src="/2021/04/26/shi-jian-chu-li/2.jpg" alt="2.jpg"></p>
 
                 
             </div>
@@ -612,7 +650,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2021/03/25/tu-pian-shang-chuan/">http://userlyz.github.io/2021/03/25/tu-pian-shang-chuan/</a>
+                    <a href="http://userlyz.github.io/2021/04/26/shi-jian-chu-li/">http://userlyz.github.io/2021/04/26/shi-jian-chu-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -650,8 +688,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/hexo%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">hexo学习</span>
+                                <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">python学习</span>
                                 </a>
                             
                         </div>
@@ -821,17 +859,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/03/27/sqlserver-an-zhuang/">
+                <a href="/2021/04/26/shi-jian-chu-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="sqlserver安装">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="事件处理">
                         
-                        <span class="card-title">sqlserver安装</span>
+                        <span class="card-title">事件处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -841,9 +880,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -852,11 +891,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/sqlserver-%E5%AE%89%E8%A3%85/">
-                        <span class="chip bg-color">sqlserver 安装</span>
+                    <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python学习</span>
                     </a>
                     
                 </div>
@@ -870,13 +910,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/03/25/python-an-zhuang-qrcode-mo-kuai/">
+                <a href="/2021/04/25/chuang-ti-xian-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="python（pycharm）安装qrcode等模块失败">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="窗体显示">
                         
-                        <span class="card-title">python（pycharm）安装qrcode等模块失败</span>
+                        <span class="card-title">窗体显示</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -887,7 +927,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-25
                             </span>
                         <span class="publish-author">
                             
@@ -900,8 +940,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python%E5%AE%89%E8%A3%85/">
-                        <span class="chip bg-color">python安装</span>
+                    <a href="/tags/python%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">python学习</span>
                     </a>
                     
                 </div>
