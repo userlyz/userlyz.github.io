@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2021-06-03T12:36:09.446Z</updated>
+  <updated>2021-06-03T12:46:03.758Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -21,15 +21,14 @@
     <link href="http://userlyz.github.io/2021/06/03/pa-chong-jie-xi/"/>
     <id>http://userlyz.github.io/2021/06/03/pa-chong-jie-xi/</id>
     <published>2021-06-03T07:13:52.000Z</published>
-    <updated>2021-06-03T12:36:09.446Z</updated>
+    <updated>2021-06-03T12:46:03.758Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;今天主要整理python的三种解析方法&lt;br&gt;正则表达式&lt;br&gt;1、正则解析主要是以//.&lt;em&gt;和//.&lt;/em&gt;?的两种从而获得想要获取的数据就比如说在分页爬取的时候中间的&lt;/p&gt;
-&lt;pre class=&quot;line-numbers</summary>
+    <summary type="html">&lt;h1 id=&quot;今天主要整理python的三种解析方法&quot;&gt;&lt;a href=&quot;#今天主要整理python的三种解析方法&quot; class=&quot;headerlink&quot; title=&quot;今天主要整理python的三种解析方法&quot;&gt;&lt;/a&gt;今天主要整理python的三种解析方法&lt;/h1&gt;&lt;h2</summary>
         
       
     
