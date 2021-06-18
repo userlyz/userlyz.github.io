@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2021-06-10T12:50:02.492Z</updated>
+  <updated>2021-06-18T02:58:22.622Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次网络实训</title>
+    <link href="http://userlyz.github.io/2021/06/18/wang-luo-shi-xun/"/>
+    <id>http://userlyz.github.io/2021/06/18/wang-luo-shi-xun/</id>
+    <published>2021-06-18T02:17:33.000Z</published>
+    <updated>2021-06-18T02:58:22.622Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;记一次网络实训&quot;&gt;&lt;a href=&quot;#记一次网络实训&quot; class=&quot;headerlink&quot; title=&quot;记一次网络实训&quot;&gt;&lt;/a&gt;记一次网络实训&lt;/h1&gt;&lt;p&gt;这次网络实训是使用python去完成的&lt;/p&gt;
+&lt;h2 id=&quot;零比特填充&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="学习" scheme="http://userlyz.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>12306模拟登录</title>
@@ -455,30 +479,6 @@
     
     
     <category term="python安装" scheme="http://userlyz.github.io/tags/python%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>安装包地址</title>
-    <link href="http://userlyz.github.io/2021/03/25/an-zhuang-bao-di-zhi/"/>
-    <id>http://userlyz.github.io/2021/03/25/an-zhuang-bao-di-zhi/</id>
-    <published>2021-03-25T01:44:22.000Z</published>
-    <updated>2021-03-28T14:32:35.795Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;内容待定！！&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    
-    <category term="安装" scheme="http://userlyz.github.io/tags/%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
