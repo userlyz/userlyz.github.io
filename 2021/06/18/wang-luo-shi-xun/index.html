@@ -735,6 +735,48 @@
                 result<span class="token operator">+=</span><span class="token builtin">int</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span>
         <span class="token comment"># print(result)</span>
         <span class="token keyword">return</span> <span class="token builtin">str</span><span class="token punctuation">(</span>result<span class="token operator">%</span><span class="token number">2</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="crc8代码实现"><a href="#crc8代码实现" class="headerlink" title="crc8代码实现"></a>crc8代码实现</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getyu</span><span class="token punctuation">(</span>str1<span class="token punctuation">,</span> str2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    index <span class="token operator">=</span> <span class="token number">0</span>
+    str1_new <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token keyword">for</span> item <span class="token keyword">in</span> str1<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> item <span class="token operator">==</span> <span class="token string">'0'</span><span class="token punctuation">:</span>
+            index <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+    <span class="token keyword">if</span> index <span class="token operator">&gt;=</span> str2<span class="token punctuation">.</span>__len__<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span><span class="token punctuation">,</span> str1<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> index <span class="token operator">+</span> <span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> str1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> str2<span class="token punctuation">[</span>i <span class="token operator">-</span> index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                str1_new <span class="token operator">+=</span> <span class="token string">'0'</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                str1_new <span class="token operator">+=</span> <span class="token string">'1'</span>
+        str1 <span class="token operator">=</span> str1<span class="token punctuation">[</span><span class="token punctuation">:</span>index<span class="token punctuation">]</span> <span class="token operator">+</span> str1_new <span class="token operator">+</span> str1<span class="token punctuation">[</span>index <span class="token operator">+</span> <span class="token number">9</span><span class="token punctuation">:</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token boolean">False</span><span class="token punctuation">,</span> str1
+
+
+<span class="token keyword">def</span> <span class="token function">crc8</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    str_all <span class="token operator">=</span> <span class="token builtin">input</span><span class="token punctuation">(</span><span class="token string">"请输入您要传输的信息"</span><span class="token punctuation">)</span>
+    str_ <span class="token operator">=</span> <span class="token string">''</span>
+    str_list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        str_ <span class="token operator">+=</span> <span class="token string">'0'</span>
+    <span class="token keyword">for</span> item <span class="token keyword">in</span> str_all<span class="token punctuation">:</span>
+        item <span class="token operator">=</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">bin</span><span class="token punctuation">(</span><span class="token builtin">ord</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">+</span> str_
+        str_list<span class="token punctuation">.</span>append<span class="token punctuation">(</span>item<span class="token punctuation">)</span>
+    in_ <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> item <span class="token keyword">in</span> str_list<span class="token punctuation">:</span>
+        in_ <span class="token operator">+=</span> <span class="token number">1</span>
+        str1 <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">,</span> item<span class="token punctuation">)</span>
+        str2 <span class="token operator">=</span> <span class="token string">'100000111'</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            str1 <span class="token operator">=</span> getyu<span class="token punctuation">(</span>str1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> str2<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> str1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+        str_send <span class="token operator">=</span> item<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">+</span> str1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'第{0}个元素的冗余码是{1},发送码是{2}'</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>in_<span class="token punctuation">,</span> str1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> str_send<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="主代码展示"><a href="#主代码展示" class="headerlink" title="主代码展示"></a>主代码展示</h1><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 编写时间2021/6/16;14:07</span>
 <span class="token comment"># 编写  :刘钰琢</span>
 <span class="token keyword">def</span> <span class="token function">bit</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -747,9 +789,10 @@
     bit<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#零比特填充</span>
     sure_haiming<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#验证海明码哪一步是错误的</span>
     build_haiming<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#创建海明码</span>
+    crc8<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#crc8 实现</span>
     <span class="token keyword">pass</span>
 <span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1>
                 
             </div>
