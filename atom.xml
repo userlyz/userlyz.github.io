@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2021-06-23T06:08:58.903Z</updated>
+  <updated>2021-07-22T05:20:08.353Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python_flask框架学习1</title>
+    <link href="http://userlyz.github.io/2021/07/22/python-flask-kuang-jia-xue-xi-1/"/>
+    <id>http://userlyz.github.io/2021/07/22/python-flask-kuang-jia-xue-xi-1/</id>
+    <published>2021-07-22T05:11:03.000Z</published>
+    <updated>2021-07-22T05:20:08.353Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;flask框架&quot;&gt;&lt;a href=&quot;#flask框架&quot; class=&quot;headerlink&quot; title=&quot;flask框架&quot;&gt;&lt;/a&gt;flask框架&lt;/h1&gt;&lt;h2 id=&quot;基本的语法&quot;&gt;&lt;a href=&quot;#基本的语法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python_flask框架学习" scheme="http://userlyz.github.io/tags/python-flask%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次网络实训</title>
@@ -409,29 +432,6 @@
     
     
     <category term="python爬虫学习" scheme="http://userlyz.github.io/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sqlserver安装</title>
-    <link href="http://userlyz.github.io/2021/03/27/sqlserver-an-zhuang/"/>
-    <id>http://userlyz.github.io/2021/03/27/sqlserver-an-zhuang/</id>
-    <published>2021-03-27T04:24:39.000Z</published>
-    <updated>2021-03-28T14:31:42.882Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;SQL server</summary>
-        
-      
-    
-    
-    
-    
-    <category term="sqlserver 安装" scheme="http://userlyz.github.io/tags/sqlserver-%E5%AE%89%E8%A3%85/"/>
     
   </entry>
   
