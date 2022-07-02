@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2022-07-02T02:12:44.747Z</updated>
+  <updated>2022-07-02T05:32:54.175Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -17,12 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Java学习之算法</title>
+    <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/"/>
+    <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/</id>
+    <published>2022-07-02T02:42:03.000Z</published>
+    <updated>2022-07-02T05:32:54.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;字符串比较&quot;&gt;&lt;a href=&quot;#字符串比较&quot; class=&quot;headerlink&quot; title=&quot;字符串比较&quot;&gt;&lt;/a&gt;字符串比较&lt;/h1&gt;&lt;h3 id=&quot;BF算法即为暴力破解算法&quot;&gt;&lt;a href=&quot;#BF算法即为暴力破解算法&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Java学习之智游</title>
     <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/"/>
     <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/</id>
     <published>2022-07-02T02:09:20.000Z</published>
-    <updated>2022-07-02T02:12:44.747Z</updated>
+    <updated>2022-07-02T13:16:51.317Z</updated>
     
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Java的数据类型&quot;&gt;&lt;a href=&quot;#Java的数据类型&quot; class=&quot;headerlink&quot; title=&quot;Java的数据类型&quot;&gt;&lt;/a&gt;Java的数据类型&lt;/h1&gt;&lt;h2 id=&quot;八种基本类型&quot;&gt;&lt;a href=&quot;#八种基本类型&quot;</summary>
+        
+      
     
     
     
@@ -431,29 +462,6 @@
         
         
     <summary type="html">&lt;h1 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-html&quot; data-language=&quot;html&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee开发" scheme="http://userlyz.github.io/tags/javaee%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>html学习-1</title>
-    <link href="http://userlyz.github.io/2021/12/24/html-xue-xi-1/"/>
-    <id>http://userlyz.github.io/2021/12/24/html-xue-xi-1/</id>
-    <published>2021-12-24T02:20:06.000Z</published>
-    <updated>2022-07-02T01:08:59.549Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;入门&quot;&gt;&lt;a href=&quot;#入门&quot; class=&quot;headerlink&quot; title=&quot;入门&quot;&gt;&lt;/a&gt;入门&lt;/h1&gt;&lt;h2 id=&quot;简单的示例&quot;&gt;&lt;a href=&quot;#简单的示例&quot; class=&quot;headerlink&quot;</summary>
         
       
     

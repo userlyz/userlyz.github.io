@@ -581,7 +581,115 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Java的数据类型"><a href="#Java的数据类型" class="headerlink" title="Java的数据类型"></a>Java的数据类型</h1><h2 id="八种基本类型"><a href="#八种基本类型" class="headerlink" title="八种基本类型"></a>八种基本类型</h2><p>六种数字类型（四个整数类型，两个浮点类型），一个字符类型，一种布尔类型</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>范围</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>二的7次方    -128-127（默认值是0）</td>
+<td></td>
+</tr>
+<tr>
+<td>short</td>
+<td>二的15次方   -32768~-32767 (默认值是0)</td>
+<td></td>
+</tr>
+<tr>
+<td>int</td>
+<td>二的32次方   -2147483648~-2147483647（默认值是0）</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>二的64次方   -9223 372 036 854 775 808~9233 372 036 854 775 807（默认值是0L）</td>
+<td></td>
+</tr>
+<tr>
+<td>float</td>
+<td>32位</td>
+<td></td>
+</tr>
+<tr>
+<td>double</td>
+<td>64位</td>
+<td></td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>默认值是false</td>
+<td></td>
+</tr>
+<tr>
+<td>char</td>
+<td>16位   （默认值是’u0000’ String的值是null）</td>
+<td>Character</td>
+</tr>
+</tbody></table>
+<h2 id="控制修饰符"><a href="#控制修饰符" class="headerlink" title="控制修饰符"></a>控制修饰符</h2><table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>权限</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>default</td>
+<td>在同一个包内可见，不适用任何修饰符，使用对象：类、接口、变量、方法</td>
+</tr>
+<tr>
+<td>private</td>
+<td>在同一类内可见，使用对象：变量，方法。<strong>不能修饰类（外部类）</strong></td>
+</tr>
+<tr>
+<td>public</td>
+<td>对所有的类都可见，使用对象：变量，接口，变量，方法</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>对同一包内的类的所有子类可见。使用对象：变量、方法。<strong>不能修饰类（外部类）</strong></td>
+</tr>
+</tbody></table>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702163456232.png" alt="菜鸟教程网站截图"></p>
+<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><h3 id="static修饰符"><a href="#static修饰符" class="headerlink" title="static修饰符"></a>static修饰符</h3><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702164939824.png" alt="static修饰符"></p>
+<h3 id="final修饰符"><a href="#final修饰符" class="headerlink" title="final修饰符"></a>final修饰符</h3><p>变量一旦被赋值之后，就不能更改，必须显式指定初始值</p>
+<p>父类中的 final 方法可以被子类继承，但是不能被子类重写。</p>
+<h3 id="abstract修饰符"><a href="#abstract修饰符" class="headerlink" title="abstract修饰符"></a>abstract修饰符</h3><p>抽象类；抽象类不能用来实例化对象，声明抽象类的唯一目的是为了将来对该类进行扩充<strong>一个类不能同时别abstract和final修饰</strong></p>
+<p><strong>抽象方法</strong></p>
+<p><strong>抽象方法是一种没有任何实现的方法，该方法的具体实现由子类提供。</strong></p>
+<p><strong>任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。</strong></p>
+<p><strong>如果该类有多个抽象方法，那么这个类就必须声明为抽象类，抽象类可以不包含抽象方法</strong></p>
+<h3 id="synchronized修饰符"><a href="#synchronized修饰符" class="headerlink" title="synchronized修饰符"></a>synchronized修饰符</h3><p><strong>synchronized修饰符声明的方法同一时间只能被一个线程访问 。可以应用于四个访问修饰符；例：</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">showDetails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="transient修饰符"><a href="#transient修饰符" class="headerlink" title="transient修饰符"></a>transient修饰符</h3><p><strong>这种修饰的变量，只能活跃在内存中，不能用于持久化存储</strong></p>
+<p>序列化的对象被transient修饰的实例变量时，Java虚拟机跳过该铁定的变量</p>
+<p><strong>当然，如果一个用户有一些敏感信息（譬如密码，银行卡号等），为了安全起见，不希望在网络操作（主要涉及到序列化操作，本地序列化缓存也适用）中被传输。这些信息对应的变量就可以被定义为transient类型。换句话说，这个字段的生命周期仅存于调用者的内存中。</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">transient</span> <span class="token keyword">int</span> limit<span class="token operator">=</span><span class="token number">55</span><span class="token punctuation">;</span><span class="token comment">//不能持久化</span>
+<span class="token keyword">public</span> <span class="token keyword">int</span> limit_int<span class="token operator">=</span><span class="token number">55</span><span class="token punctuation">;</span><span class="token comment">//能持久化</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="volatile-修饰符"><a href="#volatile-修饰符" class="headerlink" title="volatile 修饰符"></a>volatile 修饰符</h3><p>volatile修饰符修饰的成员变量，在每次被线程访问时，都强制从共享存储中重新读取该成员变量的值，而且，当成员变发生变化时，会强制线程将变化值回写到共享内存中，<strong>在任何时刻，两个线程总是能看到某个成员变量的值是同一个值</strong></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702173534174.png" alt="算数运算符"></p>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><p>== != &gt; &lt; &gt;=  &lt;=</p>
+<h3 id="位运算符"><a href="#位运算符" class="headerlink" title="位运算符"></a>位运算符</h3><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702173833238.png" alt="位运算符"></p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>&amp;&amp;    &amp;    ||   |    !</p>
+<p>&amp;&amp; 前面是假就不运算了后边的了，&amp;是运算前后的得出结论；同理||   |也一样</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702174224505.png" alt="赋值运算符"></p>
+<h3 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token punctuation">(</span>条件<span class="token punctuation">)</span><span class="token operator">?</span> value is <span class="token boolean">true</span><span class="token operator">:</span> value id <span class="token boolean">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h3><p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。</p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702174440658.png" alt="**优先级**"></p>
+<h2 id="Java-Number和Mash类"><a href="#Java-Number和Mash类" class="headerlink" title="Java Number和Mash类"></a>Java Number和Mash类</h2><p>Mash类的指数，对数，平方根，三角函数。</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/java/java-number.html">Java Number &amp; Math 类 | 菜鸟教程 (runoob.com)</a></p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702180138733.png" alt="Mash类"></p>
+<h2 id="Java的Character类"><a href="#Java的Character类" class="headerlink" title="Java的Character类"></a>Java的Character类</h2><h1 id="Java的面向对象"><a href="#Java的面向对象" class="headerlink" title="Java的面向对象"></a>Java的面向对象</h1><h1 id="Java的数据结构"><a href="#Java的数据结构" class="headerlink" title="Java的数据结构"></a>Java的数据结构</h1>
                 
             </div>
             <hr/>
@@ -816,18 +924,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/07/02/java-xue-xi-zhi-ji-chu/">
+                <a href="/2022/07/02/java-xue-xi-zhi-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java学习之智游">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java学习之算法">
                         
-                        <span class="card-title">Java学习之智游</span>
+                        <span class="card-title">Java学习之算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -837,9 +944,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -848,7 +955,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
