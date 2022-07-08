@@ -1258,14 +1258,14 @@ public class C implements A,B{
 <p>5、方法能够在同一个类或者子类中被重载</p>
 <p>6、无法以返回值作为重载函数的区分</p>
 <h2 id="Java多态"><a href="#Java多态" class="headerlink" title="Java多态"></a>Java多态</h2><p>多态是同一个行为具有多个不同表现形式或形态的能力</p>
-<p>多态就是同一个接口，按照不同实力而执行的不同操作</p>
+<p>多态就是同一个接口，按照不同实例而执行的不同操作</p>
 <h3 id="多态的优点"><a href="#多态的优点" class="headerlink" title="多态的优点"></a>多态的优点</h3><p>1、消除类型之间的耦合关系；2、可替换性；3、可扩充性；4、接口性；5、灵活性；6、简化性；</p>
-<h3 id="多态存在的三个必要条件"><a href="#多态存在的三个必要条件" class="headerlink" title="多态存在的三个必要条件"></a>多态存在的三个必要条件</h3><p>1、继承；2、重写；3、父类引用指向子类对象</p>
+<h3 id="多态存在的三个必要条件"><a href="#多态存在的三个必要条件" class="headerlink" title="多态存在的三个必要条件"></a>多态存在的三个必要条件</h3><p>1、继承；2、重写；3、父类引用指向子类对象（例：Animal a = new Cat();）</p>
 <p>使用多态调用方法时，首先检查父类是否有该方法，如果没有，则编译错误，如果有再去调用子类的同名方法</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>     
       <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 向上转型  </span>
       a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// 调用的是 Cat 的 eat</span>
-      <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Cat</span><span class="token punctuation">)</span>a<span class="token punctuation">;</span>        <span class="token comment">// 向下转型  </span>
+      <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
       c<span class="token punctuation">.</span><span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 调用的是 Cat 的 work</span>
   <span class="token punctuation">}</span>  
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token class-name">Animal</span> a<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
@@ -1280,7 +1280,7 @@ public class C implements A,B{
         <span class="token punctuation">}</span>  
     <span class="token punctuation">}</span> 
 
-<span class="token comment">//----------------</span>
+<span class="token comment">//----------------接口环境和普通类环境都是可以的，这个实例是接口环境-----</span>
 <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Animal</span> <span class="token punctuation">{</span>  
     <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
 <span class="token punctuation">}</span>  
@@ -1348,6 +1348,9 @@ public class C implements A,B{
 <h3 id="接口与类的区别"><a href="#接口与类的区别" class="headerlink" title="接口与类的区别"></a>接口与类的区别</h3><p>1、接口不能用于实例化对象；2、接口没有构造方法；3、所有方法必须是抽象方法（JDK8之后可以使用default关键字修饰非抽象方法）；4接口不能包含成员变量，除了static和final变量；5、接口不是被类继承了，而是被类实现；6、接口支持多继承</p>
 <h3 id="接口特性"><a href="#接口特性" class="headerlink" title="接口特性"></a>接口特性</h3><p>接口中每一个方法也是隐式抽象的，被隐式指定为public abstract</p>
 <p>接口中可以含有变量，变量会被隐式指定为public static final</p>
+<h3 id="接口的意义"><a href="#接口的意义" class="headerlink" title="接口的意义"></a>接口的意义</h3><p>①扩展原有类的功能</p>
+<p>②设定了规则</p>
+<p>③降低了耦合性</p>
 <h3 id="抽象类与接口的区别"><a href="#抽象类与接口的区别" class="headerlink" title="抽象类与接口的区别"></a>抽象类与接口的区别</h3><p>抽象类可以有方法体，接口中的不行；抽象类中的成员变量可以是各种类型，而接口中的变量只能是public static final类型；一个类可以继承一个抽象类，但是可以继承多个接口</p>
 <p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220707092334290.png" alt="接口例子"></p>
 <h2 id="Java枚举enum"><a href="#Java枚举enum" class="headerlink" title="Java枚举enum"></a>Java枚举enum</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">enum</span> <span class="token class-name">Color</span>
@@ -1683,7 +1686,21 @@ sites<span class="token punctuation">.</span><span class="token function">add</s
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h2><h2 id="Java-发送邮件"><a href="#Java-发送邮件" class="headerlink" title="Java 发送邮件"></a>Java 发送邮件</h2><h2 id="Java-多线程"><a href="#Java-多线程" class="headerlink" title="Java 多线程"></a>Java 多线程</h2><h2 id="Java-Applet基础"><a href="#Java-Applet基础" class="headerlink" title="Java Applet基础"></a>Java Applet基础</h2><h2 id="Java-文档注释"><a href="#Java-文档注释" class="headerlink" title="Java 文档注释"></a>Java 文档注释</h2><h2 id="Java-实例"><a href="#Java-实例" class="headerlink" title="Java 实例"></a>Java 实例</h2><h2 id="Java-Mysql链接"><a href="#Java-Mysql链接" class="headerlink" title="Java Mysql链接"></a>Java Mysql链接</h2><h1 id="常用类和方法"><a href="#常用类和方法" class="headerlink" title="常用类和方法"></a>常用类和方法</h1><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="笔记1：类中private方法在类外边的访问"><a href="#笔记1：类中private方法在类外边的访问" class="headerlink" title="笔记1：类中private方法在类外边的访问"></a>笔记1：类中private方法在类外边的访问</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h2 id="Java网络编程"><a href="#Java网络编程" class="headerlink" title="Java网络编程"></a>Java网络编程</h2><p>java提供了两种常见的网络协议支持：</p>
+<p><strong>TCP</strong>:一种面向连接的的、可靠的、基于字节流的传输层通信协议，TCP保障了两个应用程序之间的可靠通信。常用于互联网协议</p>
+<p><strong>UDP</strong>一种无连接的协议，由于UDP缺乏可靠性且属于无连接协议，所以应用程序通常必须容许一些丢失、错误、或重复的数据包</p>
+<p><strong>Socket编程</strong> ①套接字使用TCP提供了两台计算机之间的通信机制。客户端程序创建一个套接字，并尝试链接服务器的套接字；②当连接建立时服务器，会创建一个Socket对象。客户端和服务端现在可以通过对Socket对象的写入和读写进行通信</p>
+<p>服务器端实例化一个ServerSocket对象，表示通过该服务器上的端口通信</p>
+<p>服务器调用ServerSocket类的accept()方法，该方法一直等待，直到客户端连接到服务器给定的端口</p>
+<p>服务器正在等待时；一个客户端实例化一个Socket对象，指定服务器名称和端口号来请求连接</p>
+<p>Socket类的构造函数试图将客户端连接到指定的服务器和端口号。如果通信被建立，则客户端创建一个Socket对象与服务器进行通信。</p>
+<p>在服务器端，accept()方法返回服务器上的一个新的socket引用，该socket连接到客户端的socket</p>
+<p><strong>TCP是一个双向通信协议，因此数据可以通过两个数据流在同一时间发送。</strong></p>
+<h3 id="ServerSocket类的方法"><a href="#ServerSocket类的方法" class="headerlink" title="ServerSocket类的方法"></a>ServerSocket类的方法</h3><h4 id="ServerSpcket的构造方法："><a href="#ServerSpcket的构造方法：" class="headerlink" title="ServerSpcket的构造方法："></a>ServerSpcket的构造方法：</h4><p>ServerSocket(int port) 创建绑定到指定端口的服务器套接字</p>
+<p>ServerSocket(int port ,int backlog)利用指定的backlog创建服务器套接字并将其绑定到指定的本地端口号</p>
+<p>ServerSocket(int port,int backlog , InetAddress address)使用指定的端口，侦听backlog和要绑定的本地IP地址创建服务器</p>
+<p>ServerSocket()创建非绑定服务器套接字</p>
+<h2 id="Java-发送邮件"><a href="#Java-发送邮件" class="headerlink" title="Java 发送邮件"></a>Java 发送邮件</h2><h2 id="Java-多线程"><a href="#Java-多线程" class="headerlink" title="Java 多线程"></a>Java 多线程</h2><h2 id="Java-Applet基础"><a href="#Java-Applet基础" class="headerlink" title="Java Applet基础"></a>Java Applet基础</h2><h2 id="Java-文档注释"><a href="#Java-文档注释" class="headerlink" title="Java 文档注释"></a>Java 文档注释</h2><h2 id="Java-实例"><a href="#Java-实例" class="headerlink" title="Java 实例"></a>Java 实例</h2><h2 id="Java-Mysql链接"><a href="#Java-Mysql链接" class="headerlink" title="Java Mysql链接"></a>Java Mysql链接</h2><h1 id="常用类和方法"><a href="#常用类和方法" class="headerlink" title="常用类和方法"></a>常用类和方法</h1><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="笔记1：类中private方法在类外边的访问"><a href="#笔记1：类中private方法在类外边的访问" class="headerlink" title="笔记1：类中private方法在类外边的访问"></a>笔记1：类中private方法在类外边的访问</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token class-name">Student</span> s<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">p</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
