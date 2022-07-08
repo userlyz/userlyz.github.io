@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="毛豆人很逗" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="毛豆人很逗" type="application/atom+xml">
 </head>
 
 
@@ -1340,10 +1340,11 @@ public class C implements A,B{
 <p>3、可以对成员变量进行更精准的控制</p>
 <p>4、隐藏信息，实现细节</p>
 <h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><p>Spring —-&gt;反射+注解</p>
-<h2 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h2><p>时抽象方法的集合，通常使用interface来声明。一个类通过继承接口的方式，从而来继承接口的抽象方法。</p>
+<h2 id="Java接口"><a href="#Java接口" class="headerlink" title="Java接口"></a>Java接口</h2><p>本质上它也是一种类，他称之为接口类，是一种特殊的类；作为一种功能集合，</p>
+<p>时抽象方法的集合，通常使用interface来声明。一个类通过继承接口的方式，从而来实现接口的抽象方法。</p>
 <p>除非实现接口的类是抽象类，否则该类要定义接口中的所有方法。</p>
 <p>接口无法别实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法</p>
-<h3 id="接口与类的相似点"><a href="#接口与类的相似点" class="headerlink" title="接口与类的相似点"></a>接口与类的相似点</h3><p>1、一个接口可以有多个方法；2、接口文件保存在.java结尾的文件中，文件名使用接口名；3、接口的字节码文件保存在.class结尾的文件中；4、接口相应的字节码文件必须在与包名称相匹配的目录结构中</p>
+<h3 id="接口与类的相似点"><a href="#接口与类的相似点" class="headerlink" title="接口与类的相似点"></a>接口与类的相似点</h3><p>1、一个接口可以有多个方法（方法可以是抽象方法，也可以是静态方法）；2、接口文件保存在.java结尾的文件中，文件名使用接口名；3、接口的字节码文件保存在.class结尾的文件中；4、接口相应的字节码文件必须在与包名称相匹配的目录结构中</p>
 <h3 id="接口与类的区别"><a href="#接口与类的区别" class="headerlink" title="接口与类的区别"></a>接口与类的区别</h3><p>1、接口不能用于实例化对象；2、接口没有构造方法；3、所有方法必须是抽象方法（JDK8之后可以使用default关键字修饰非抽象方法）；4接口不能包含成员变量，除了static和final变量；5、接口不是被类继承了，而是被类实现；6、接口支持多继承</p>
 <h3 id="接口特性"><a href="#接口特性" class="headerlink" title="接口特性"></a>接口特性</h3><p>接口中每一个方法也是隐式抽象的，被隐式指定为public abstract</p>
 <p>接口中可以含有变量，变量会被隐式指定为public static final</p>

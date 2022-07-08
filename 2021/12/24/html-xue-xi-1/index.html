@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="html学习-1, 毛豆人很逗">
+    <meta name="keywords" content="html学习, 毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>html学习-1 | 毛豆人很逗</title>
+    <title>html学习 | 毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,9 +29,9 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="毛豆人很逗" type="application/atom+xml">
-
+<meta name="generator" content="Hexo 5.4.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="毛豆人很逗" type="application/atom+xml">
 </head>
 
 
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">html学习-1</h1>
+                    <h1 class="description center-align post-title">html学习</h1>
                 </div>
             </div>
         </div>
@@ -597,21 +597,30 @@
 
 <p>head之中存放的都是网页的说明性内容，例标题等。</p>
 <p><img src="/2021/12/24/html-xue-xi-1/image-20211224103031352.png" alt="image-20211224103031352"></p>
-<h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><h3 id="font"><a href="#font" class="headerlink" title="font"></a>font</h3><p>颜色</p>
+<h2 id="基本标签"><a href="#基本标签" class="headerlink" title="基本标签"></a>基本标签</h2><h3 id="span标签"><a href="#span标签" class="headerlink" title="span标签"></a>span标签</h3><p>显示文本，不会单独占据一行</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>span标签<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
+<h3 id="font"><a href="#font" class="headerlink" title="font"></a>font</h3><p>颜色</p>
 <p>大小 1-7</p>
 <p>字体</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
 		今天天气怎么样：
+    	<span class="token comment">&lt;!--size属性：1~7，默认是3  color属性：可以是#xxxxxx表示三原色，也可以是red blue green等，如果红绿蓝两位取值相同，可省略成一位，例如#FF1133简化为#F13--&gt;</span>
 		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>blue<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>6<span class="token punctuation">"</span></span> <span class="token attr-name">face</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>楷体<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 			今天好晴朗
 		<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">&gt;</span></span>
-	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="br"><a href="#br" class="headerlink" title="br/"></a>br/</h3><p>换行</p>
+<h3 id="b标签"><a href="#b标签" class="headerlink" title="b标签"></a>b标签</h3><p>粗体标签，不会独占一行</p>
 <h3 id="p"><a href="#p" class="headerlink" title="p"></a>p</h3><p>划分段落，自动在段前段后自动加空行</p>
 <p>align段落的对齐方式，默认为居左</p>
 <h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><p>h1-h6</p>
 <p>h1最大，h6最小</p>
+<h3 id="hr"><a href="#hr" class="headerlink" title="hr"></a>hr</h3><p>分隔符标签，会在页面上显示一条分割线</p>
+<p>size属性：水平分割线的高度</p>
 <h3 id="空格符"><a href="#空格符" class="headerlink" title="空格符"></a>空格符</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token entity named-entity" title="&nbsp;">&amp;nbsp;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!--注释内容--&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
