@@ -581,7 +581,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>@</p>
+                <p>[TOC]</p>
+<p>@</p>
 <p>菜鸟教程学习笔记<a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
 <h1 id="Java的数据类型"><a href="#Java的数据类型" class="headerlink" title="Java的数据类型"></a>Java的数据类型</h1><p>常用五大包：java.long(longuage)该包下的类，在使用时是不需要导包的;java.util   工具包；java,io  文件读写；java.net  网络编程包；java.sql 操作数据库</p>
 <h2 id="八种基本类型"><a href="#八种基本类型" class="headerlink" title="八种基本类型"></a>八种基本类型</h2><p>六种数字类型（四个整数类型，两个浮点类型），一个字符类型，一种布尔类型</p>
@@ -742,7 +743,7 @@
 <p>大小数的加减乘除和大数的加减乘除是一样的；</p>
 <h2 id="Java的Character类"><a href="#Java的Character类" class="headerlink" title="Java的Character类"></a>Java的Character类</h2><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220703122124237.png" alt="转义序列"></p>
 <p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220703123703667.png" alt="方法"></p>
-<h3 id="Java-String类"><a href="#Java-String类" class="headerlink" title="Java String类"></a>Java String类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bys<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+<h2 id="Java-String类"><a href="#Java-String类" class="headerlink" title="Java String类"></a>Java String类</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> bys<span class="token operator">=</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">97</span><span class="token punctuation">,</span><span class="token number">98</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token class-name">String</span> str2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bys<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">String</span> str3<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>bys<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//前面是用来设置开始的位置的，后面是设置列表中的总长度的</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//abcd</span>
@@ -787,7 +788,7 @@ fs<span class="token operator">=</span><span class="token class-name">String</sp
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"trim()忽略前面空格和后面空格"</span><span class="token operator">+</span><span class="token string">"    user   "</span><span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"|"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"isEmpty() 判断字符串是否为空"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="Java的StringBuffer和StringBuilder类"><a href="#Java的StringBuffer和StringBuilder类" class="headerlink" title="Java的StringBuffer和StringBuilder类"></a>Java的StringBuffer和StringBuilder类</h3><p>StringBuilder类与StringBuffer之间的最大不同就在于StringBuilder的方法不是线程安全的（不能同步访问）</p>
+<h2 id="Java的StringBuffer和StringBuilder类"><a href="#Java的StringBuffer和StringBuilder类" class="headerlink" title="Java的StringBuffer和StringBuilder类"></a>Java的StringBuffer和StringBuilder类</h2><p>StringBuilder类与StringBuffer之间的最大不同就在于StringBuilder的方法不是线程安全的（不能同步访问）</p>
 <p>StringBuilder类相较于StringBuffer有速度优势，所以大多数情况下建议使用StringBuilder类</p>
 <p>append    reverse   delete   insert   replace  </p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">StringBuilder</span> sb<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -813,7 +814,7 @@ sf<span class="token operator">=</span> <span class="token punctuation">(</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"返回一个新的String，可以只有开始值"</span><span class="token operator">+</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>indexOf()    lastIndexOf()  length()  setCharAt(int index ,char ch)</p>
-<h3 id="Java的数组"><a href="#Java的数组" class="headerlink" title="Java的数组"></a>Java的数组</h3><p>一维数组 datatype[]q list=new datatype[arraySize]</p>
+<h2 id="Java的数组"><a href="#Java的数组" class="headerlink" title="Java的数组"></a>Java的数组</h2><p>一维数组 datatype[]q list=new datatype[arraySize]</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">多维数组  <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> strs<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> mylist<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">1.2</span><span class="token punctuation">,</span><span class="token number">2.2</span><span class="token punctuation">,</span><span class="token number">3.4</span><span class="token punctuation">,</span><span class="token number">3.5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">double</span><span class="token punctuation">[</span><span class="token punctuation">]</span> mylist_2<span class="token operator">=</span><span class="token punctuation">{</span><span class="token number">2.2</span><span class="token punctuation">,</span><span class="token number">1.2</span><span class="token punctuation">,</span><span class="token number">3.4</span><span class="token punctuation">,</span><span class="token number">3.5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -831,7 +832,7 @@ mylist_3<span class="token punctuation">.</span><span class="token function">add
 <p>binarySearch(Object[] a,Object key) 用二分查找在给定数组中搜索给定值对象。数组在调用之前必须排好序；有则返回索引，没有则返回-1</p>
 <p>equals()   两个数组以相同的顺序，相同的元素，则这两个数组是相等的</p>
 <p>sort()  根据元素的自然顺序进行升序排序</p>
-<h3 id="Java日期时间"><a href="#Java日期时间" class="headerlink" title="Java日期时间"></a>Java日期时间</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<h2 id="Java日期时间"><a href="#Java日期时间" class="headerlink" title="Java日期时间"></a>Java日期时间</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
 日期时间
 Date()
 Date(long millisec)该参数是从1970年1月1日起的毫秒数
@@ -881,14 +882,14 @@ Date(long millisec)该参数是从1970年1月1日起的毫秒数
 <span class="token class-name">Date</span> <span class="token class-name">S_D_date</span> <span class="token operator">=</span> <span class="token class-name">S_D_df</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"转换之后的Date"</span><span class="token operator">+</span><span class="token class-name">S_D_date</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//转换之后的DateFri Jun 30 00:00:00 CST 2361</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h4><p>Calendar类是一个抽象类，在实际使用时实现特定的子类对象，创建对象过程中只需要使用getInstance方法创建即可</p>
+<h3 id="Calendar类"><a href="#Calendar类" class="headerlink" title="Calendar类"></a>Calendar类</h3><p>Calendar类是一个抽象类，在实际使用时实现特定的子类对象，创建对象过程中只需要使用getInstance方法创建即可</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Calendar</span> c<span class="token operator">=</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//默认是当前日期</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认是当前日期"</span><span class="token operator">+</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
 c<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">2001</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"设置的日期"</span><span class="token operator">+</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="GregorianCalendar类"><a href="#GregorianCalendar类" class="headerlink" title="GregorianCalendar类"></a>GregorianCalendar类</h4><p>实现了公历日期</p>
-<h3 id="Java正则表达式"><a href="#Java正则表达式" class="headerlink" title="Java正则表达式"></a>Java正则表达式</h3><table>
+<h3 id="GregorianCalendar类"><a href="#GregorianCalendar类" class="headerlink" title="GregorianCalendar类"></a>GregorianCalendar类</h3><p>实现了公历日期</p>
+<h2 id="Java正则表达式"><a href="#Java正则表达式" class="headerlink" title="Java正则表达式"></a>Java正则表达式</h2><table>
 <thead>
 <tr>
 <th>字符</th>
@@ -1259,13 +1260,17 @@ public class C implements A,B{
 <p>6、无法以返回值作为重载函数的区分</p>
 <h2 id="Java多态"><a href="#Java多态" class="headerlink" title="Java多态"></a>Java多态</h2><p>多态是同一个行为具有多个不同表现形式或形态的能力</p>
 <p>多态就是同一个接口，按照不同实例而执行的不同操作</p>
+<p>特点</p>
+<p>对于成员方法：编译看左边，运行看右边</p>
+<p>对于成员变量：编译看左边，运行看左边</p>
 <h3 id="多态的优点"><a href="#多态的优点" class="headerlink" title="多态的优点"></a>多态的优点</h3><p>1、消除类型之间的耦合关系；2、可替换性；3、可扩充性；4、接口性；5、灵活性；6、简化性；</p>
 <h3 id="多态存在的三个必要条件"><a href="#多态存在的三个必要条件" class="headerlink" title="多态存在的三个必要条件"></a>多态存在的三个必要条件</h3><p>1、继承；2、重写；3、父类引用指向子类对象（例：Animal a = new Cat();）</p>
 <p>使用多态调用方法时，首先检查父类是否有该方法，如果没有，则编译错误，如果有再去调用子类的同名方法</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>     
-      <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 向上转型  </span>
+      <span class="token class-name">Animal</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 向上转型  父类指向子类</span>
       a<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>               <span class="token comment">// 调用的是 Cat 的 eat</span>
-      <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Cat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">Cat</span> c <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Cat</span><span class="token punctuation">)</span> a<span class="token punctuation">;</span><span class="token comment">//向下转型</span>
+   
       c<span class="token punctuation">.</span><span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// 调用的是 Cat 的 work</span>
   <span class="token punctuation">}</span>  
 <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token class-name">Animal</span> a<span class="token punctuation">)</span>  <span class="token punctuation">{</span>
@@ -1292,7 +1297,7 @@ public class C implements A,B{
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">work</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"抓老鼠"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
     <span class="token punctuation">}</span>  
-<span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token punctuation">}</span>  <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="虚函数"><a href="#虚函数" class="headerlink" title="虚函数"></a>虚函数</h3><p>虚函数的存在是为了多态。</p>
 <p>Java 中其实没有虚函数的概念，它的普通函数就相当于 C++ 的虚函数，动态绑定是Java的默认行为。如果 Java 中不希望某个函数具有虚函数特性，可以加上 final 关键字变成非虚函数。</p>
@@ -1908,9 +1913,8 @@ message<span class="token punctuation">.</span><span class="token function">setC
 <p>}</p>
 <h2 id="笔记5-守护进程运行方式"><a href="#笔记5-守护进程运行方式" class="headerlink" title="笔记5 守护进程运行方式"></a>笔记5 守护进程运行方式</h2><p>这个问题的发现是：java多线程中发现的，有两个线程（都是死循环程序），当时都设置的守护进程，主程序结束之后就结束运行了；然后我就突发奇想，把其中一个改成用户进程，然后就发现主函数都结束好一会了，两个线程都还在运行；不管怎么设置setDaemon</p>
 <p><strong>问题解决</strong></p>
-<p>**一个守护线程什么时候结束不取决于主线程什么时候结束。守护线程的作用是在后台运行任务，只要还有一个以上非守护线程没有结束（即便此时主线程已结束），程序就不会结束。而程序没结束，守护线程当然还可以继续运行。</p>
-<p>反过来，当所有非守护线程都结束了后，即便还有未结束的守护线程，系统也会马上结束这些守护线程，然后结束程序。**</p>
-
+<p><strong>一个守护线程什么时候结束不取决于主线程什么时候结束。守护线程的作用是在后台运行任务，只要还有一个以上非守护线程没有结束（即便此时主线程已结束），程序就不会结束。而程序没结束，守护线程当然还可以继续运行；反过来，当所有非守护线程都结束了后，即便还有未结束的守护线程，系统也会马上结束这些守护线程，然后结束程序。</strong></p>
+<h2 id="笔记6"><a href="#笔记6" class="headerlink" title="笔记6"></a>笔记6</h2>
                 
             </div>
             <hr/>
