@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java学习之算法二, 毛豆人很逗">
+    <meta name="keywords" content="Java学习之java高级, 毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java学习之算法二 | 毛豆人很逗</title>
+    <title>Java学习之java高级 | 毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java学习之算法二</h1>
+                    <h1 class="description center-align post-title">Java学习之java高级</h1>
                 </div>
             </div>
         </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-11
+                    2022-07-13
                 </div>
                 
 
@@ -581,18 +581,51 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>@</p>
-<h1 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h1><h3 id="BF算法即为暴力破解算法"><a href="#BF算法即为暴力破解算法" class="headerlink" title="BF算法即为暴力破解算法"></a>BF算法即为暴力破解算法</h3><p>通过一位一位的移动，和比较来确定了，相重复的字符串</p>
-<h3 id="RK算法属于hash算法"><a href="#RK算法属于hash算法" class="headerlink" title="RK算法属于hash算法"></a>RK算法属于hash算法</h3><p>通过一位一位的移动，来计算和相比较的目标字符串的hash值，这个减少比较的次数，但是也会出现需要移动一次，比较整个字符串的内容，跟暴力算法一样了</p>
-<h3 id="BM算法"><a href="#BM算法" class="headerlink" title="BM算法"></a>BM算法</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/DBC_121/article/details/105569440">BM算法</a></p>
-<p>坏字符规则：<strong>从右往左匹配</strong>，从要找的A字符串中找到<strong>第一个不匹配</strong>的字符（就是坏字符），将B字符串<strong>右移</strong>，直到B串中出现与A串坏字符对齐，再往左边继续寻找坏字符，如果B目标字符串中<strong>没有该坏字符</strong>，则直接移动到该坏字符的<strong>下一位</strong>即可；<strong>也就是在B中不匹配的字符之前找一个，跟A中坏字符相同的，把Byi</strong></p>
-<p>好后缀规则：从右往左匹配，找到坏字符（坏字符之后的就是好后缀），往左找B中是否还有该好后缀，若有则将B右移到该位置与A好后缀对齐，重复该规则。如果B串往右没有该好后缀，则右移到好后缀的右边一位，重复该规则，避免B串的前缀与好后缀的后缀匹配</p>
-<p><strong>综合使用，那种移动的位数多使用那种</strong></p>
-<p>时间复杂度O(n/m) ,退化时间复杂度O(n*m)</p>
-<p><img src="/2022/07/11/java-xue-xi-zhi-suan-fa-er/image-20220702105017335.png" alt="BM算法"></p>
-<h3 id="KMP复杂度"><a href="#KMP复杂度" class="headerlink" title="KMP复杂度"></a>KMP复杂度</h3><p>前缀，后缀</p>
-<p>PMT值：前缀集和后缀集的交集中集中的最长元素的长度</p>
-<p>在不匹配的字符串前A串的后缀和B串的前缀的</p>
+                <p>[TOC]</p>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="通过继承Thread类来实现多线程"><a href="#通过继承Thread类来实现多线程" class="headerlink" title="通过继承Thread类来实现多线程"></a>通过继承Thread类来实现多线程</h2><p>不能直接调用线程中的run()方法，要调用线程的start()函数，才能实现多线程</p>
+<p>一个线程只能启动一次，要不然就会报错误IllegalThreadStateException();</p>
+<p>实例：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> title<span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token class-name">String</span> title<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token operator">=</span>title<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>title<span class="token operator">+</span><span class="token string">"i的值是"</span><span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="基于Runable接口实现多线程"><a href="#基于Runable接口实现多线程" class="headerlink" title="基于Runable接口实现多线程"></a>基于Runable接口实现多线程</h2><p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713200419002.png" alt="Runable实现多线程"></p>
+<pre class="line-numbers language-none"><code class="language-none">Thread runable1=new Thread(new MyThread_R("线程R1"));
+runable1.start();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>利用lambda表达式来创建线程，在以后的开发对于多线程的实现，优先考虑的就是Runable接口的实现，</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>x<span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">;</span>x<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token class-name">String</span> title<span class="token operator">=</span><span class="token string">"线程对象-"</span><span class="token operator">+</span>x<span class="token punctuation">;</span>
+    <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> y<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>y<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">;</span>y<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> title<span class="token operator">+</span><span class="token string">"lambda表达式"</span><span class="token operator">+</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Thread与Runable关系"><a href="#Thread与Runable关系" class="headerlink" title="Thread与Runable关系"></a>Thread与Runable关系</h2><p>使用Runable是最方便的，可以避免单继承的局限，也可以更好的对功能进行扩充</p>
+<p>但是从结构上来看，之前继承Thread的时候，还是实现Runable接口中的run()方法</p>
+<p>通过 Thread 类的构造方法传递了一个 Runnable 接口对象的时候，那么该接口对象将被 Thread 类中的 target 属性所保存，在 start() 方法执行的时候会调用Thread类中的 run() 方法，而这个 run() 方法去调用 Runnable 接口子类被覆写过的 run() 方法。</p>
+<p>多线程开发的本质上是多个线程可以进行同一资源的抢占</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713201232676.png" alt="Thread和Runable的关系"></p>
+<h2 id="多线程开发"><a href="#多线程开发" class="headerlink" title="多线程开发"></a>多线程开发</h2><p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713205433269.png" alt="多线程开发"></p>
+<h2 id="Callable接口实现多线程"><a href="#Callable接口实现多线程" class="headerlink" title="Callable接口实现多线程"></a>Callable接口实现多线程</h2><p>Runable接口有一个问题，就是线程结束之后无法获取一个返回值，jdk1.5之后就提出了java.util.concurrent.Callable,就解决了这一问题</p>
+<p>Callable定义的时候可以设置一个泛型，此泛型的类型就是返回数据的类型，这样的好处就是 可以避免一些安全隐患</p>
+<h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><h2 id="Runable和Callable的区别"><a href="#Runable和Callable的区别" class="headerlink" title="Runable和Callable的区别"></a>Runable和Callable的区别</h2><p>1、Runable是在jdk1.0的时候提出的多线程的实现接口，而Callable实在jdk1.5之后提出的</p>
+<p>2、java.long.Runable接口中只提供了一个run()方法，并且没有返回值，就无法判断该线程是否已经结束</p>
+<p>3、java.util.concurrent.Callable接口提供了call()方法，可以有返回值</p>
 
                 
             </div>
@@ -619,7 +652,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2022/07/11/java-xue-xi-zhi-suan-fa-er/">http://userlyz.github.io/2022/07/11/java-xue-xi-zhi-suan-fa-er/</a>
+                    <a href="http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/">http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,9 +861,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/07/13/java-xue-xi-zhi-java-gao-ji/">
                     <div class="card-image">
@@ -848,9 +882,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -859,6 +893,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -877,13 +912,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/07/02/java-xue-xi-zhi-suan-fa/">
+                <a href="/2022/07/11/java-xue-xi-zhi-suan-fa-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Java学习之算法">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="java学习之算法二">
                         
-                        <span class="card-title">Java学习之算法</span>
+                        <span class="card-title">java学习之算法二</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -894,7 +929,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-11
                             </span>
                         <span class="publish-author">
                             

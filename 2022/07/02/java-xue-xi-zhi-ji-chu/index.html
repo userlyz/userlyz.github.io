@@ -582,7 +582,6 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[TOC]</p>
-<p>@</p>
 <p>菜鸟教程学习笔记<a target="_blank" rel="noopener" href="https://www.runoob.com/">菜鸟教程</a></p>
 <h1 id="Java的数据类型"><a href="#Java的数据类型" class="headerlink" title="Java的数据类型"></a>Java的数据类型</h1><p>常用五大包：java.long(longuage)该包下的类，在使用时是不需要导包的;java.util   工具包；java,io  文件读写；java.net  网络编程包；java.sql 操作数据库</p>
 <h2 id="八种基本类型"><a href="#八种基本类型" class="headerlink" title="八种基本类型"></a>八种基本类型</h2><p>六种数字类型（四个整数类型，两个浮点类型），一个字符类型，一种布尔类型</p>
@@ -673,7 +672,9 @@
 </tr>
 </tbody></table>
 <p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702163456232.png" alt="菜鸟教程网站截图"></p>
-<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><h3 id="static修饰符"><a href="#static修饰符" class="headerlink" title="static修饰符"></a>static修饰符</h3><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702164939824.png" alt="static修饰符"></p>
+<h2 id="非访问修饰符"><a href="#非访问修饰符" class="headerlink" title="非访问修饰符"></a>非访问修饰符</h2><h3 id="static修饰符"><a href="#static修饰符" class="headerlink" title="static修饰符"></a>static修饰符</h3><p>静态的，属于类</p>
+<p>static 不能直接修饰，只能取修饰成员方法，成员属性</p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220702164939824.png" alt="static修饰符"></p>
 <p>被static修饰的成员变量属于类，不属于这个类的某个对象（多个对象共享一个static修饰的成员变量）</p>
 <h3 id="final修饰符"><a href="#final修饰符" class="headerlink" title="final修饰符"></a>final修饰符</h3><p>变量一旦被赋值之后，就不能更改，必须显式指定初始值</p>
 <p>父类中的 final 方法可以被子类继承，但是不能被子类重写。</p>
@@ -789,7 +790,8 @@ fs<span class="token operator">=</span><span class="token class-name">String</sp
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"isEmpty() 判断字符串是否为空"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Java的StringBuffer和StringBuilder类"><a href="#Java的StringBuffer和StringBuilder类" class="headerlink" title="Java的StringBuffer和StringBuilder类"></a>Java的StringBuffer和StringBuilder类</h2><p>StringBuilder类与StringBuffer之间的最大不同就在于StringBuilder的方法不是线程安全的（不能同步访问）</p>
-<p>StringBuilder类相较于StringBuffer有速度优势，所以大多数情况下建议使用StringBuilder类</p>
+<p>StringBuffer可将缓冲区安全的应用于多个线程，可以在必要时对这些方法进行同步</p>
+<p>StringBuilder类相较于StringBuffer有速度优势，所以大多数情况下建议使用</p>
 <p>append    reverse   delete   insert   replace  </p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">StringBuilder</span> sb<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">StringBuilder</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 sb<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"userlyz.."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
