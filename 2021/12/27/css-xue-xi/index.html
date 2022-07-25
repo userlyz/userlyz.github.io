@@ -593,7 +593,8 @@
 <p>css注释</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">/*注释内容*/<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><h4 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><p><strong>选择器严格区分大小写，属性和属性值不区分大小写；<br>属性和属性之间使用分号隔开，最后一个可以省略。<br>如果一个属性名有多个值，多个值之间使用   空格    隔开</strong></p>
+<h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><h4 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
@@ -628,16 +629,20 @@
         <span class="token selector">.redF</span><span class="token punctuation">{</span>
             <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
+        <span class="token selector">.three</span><span class="token punctuation">{</span>
+            <span class="token property">color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">&gt;</span></span>span1:我是黑色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redF<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>span2:我是红色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>div1:我是黑色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redF<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div2:我是红色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>redF three<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>div2:我是红色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
+<h4 id="id选择器"><a href="#id选择器" class="headerlink" title="id选择器"></a>id选择器</h4><p>#id号</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
@@ -677,6 +682,18 @@
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>font</span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span> <span class="token attr-name">color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>我要保持黑色<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>font</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p>并集选择器  </p>
+<p>选择器1，选择器2{}</p>
+<h3 id="不常用的选择器"><a href="#不常用的选择器" class="headerlink" title="不常用的选择器"></a>不常用的选择器</h3><p>后代选择器 **选择器1 选择器2{}**会找到选择器1下的选择器1的所有后代</p>
+<p>子元素选择器 <strong>选择器1&gt;选择器2{}<strong>选择器1下的所有</strong>子标签</strong>符合选择器2的条件</p>
+<p>交集选择器 <strong>选择器1选择器2{}</strong></p>
+<p>相邻兄弟选择器 <strong>选择器1+选择器1{}</strong></p>
+<p>通用兄弟选择器 <strong>选择器1~选择器2{}</strong></p>
+<p>选中同一个级别的第一个标签 <strong>标签：first-child{}</strong></p>
+<p>选中同级别中同类型的第一个标签 <strong>标签：first-of-type{}</strong></p>
+<p>选中同级别中同类型的最后一个标签 <strong>标签：last-of-type{}</strong></p>
+<p>选中同级别的第几个标签 <strong>标签nth-child(3){}</strong></p>
+<p>选中同级别同类型的第几个标签  <strong>标签:nth-of-type(3)</strong></p>
 <h2 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h2><p>所有的html标签都是有边框的，，只是默认的边框是不显示的</p>
 <h3 id="边框属性"><a href="#边框属性" class="headerlink" title="边框属性"></a>边框属性</h3><p><strong>border 用于设置边框的样式</strong></p>
 <p>格式：宽度 样式 颜色</p>
@@ -685,22 +702,35 @@
 <p><strong>width 用于设置标签的宽度</strong></p>
 <p><strong>height 用于设置边框的高度</strong></p>
 <p><strong>background-color 用于设置背景的颜色</strong></p>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>格式 选择器{float:属性值}</p>
+<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><h4 id="浮动文档流"><a href="#浮动文档流" class="headerlink" title="浮动文档流"></a>浮动文档流</h4><p>格式 选择器{float:属性值}</p>
 <p>none:元素不浮动  left:元素向左浮动 right:元素向右浮动</p>
 <p>设置浮动之后会出现下面的情况</p>
 <p><img src="/2021/12/27/css-xue-xi/image-20211228212124906.png" alt="浮动可能出现的错误"></p>
-<h3 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h3><h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><p><strong>块级元素</strong>以区域块的方式出现，每一个块标签独自占据一整行或多行。在块结束的时候会自动换行</p>
-<p>常见的块级元素有h1、p、div、ul等</p>
-<p>常见的行内元素有span、a等** 不会自动换行**</p>
+<h4 id="标签文档流"><a href="#标签文档流" class="headerlink" title="标签文档流"></a>标签文档流</h4><p>标准流：页面默认加载的一种流方式  从上到下，从左到右</p>
+<p>​                把页面中的标签分为两种类型：块级标签、行内标签</p>
+<p>​                                    块级标签：独占一行，可以设置宽高常见的块级元素有h系列、p、div、ul等</p>
+<p>​                                    行级标签：不独占一行，不可以设置宽高；常见的行内元素有span、a等<strong>不会自动换行</strong></p>
+<p>​                块级标签从上到下；行级标签从左到右</p>
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="display"><a href="#display" class="headerlink" title="display"></a>display</h4><p><strong>块级元素</strong>以区域块的方式出现，每一个块标签独自占据一整行或多行。在块结束的时候会自动换行</p>
+<p>常见的块级元素有h系列、p、div、ul等</p>
+<p>常见的行内元素有span、a等<strong>不会自动换行</strong></p>
 <p><strong>格式</strong></p>
 <p>选择器{display:属性值}</p>
 <p>常见属性值：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">block:将元素显为块状元素（块状元素的默认属性值）
 inline:将元素显示为行内元素（行内元素的默认属性值）
-none:此元素将被隐藏，不显示，也不占用页面空间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+inline-block:行内块标签
+none:此元素将被隐藏，不显示，也不占用页面空间<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h3><h4 id="font-size"><a href="#font-size" class="headerlink" title="font-size"></a>font-size</h4><p>用于设置字体大小</p>
-<h4 id="color"><a href="#color" class="headerlink" title="color"></a>color</h4><p>用于设置字体的颜色</p>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><p><strong>font-size</strong>用于设置字体大小，取值是像素</p>
+<p><strong>color</strong>用于设置字体的颜色</p>
+<p><strong>font-style</strong>设置字体样式取值为<strong>italic</strong>和<strong>normal</strong></p>
+<p><strong>font-weight</strong>设置文字的粗细，常用取值<strong>lighter</strong>,<strong>bold</strong>和<strong>bolder</strong>还可以进行数字取值<em>100</em>，<em>900</em></p>
+<p><strong>font-family</strong>设置字体，*”宋体”<em>或者</em>“微软雅黑”*</p>
+<p><strong>连写形式</strong></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">font: italic bold 100px "楷体"<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>text-decoration</strong>文本装饰属性，常用取值<strong>underline(下划线)</strong> <strong>line-through(删除线)</strong> <strong>overline(上划线)</strong> **none(什么都没有)**可以用none去掉a标签的下划线</p>
 <h2 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h2><p>所有的html元素，我们都可以看作一个四边形，一个盒子</p>
 <p>用css设置盒子的内边距，边框，外边距的样式<strong>内边距padding 边框border 外边距margin</strong></p>
 <h3 id="边框border"><a href="#边框border" class="headerlink" title="边框border"></a>边框border</h3><p>border-top     border-left       border-bottom      border-right</p>

@@ -591,57 +591,68 @@
 <th>类型</th>
 <th>范围</th>
 <th>包装类</th>
+<th>字节数</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>byte</td>
 <td>二的7次方    -128-127（默认值是0）</td>
 <td></td>
+<td>1</td>
 </tr>
 <tr>
 <td>short</td>
 <td>二的15次方   -32768~-32767 (默认值是0)</td>
 <td></td>
+<td>2</td>
 </tr>
 <tr>
 <td>int</td>
 <td>二的32次方   -2147483648~-2147483647（默认值是0）</td>
-<td>Integer</td>
+<td><strong>Integer</strong></td>
+<td>4</td>
 </tr>
 <tr>
 <td>long</td>
-<td>二的64次方   -9223 372 036 854 775 808~9233 372 036 854 775 807（默认值是0L）</td>
+<td>二的64次方   -2<sup>63</sup>~2<sup>63</sup>-1（默认值是0L）</td>
 <td></td>
+<td>8</td>
 </tr>
 <tr>
 <td>BigInteger</td>
+<td>大整数</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>float</td>
-<td>32位</td>
+<td>32位，最多表示8位小数;0.0f</td>
 <td></td>
+<td>4</td>
 </tr>
 <tr>
 <td>double</td>
-<td>64位</td>
+<td>64位，最多表示16位小数</td>
 <td></td>
+<td>8</td>
 </tr>
 <tr>
 <td>BigDecimal</td>
+<td>大小数</td>
 <td></td>
 <td></td>
 </tr>
 <tr>
 <td>boolean</td>
-<td>默认值是false</td>
+<td>占一个字节，默认值是false</td>
 <td></td>
+<td>1</td>
 </tr>
 <tr>
 <td>char</td>
 <td>16位   （默认值是’u0000’ String的值是null）</td>
-<td>Character</td>
+<td><strong>Character</strong></td>
+<td>2</td>
 </tr>
 </tbody></table>
 <p>对于引用数据类型给变量存储的数据大多数都是一个地址值</p>
@@ -686,7 +697,7 @@
 <p><strong>抽象方法是一种没有任何实现的方法，该方法的具体实现由子类提供。</strong></p>
 <p><strong>任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。</strong></p>
 <p><strong>如果该类有多个抽象方法，那么这个类就必须声明为抽象类，抽象类可以不包含抽象方法</strong></p>
-<h3 id="synchronized修饰符"><a href="#synchronized修饰符" class="headerlink" title="synchronized修饰符"></a>synchronized修饰符</h3><p><strong>synchronized修饰符声明的方法同一时间只能被一个线程访问 。可以应用于四个访问修饰符；例：</strong></p>
+<h3 id="synchronized修饰符"><a href="#synchronized修饰符" class="headerlink" title="synchronized修饰符"></a>synchronized修饰符</h3><p><strong>synchronized修饰符声明的方法同一时间只能被一个线程访问 例：</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">showDetails</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -834,7 +845,8 @@ mylist_3<span class="token punctuation">.</span><span class="token function">add
 <p>binarySearch(Object[] a,Object key) 用二分查找在给定数组中搜索给定值对象。数组在调用之前必须排好序；有则返回索引，没有则返回-1</p>
 <p>equals()   两个数组以相同的顺序，相同的元素，则这两个数组是相等的</p>
 <p>sort()  根据元素的自然顺序进行升序排序</p>
-<h2 id="Java日期时间"><a href="#Java日期时间" class="headerlink" title="Java日期时间"></a>Java日期时间</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
+<h2 id="Java日期时间"><a href="#Java日期时间" class="headerlink" title="Java日期时间"></a>Java日期时间</h2><p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220718153934275.png" alt="SimpleDateFormat格式对照表"></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/*
 日期时间
 Date()
 Date(long millisec)该参数是从1970年1月1日起的毫秒数
@@ -888,7 +900,15 @@ Date(long millisec)该参数是从1970年1月1日起的毫秒数
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Calendar</span> c<span class="token operator">=</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//默认是当前日期</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"默认是当前日期"</span><span class="token operator">+</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
 c<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token number">2001</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"设置的日期"</span><span class="token operator">+</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"设置的日期"</span><span class="token operator">+</span>c<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Calendar</span> c<span class="token operator">=</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>HOUR_OF_DAY<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+c<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token class-name">Calendar</span><span class="token punctuation">.</span>DATE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">Date</span> date<span class="token operator">=</span>c<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//Calendar转换</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="GregorianCalendar类"><a href="#GregorianCalendar类" class="headerlink" title="GregorianCalendar类"></a>GregorianCalendar类</h3><p>实现了公历日期</p>
 <h2 id="Java正则表达式"><a href="#Java正则表达式" class="headerlink" title="Java正则表达式"></a>Java正则表达式</h2><table>
@@ -1224,6 +1244,7 @@ public class C implements A,B{
 <h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><p>子类是不继承父类的构造器（构造方法或者构造函数），他只是调用（显式或者隐式），如果父类的构造器带有参数，就必须在子类的构造器中显式地通过super关键字调用父类的构造器并配以适当的参数列表；如果父类构造器没有参数，则子类的构造器中不需要使用super关键字调用父类构造器，系统会自动调用父类的无参构造器</p>
 <h2 id="Java的重写-Override-和重载-Overload"><a href="#Java的重写-Override-和重载-Overload" class="headerlink" title="Java的重写(Override)和重载(Overload)"></a>Java的重写(Override)和重载(Overload)</h2><p>出现的位置：方法重写发生在父子类当中；方法重载发生在同一个类当中</p>
 <p>判定机制：方法重载是根据参数列表进行判定；方法重写是根据</p>
+<p><strong>重载是一个编译期概念，重写是一个运行期的概念</strong></p>
 <h3 id="重写-Override"><a href="#重写-Override" class="headerlink" title="重写(Override)"></a>重写(Override)</h3><p>子类对于父类允许访问的方法的实现过程进行<strong>重新编写</strong>，<strong>返回值和形参都不能改变</strong>，<strong>外壳不变，核心重写</strong></p>
 <p>重写方法不能抛出新的检查异常或者比被重写方法申明更加宽泛的异常</p>
 <p>例如： 父类的一个方法申明了一个检查异常 IOException，但是在重写这个方法的时候不能抛出 Exception 异常，因为 Exception 是 IOException 的父类</p>
@@ -1550,7 +1571,7 @@ sites<span class="token punctuation">.</span><span class="token function">remove
 <span class="token comment">//for-each来迭代HashSet中的元素</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Java-HashMap"><a href="#Java-HashMap" class="headerlink" title="Java HashMap"></a>Java HashMap</h2><p>Map是集合容器，由键和值两部分，键和值必须是引用类型，键唯一不能重复也没有顺序</p>
-<p>HashMap是Map的一个实现类</p>
+<p>HashMap是Map的一个实现类<strong>可以允许键和值是null</strong></p>
 <p>Map的增删查：map.put(“1”,”Monday”);获取key对应的value：map.get(“1”);删除map.remove(“1”);</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//遍历map</span>
 <span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span> <span class="token punctuation">,</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> map<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">HashMap</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1880,7 +1901,7 @@ message<span class="token punctuation">.</span><span class="token function">setC
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>使用继承Thread类的方式创建多线程，编写简单，需要访问当前线程，则无需使用Thread.currentThread()方法，直接使用this即可获得当前线程</p>
-<h2 id="Java-Applet基础"><a href="#Java-Applet基础" class="headerlink" title="Java Applet基础"></a>Java Applet基础</h2><h2 id="Java-文档注释"><a href="#Java-文档注释" class="headerlink" title="Java 文档注释"></a>Java 文档注释</h2><h2 id="Java-实例"><a href="#Java-实例" class="headerlink" title="Java 实例"></a>Java 实例</h2><h2 id="Java-Mysql链接"><a href="#Java-Mysql链接" class="headerlink" title="Java Mysql链接"></a>Java Mysql链接</h2><h1 id="常用类和方法"><a href="#常用类和方法" class="headerlink" title="常用类和方法"></a>常用类和方法</h1><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="笔记1：类中private方法在类外边的访问"><a href="#笔记1：类中private方法在类外边的访问" class="headerlink" title="笔记1：类中private方法在类外边的访问"></a>笔记1：类中private方法在类外边的访问</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h2 id="Java-Applet基础"><a href="#Java-Applet基础" class="headerlink" title="Java Applet基础"></a>Java Applet基础</h2><h2 id="Java-文档注释"><a href="#Java-文档注释" class="headerlink" title="Java 文档注释"></a>Java 文档注释</h2><h2 id="Java-实例"><a href="#Java-实例" class="headerlink" title="Java 实例"></a>Java 实例</h2><h2 id="Java-Mysql链接"><a href="#Java-Mysql链接" class="headerlink" title="Java Mysql链接"></a>Java Mysql链接</h2><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="笔记1：类中private方法在类外边的访问"><a href="#笔记1：类中private方法在类外边的访问" class="headerlink" title="笔记1：类中private方法在类外边的访问"></a>笔记1：类中private方法在类外边的访问</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token class-name">Student</span> s<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token function">p</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -1916,7 +1937,7 @@ message<span class="token punctuation">.</span><span class="token function">setC
 <h2 id="笔记5-守护进程运行方式"><a href="#笔记5-守护进程运行方式" class="headerlink" title="笔记5 守护进程运行方式"></a>笔记5 守护进程运行方式</h2><p>这个问题的发现是：java多线程中发现的，有两个线程（都是死循环程序），当时都设置的守护进程，主程序结束之后就结束运行了；然后我就突发奇想，把其中一个改成用户进程，然后就发现主函数都结束好一会了，两个线程都还在运行；不管怎么设置setDaemon</p>
 <p><strong>问题解决</strong></p>
 <p><strong>一个守护线程什么时候结束不取决于主线程什么时候结束。守护线程的作用是在后台运行任务，只要还有一个以上非守护线程没有结束（即便此时主线程已结束），程序就不会结束。而程序没结束，守护线程当然还可以继续运行；反过来，当所有非守护线程都结束了后，即便还有未结束的守护线程，系统也会马上结束这些守护线程，然后结束程序。</strong></p>
-<h2 id="笔记6"><a href="#笔记6" class="headerlink" title="笔记6"></a>笔记6</h2>
+<h2 id="笔记6-JVM内存结构、Java内存结构、Java对象模型"><a href="#笔记6-JVM内存结构、Java内存结构、Java对象模型" class="headerlink" title="笔记6 JVM内存结构、Java内存结构、Java对象模型"></a>笔记6 JVM内存结构、Java内存结构、Java对象模型</h2>
                 
             </div>
             <hr/>
