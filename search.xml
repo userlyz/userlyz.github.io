@@ -14,7 +14,7 @@
       
         <tags>
             
-            <tag> java学学习 </tag>
+            <tag> java学习 </tag>
             
         </tags>
       
@@ -1291,17 +1291,6 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="contact/index.html"/>
-      <url>contact/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>tags</title>
       <link href="tags/index.html"/>
       <url>tags/index.html</url>
@@ -1313,9 +1302,9 @@
     
     
     <entry>
-      <title>categories</title>
-      <link href="categories/index.html"/>
-      <url>categories/index.html</url>
+      <title>contact</title>
+      <link href="contact/index.html"/>
+      <url>contact/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1327,6 +1316,17 @@
       <title>about</title>
       <link href="about/index.html"/>
       <url>about/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>categories</title>
+      <link href="categories/index.html"/>
+      <url>categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
