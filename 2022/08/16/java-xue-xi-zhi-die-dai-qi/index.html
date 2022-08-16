@@ -539,9 +539,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">java学习</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -577,7 +581,124 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><pre class="line-numbers language-none"><code class="language-none">Demo001---------阿里云基础P184
+	迭代器Enumeration和Iterator的区别
+	1、函数接口不同
+        Enumeration只有两个函数接口。通过Enumeration,我们只能读取集合的数据，而不能对数据进行修改
+        Iterator只有三个函数接口。Iterator除了能读取集合的数据之外，也能对数据进行删除操作
+	2、Iterator支持fail-fast机制，而Enumeration不支持
+		Enumeration是Java1.0之后添加的接口。使用到它的函数包括Vector、Hashtable等类；这些类都是JDK1.0中加入的。Enumeration存在的目的就是为他们提供遍历接口。Enumeration本省并不支持同步，而是在Vector、Hashtable实现Enumeration时添加的同步
+		Iterator是JDK1.2才添加的接口，他也是为了HashMap、ArrayList等集合提供遍历接口。Iterator是支持fail-fast机制的，当有多个线程对同一集合进行操作的时候，就有可能产生fail-fast事件。
+		注：Enumeration迭代器只能遍历 Vector、Hashtable等这些古老的集合，因此通常使用Iterator；除非在极端情况下不得不使用Enumeration的时候才会使用
+	
+    使用迭代器删除元素而引起的ConcurrentModifcationException(CME)并发修改异常
+    原因：Java集合汇中运用了fail-fast机制进行设计，一旦使用不当，就会触发fail-fast机制设计的代码，就会发生非预期情况
+        触发错误的代码：
+            List&lt;String&gt; usernames=new ArrayList&lt;String&gt;(){{
+                add("user");
+                add("User");
+                add("userlyz");
+                add("u");
+            }};
+            for(String username:usernames){
+                if(username.equals("User")){
+                    usernames.(username);
+                }
+            }
+    对于编译后的class进行反编译，可以发现foreach其实是依赖了 do while循环和Iterator实现的
+    爆出这个错误是因为modCount和expectedModCount不相等导致的
+        modCount表示该集合实际被修改的次数
+        expectedModCount是ArrayList中的一个内部类--Itr中的成员变量；表示这个迭代器预期该集合被修改的次数
+    fail-safe机制
+        为了避免触发fail-fast机制，我们可以使用Java中提供的一些采用了fail-safe机制的集合类
+            这样的集合容器，在遍历上不是直接在集合内容上访问的，而是先复制原有集合内容在拷贝的集合上进行遍历
+            java.util.concurrent下的容器都是fail-safe的，可以在多线程并发使用，并发修改
+            代码说明
+                        List&lt;String&gt; usernames=new CopyOnWriteArrayList&lt;String&gt;(){{
+                            add("user");
+                            add("User");
+                            add("userlyz");
+                            add("u");
+                        }};
+                        for(String username:usernames){
+                            if(username.equals("User")){
+                                usernames.(username);
+                                System.out.println(username+"已经删除了");
+                            }
+                        }
+                        System.out.println(usernames);
+            输出
+                User已经删除了
+                [user, userlyz, u]
+        这样虽然是避免了ConcurrentModificationException,但是迭代器并不能访问修改之后的内容
+            代码如下
+                List&lt;String&gt; usernames=new CopyOnWriteArrayList&lt;String&gt;(){{
+                    add("user");
+                    add("User");
+                    add("userlyz");
+                    add("u");
+                }};
+                Iterator it= usernames.iterator();
+                for(String username:usernames){
+                    if(username.equals("User")){
+                        usernames.(username);
+                        System.out.println(username+"已经删除了");
+                    }
+                }
+                System.out.println(usernames);
+                System.out.println("---------------------");
+                while(it.hasNext()){
+                    System.out.println(it.next());
+                }
+            输出
+                User已经删除了
+                [user, userlyz, u]
+                ---------------------
+                user
+                User
+                userlyz
+                u
+    CopyOnWrite 是一种程序设计中的优化策略。从一开始大家都在共享同一个内容，当某人想要修改这个内容的时候，才会真正
+        把内容Copy出去形成一个新的内容然后再该，这是一种延时懒惰策略
+            他的add/remove等写方法是需要加锁；目的是为了避免Copy处N个副本，导致并发读写
+            他的读方法是没有加锁的，所以读到的数据可能不是最新的
+        所以CopyOnWrite容器是一种读写分离的思想
+        而Vector在读写的时候使用同一个容器，读写互斥，同时只能做一件事儿。
+    所以应该在遍历的同时删除ArrayList中的元素
+        1、使用普通的for循环进行操作：可能会出现漏删的情况
+        2、直接使用Iterator进行操作：直接使用Iterator提供的remove方法
+            List&lt;String&gt; userNames = new ArrayList&lt;String&gt;() {{
+                add("Hollis");
+                add("hollis");
+                add("HollisChuang");
+                add("H");
+            }};
+            Iterator iterator = userNames.iterator();
+            while (iterator.hasNext()) {
+                if (iterator.next().equals("Hollis")) {
+                    iterator.remove();
+                    }
+                }
+            System.out.println(userNames);
+        3、使用java8中提供的 filter过滤
+            代码：
+                List&lt;String&gt; userNames = new ArrayList&lt;String&gt;() {{
+                   add("Hollis");
+                   add("hollis");
+                   add("HollisChuang");
+                   add("H");
+               }};
+               userNames = userNames.stream().filter(userName -&gt; !userName.equals("Hol lis")).collect(Collectors.toList());
+               System.out.println(userNames);
+        4、使用增强for循环：某个元素只包含一个的话，只要删除之后立即结束循环体，不再继续遍历下去
+        5、使用fail-safe的集合类：<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<p><strong>我的博客即将同步至腾讯云开发者社区，邀请大家一同入驻：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/support-plan?invite_code=33i3ekx3p38k8">https://cloud.tencent.com/developer/support-plan?invite_code=33i3ekx3p38k8</a></strong></p>
+
                 
             </div>
             <hr/>
@@ -640,7 +761,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">java学习</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -841,6 +966,14 @@
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">java学习</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
