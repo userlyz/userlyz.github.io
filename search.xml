@@ -1353,17 +1353,6 @@
     
     
     <entry>
-      <title>contact</title>
-      <link href="contact/index.html"/>
-      <url>contact/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>categories</title>
       <link href="categories/index.html"/>
       <url>categories/index.html</url>
@@ -1375,9 +1364,9 @@
     
     
     <entry>
-      <title>tags</title>
-      <link href="tags/index.html"/>
-      <url>tags/index.html</url>
+      <title>friends</title>
+      <link href="friends/index.html"/>
+      <url>friends/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1386,9 +1375,20 @@
     
     
     <entry>
-      <title>friends</title>
-      <link href="friends/index.html"/>
-      <url>friends/index.html</url>
+      <title>contact</title>
+      <link href="contact/index.html"/>
+      <url>contact/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="tags/index.html"/>
+      <url>tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
