@@ -1656,6 +1656,10 @@ sites<span class="token punctuation">.</span><span class="token function">add</s
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="Java-序列化"><a href="#Java-序列化" class="headerlink" title="Java 序列化"></a>Java 序列化</h2><p>一个对象可以被表示为一个字节序列，该细节序列包括该对象的数据、有关对象的类型的信息和存储在对象中数据的类型。</p>
+<p>serialVersionUID是用来验证版本一致性的，所以在做兼容性升级的时候，不要改变类中serialVersionUID的值；如果不设置，系统会默认给一个serialVersionUID,这样就可能会造成一种情况：</p>
+<p>​        类已经序列化存储之后，又改变了类中的内容这个时候序列化，就会出现报错<strong>java.io.invalidClassException</strong>并且还会指出两个serialVersionUID不同</p>
+<p>idea设置一键生成serialVersionUID</p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220809091756932.png" alt="idea设置一键生成serialVersionUID"></p>
 <h3 id="序列化对象"><a href="#序列化对象" class="headerlink" title="序列化对象"></a>序列化对象</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token class-name">SerializeDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token class-name">DeserializeDemo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1938,7 +1942,13 @@ message<span class="token punctuation">.</span><span class="token function">setC
 <h2 id="笔记5-守护进程运行方式"><a href="#笔记5-守护进程运行方式" class="headerlink" title="笔记5 守护进程运行方式"></a>笔记5 守护进程运行方式</h2><p>这个问题的发现是：java多线程中发现的，有两个线程（都是死循环程序），当时都设置的守护进程，主程序结束之后就结束运行了；然后我就突发奇想，把其中一个改成用户进程，然后就发现主函数都结束好一会了，两个线程都还在运行；不管怎么设置setDaemon</p>
 <p><strong>问题解决</strong></p>
 <p><strong>一个守护线程什么时候结束不取决于主线程什么时候结束。守护线程的作用是在后台运行任务，只要还有一个以上非守护线程没有结束（即便此时主线程已结束），程序就不会结束。而程序没结束，守护线程当然还可以继续运行；反过来，当所有非守护线程都结束了后，即便还有未结束的守护线程，系统也会马上结束这些守护线程，然后结束程序。</strong></p>
-<h2 id="笔记6-JVM内存结构、Java内存结构、Java对象模型"><a href="#笔记6-JVM内存结构、Java内存结构、Java对象模型" class="headerlink" title="笔记6 JVM内存结构、Java内存结构、Java对象模型"></a>笔记6 JVM内存结构、Java内存结构、Java对象模型</h2>
+<h2 id="笔记6-JVM内存结构、Java内存结构、Java对象模型"><a href="#笔记6-JVM内存结构、Java内存结构、Java对象模型" class="headerlink" title="笔记6 JVM内存结构、Java内存结构、Java对象模型"></a>笔记6 JVM内存结构、Java内存结构、Java对象模型</h2><h2 id="笔记7-idea设置配置serialVersionUID"><a href="#笔记7-idea设置配置serialVersionUID" class="headerlink" title="笔记7 idea设置配置serialVersionUID"></a>笔记7 idea设置配置serialVersionUID</h2><p>serialVersionUID是用来验证版本一致性的，所以在做兼容性升级的时候，不要改变类中serialVersionUID的值；如果不设置，系统会默认给一个serialVersionUID,这样就可能会造成一种情况：</p>
+<p>​        类已经序列化存储之后，又改变了类中的内容这个时候序列化，就会出现报错<strong>java.io.invalidClassException</strong>并且还会指出两个serialVersionUID不同</p>
+<p>idea设置一键生成serialVersionUID</p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-ji-chu/image-20220809091756932.png" alt="idea设置一键生成serialVersionUID"></p>
+<h2 id="笔记8-String-format方法"><a href="#笔记8-String-format方法" class="headerlink" title="笔记8 String format方法"></a>笔记8 String format方法</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str<span class="token operator">=</span> <span class="token class-name">String</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">"整数：%d  小数%.1f  字符串%s"</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">12D</span><span class="token punctuation">,</span><span class="token string">"333"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
                 
             </div>
             <hr/>

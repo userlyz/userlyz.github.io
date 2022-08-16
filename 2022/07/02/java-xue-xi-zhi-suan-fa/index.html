@@ -1625,7 +1625,23 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="二分搜索树节点删除"><a href="#二分搜索树节点删除" class="headerlink" title="二分搜索树节点删除"></a>二分搜索树节点删除</h2><h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>笔记1：markDown上下标可以使用</p>
+<h2 id="二分搜索树节点删除"><a href="#二分搜索树节点删除" class="headerlink" title="二分搜索树节点删除"></a>二分搜索树节点删除</h2><p>删除二分搜索树的最大或最小结点</p>
+<p>①找到最大或者最小结点：遍历左子树或者右子树</p>
+<p>②如果最小结点没有右子树，直接删除；如果最小结点有右子树，</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">private</span> <span class="token class-name">Node</span> <span class="token function">removeMin</span><span class="token punctuation">(</span><span class="token class-name">Node</span> node<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Node</span> rightNode<span class="token operator">=</span>node<span class="token punctuation">.</span>right<span class="token punctuation">;</span>
+        node<span class="token punctuation">.</span>right<span class="token operator">=</span><span class="token keyword">null</span><span class="token punctuation">;</span>
+        count<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> rightNode<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token class-name">Node</span><span class="token punctuation">.</span>left<span class="token operator">=</span><span class="token function">removeMin</span><span class="token punctuation">(</span>node<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> node<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><p>笔记1：markDown上下标可以使用</p>
 <pre class="line-numbers language-note" data-language="note"><code class="language-note">&lt;sub&gt;下标&lt;/sub&gt;
 ~下表~
 &lt;sup&gt;上标&lt;/sup&gt;

@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2022-07-30T02:34:59.692Z</updated>
+  <updated>2022-08-16T03:01:50.100Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java学习之迭代器</title>
+    <link href="http://userlyz.github.io/2022/08/16/java-xue-xi-zhi-die-dai-qi/"/>
+    <id>http://userlyz.github.io/2022/08/16/java-xue-xi-zhi-die-dai-qi/</id>
+    <published>2022-08-16T03:01:50.000Z</published>
+    <updated>2022-08-16T03:01:50.100Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java学习之HashMap</title>
+    <link href="http://userlyz.github.io/2022/08/16/java-xue-xi-zhi-hashmap/"/>
+    <id>http://userlyz.github.io/2022/08/16/java-xue-xi-zhi-hashmap/</id>
+    <published>2022-08-16T02:11:34.000Z</published>
+    <updated>2022-08-16T09:26:33.592Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;正文&quot;&gt;&lt;a href=&quot;#正文&quot; class=&quot;headerlink&quot; title=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h1&gt;&lt;h2 id=&quot;HashMap的扩容机制&quot;&gt;&lt;a href=&quot;#HashMap的扩容机制&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java面试题" scheme="http://userlyz.github.io/tags/java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java面试题</title>
+    <link href="http://userlyz.github.io/2022/08/08/java-mian-shi-ti/"/>
+    <id>http://userlyz.github.io/2022/08/08/java-mian-shi-ti/</id>
+    <published>2022-08-08T03:05:26.000Z</published>
+    <updated>2022-08-16T02:01:31.824Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1e34y1J7ve&quot;&gt;视频地址&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;java基础&quot;&gt;&lt;a href=&quot;#java基础&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>力扣做题笔记</title>
@@ -94,7 +156,7 @@
     <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/"/>
     <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/</id>
     <published>2022-07-02T02:42:03.000Z</published>
-    <updated>2022-07-28T14:19:16.849Z</updated>
+    <updated>2022-08-08T01:36:23.950Z</updated>
     
     
       
@@ -118,7 +180,7 @@
     <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/"/>
     <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/</id>
     <published>2022-07-02T02:09:20.000Z</published>
-    <updated>2022-07-26T06:18:00.046Z</updated>
+    <updated>2022-08-09T08:49:04.988Z</updated>
     
     
       
@@ -419,75 +481,6 @@
     
     
     <category term="云计算认证" scheme="http://userlyz.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97%E8%AE%A4%E8%AF%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring框架</title>
-    <link href="http://userlyz.github.io/2022/01/13/spring-kuang-jia/"/>
-    <id>http://userlyz.github.io/2022/01/13/spring-kuang-jia/</id>
-    <published>2022-01-13T12:24:51.000Z</published>
-    <updated>2022-07-02T01:09:04.365Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;优点&quot;&gt;&lt;a href=&quot;#优点&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>BootStrap前端框架</title>
-    <link href="http://userlyz.github.io/2022/01/13/bootstrap-qian-duan-kuang-jia/"/>
-    <id>http://userlyz.github.io/2022/01/13/bootstrap-qian-duan-kuang-jia/</id>
-    <published>2022-01-13T12:24:29.000Z</published>
-    <updated>2022-07-02T01:08:53.889Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>scrapy全站爬取</title>
-    <link href="http://userlyz.github.io/2021/12/30/scrapy-quan-zhan-pa-qu/"/>
-    <id>http://userlyz.github.io/2021/12/30/scrapy-quan-zhan-pa-qu/</id>
-    <published>2021-12-30T06:21:23.000Z</published>
-    <updated>2022-07-02T01:09:01.996Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;笔记&quot;&gt;&lt;a href=&quot;#笔记&quot; class=&quot;headerlink&quot; title=&quot;笔记&quot;&gt;&lt;/a&gt;笔记&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-note&quot; data-language=&quot;note&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    
-    <category term="python爬虫学习" scheme="http://userlyz.github.io/tags/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
