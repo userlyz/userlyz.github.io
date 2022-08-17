@@ -582,7 +582,169 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[TOC]</p>
-<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="通过继承Thread类来实现多线程"><a href="#通过继承Thread类来实现多线程" class="headerlink" title="通过继承Thread类来实现多线程"></a>通过继承Thread类来实现多线程</h2><p>不能直接调用线程中的run()方法，要调用线程的start()函数，才能实现多线程</p>
+<h1 id="IO-Input-amp-amp-Output"><a href="#IO-Input-amp-amp-Output" class="headerlink" title="IO(Input&amp;&amp;Output)"></a>IO(Input&amp;&amp;Output)</h1><h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><p>java.io.File</p>
+<h3 id="路径问题"><a href="#路径问题" class="headerlink" title="路径问题"></a>路径问题</h3><p>windows中的路径分隔符\</p>
+<p>​        **使用java代码写的时候，因为\就是转义字符，所以应该写成\或者也可以写成/ **</p>
+<p>Linux中的路径的分隔符是/</p>
+<h3 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h3><p>File(File parent,String child)</p>
+<p>File(String pathname)</p>
+<p>File(String parent,String child)</p>
+<p>File(URL uri)</p>
+<h3 id="常用的功能"><a href="#常用的功能" class="headerlink" title="常用的功能"></a>常用的功能</h3><h4 id="创建删除目录和文件"><a href="#创建删除目录和文件" class="headerlink" title="创建删除目录和文件"></a>创建删除目录和文件</h4><p><strong>创建文件  createNewFile()</strong></p>
+<p>1、创建过程中如果没有中间的目录就会报错</p>
+<p>2、如果文件已经存在了，那么调用方法后的返回值就是false。但是不会报错</p>
+<p>3、如果不指定后缀名默认还是创建问价，不会创建文件夹</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">File</span> file<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">".\\Demo8_17\\java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//./java //G:\codes\javaSE\java</span>
+<span class="token comment">//./Demo8_17/java //G:\codes\javaSE\Demo8_17\java</span>
+<span class="token keyword">boolean</span> isCraete<span class="token operator">=</span>file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>创建文件夹功能  mkdir()</strong></p>
+<p>1、只能创建一级文件夹，多级目录会报错</p>
+<p>2、如果要想创建多级目录需要使用<strong>file.mkdirs();</strong></p>
+<p><strong>删除文件或者文件夹 delete()</strong></p>
+<p>1、如果有中间目录删除会失败，但是并不报错</p>
+<h3 id="File的获取功能"><a href="#File的获取功能" class="headerlink" title="File的获取功能"></a>File的获取功能</h3><ul>
+<li><p>**file.getName()**通过路径的split(“/“)数组的的最后一个元素</p>
+</li>
+<li><p>**file.getPath()**得到创建file的路径，创建的时候是啥就得到什么</p>
+</li>
+<li><p>**file.getAbsolutePath()**获取绝对路径</p>
+</li>
+<li><p>**file.getAbsoluteFile()**返回的是文件 <strong>返回值类型是File</strong></p>
+</li>
+<li><p><strong>file.length()<strong>获取的是文件的字节数，</strong>返回值：long类型</strong>**</p>
+</li>
+<li><p><strong>file.getParent()</strong> 获取的是父目录，<strong>返回值类型是String</strong></p>
+</li>
+<li><p><strong>file.getParentFile()</strong> 获取的是父目录，<strong>返回值类型是File类型</strong></p>
+<pre class="line-numbers language-none"><code class="language-none">File file=new File(".\\java");
+//./java //G:\codes\javaSE\java
+//./Demo8_17/java //G:\codes\javaSE\Demo8_17\java
+boolean isCraete=file.createNewFile();
+//boolean isdelete =file.delete();
+System.out.println("+++++++++++++");
+
+System.out.println(file.getName());//java
+System.out.println(file.getPath());//.\java  
+System.out.println(file.getAbsolutePath());//G:\codes\javaSE\.\java
+System.out.println(file.getAbsoluteFile());//G:\codes\javaSE\.\java
+System.out.println(file.length());//0
+System.out.println(file.getParent());//.
+System.out.println(file.getParentFile());//.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="File判断功能"><a href="#File判断功能" class="headerlink" title="File判断功能"></a>File判断功能</h3><ul>
+<li><p>**file.exists()**判断路是否存在</p>
+</li>
+<li><p>file.isDirectory() 如果文件夹路径存在，并且路径表示的是文件夹的时候才会返回true</p>
+</li>
+<li><p>file.isFile() 如果文件路径存在，并且是文件才会返回true</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//File判断功能  java文件没有创建</span>
+<span class="token comment">//判断路径是否存在</span>
+<span class="token class-name">File</span> file1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">".//java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">boolean</span> exists<span class="token operator">=</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>exists<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span>
+<span class="token comment">//判断是不是文件夹</span>
+<span class="token keyword">boolean</span> isDirectory<span class="token operator">=</span>file<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>isDirectory<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//false</span>
+<span class="token comment">//判断是否是文件</span>
+<span class="token keyword">boolean</span> isFile<span class="token operator">=</span>file<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>isFile<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="遍历目录"><a href="#遍历目录" class="headerlink" title="遍历目录"></a>遍历目录</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//遍历目录 返回字符串数组</span>
+<span class="token class-name">File</span> file2<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"G:\\codes\\javaSE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> list<span class="token operator">=</span>file2<span class="token punctuation">.</span><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// Demo8_17,Demo8_9  输出该文件加目录下的所有子目录的名字</span>
+<span class="token comment">//遍历目录 返回File数组</span>
+<span class="token class-name">File</span><span class="token punctuation">[</span><span class="token punctuation">]</span> files<span class="token operator">=</span>file2<span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//返回从磁盘目录开始的地址</span>
+<span class="token comment">//获取磁盘根目录</span>
+<span class="token class-name">File</span><span class="token punctuation">[</span><span class="token punctuation">]</span> files1<span class="token operator">=</span>file2<span class="token punctuation">.</span><span class="token function">listRoots</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>files1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//返回本地电脑所有的磁盘号</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="文件过滤器"><a href="#文件过滤器" class="headerlink" title="文件过滤器"></a>文件过滤器</h3><blockquote>
+<p>通过设置可以获取指定类型的文件</p>
+</blockquote>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//文件过滤器</span>
+<span class="token comment">//通过重写抽象方法 FileFilter 当返回值为true的时候，添加进数组，实现文件过滤的功能</span>
+<span class="token comment">//原理： file.listFiles()每次获取到一个文件夹都会调用对应接口的accept方法</span>
+<span class="token comment">//accept()方法如果返回值为true,就将此文件或者文件夹放入对应的数组中，所以我们可以用我们的代码进行控制函数的返回值是true还是false</span>
+<span class="token class-name">File</span> file3<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"G:\\codes\\javaSE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+file<span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileFilter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">accept</span><span class="token punctuation">(</span><span class="token class-name">File</span> pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h1 id="输入流和输出流"><a href="#输入流和输出流" class="headerlink" title="输入流和输出流"></a>输入流和输出流</h1><blockquote>
+<p>输出流和输入流是相对于程序而言。当需要将磁盘中的文件读入程序中，这种流这就是—-输入流；当需要将数据从程序写入到文件这种流就是—-输出流</p>
+</blockquote>
+<h2 id="输出流-OutputStream"><a href="#输出流-OutputStream" class="headerlink" title="输出流  OutputStream"></a>输出流  OutputStream</h2><blockquote>
+<p>OutputStream叫做字节输出流，每次操作的是1个字节（8位）</p>
+<p>OutputStream可以写入任何文件</p>
+<p>OutputStream抽象类是所有输出字节流类的超类</p>
+<p>操作的数据都是字节</p>
+</blockquote>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220817170035936.png" alt="方法摘要"></p>
+<h3 id="FileOutputStream"><a href="#FileOutputStream" class="headerlink" title="FileOutputStream"></a>FileOutputStream</h3><blockquote>
+<p>文件输出流，用于将程序当中的数据写入File的输出流</p>
+</blockquote>
+<h3 id="构造方法-1"><a href="#构造方法-1" class="headerlink" title="构造方法"></a>构造方法</h3><p><strong>append  为true那么字节将被写入文件的末尾，而不是开头</strong></p>
+<p><strong>append 设置为false 则从头还是覆盖之前的文件中的数据</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>FileOutputStream(File file)</code></td>
+<td>创建文件输出流以写入由指定的 <code>File</code>对象表示的文件。</td>
+</tr>
+<tr>
+<td><code>FileOutputStream(File file,  boolean append)</code></td>
+<td>创建文件输出流以写入由指定的 <code>File</code>对象表示的文件。</td>
+</tr>
+<tr>
+<td>FileOutputStream(FileDescriptor fdpj)</td>
+<td>创建文件输出流以写入指定的文件描述符</td>
+</tr>
+<tr>
+<td>FileOutputStream(String name)</td>
+<td>创建文件输入流以指定的名称写入文件</td>
+</tr>
+<tr>
+<td>FileOutputStraem(String name,boolean append)</td>
+<td>创建文件输出流以指定的名称写入文件</td>
+</tr>
+</tbody></table>
+<p><strong>写入方式</strong></p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"-------------输出流"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">FileOutputStream</span> fos<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span><span class="token string">"G:\\codes\\javaSE\\Demo8_17\\src\\demo\\demo.txt"</span><span class="token punctuation">,</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token number">123</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">65</span><span class="token punctuation">,</span><span class="token number">66</span><span class="token punctuation">,</span><span class="token number">67</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">{</span><span class="token number">68</span><span class="token punctuation">,</span><span class="token number">69</span><span class="token punctuation">,</span><span class="token number">70</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"\r\n"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"大家好"</span><span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//如果需要多次写入并且进行换行操作的话需要添加  \r\n</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h2><blockquote>
+<p> 跟OutputStream一样，每次操作的是一个字节（8位）</p>
+<p>InputStream可以读取任何文件</p>
+<p>InputStream 抽象类，是表示输入字节流的所有类的超类</p>
+</blockquote>
+<p><strong>基本共性功能方法</strong></p>
+<p>int read():读取一个字节并且返回，没有字节返回-1</p>
+<p>int read(byte[] );读取一定量的字节数，并且存储到字节数组中</p>
+<p>void close(): 关闭输入流</p>
+<h3 id="FileInputStream"><a href="#FileInputStream" class="headerlink" title="FileInputStream"></a>FileInputStream</h3><blockquote>
+<p>文件输入流，用于数据读取到程序的输入流，用于数据读取到程序的输入流</p>
+</blockquote>
+<h3 id="构造方法-2"><a href="#构造方法-2" class="headerlink" title="构造方法"></a>构造方法</h3><h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="通过继承Thread类来实现多线程"><a href="#通过继承Thread类来实现多线程" class="headerlink" title="通过继承Thread类来实现多线程"></a>通过继承Thread类来实现多线程</h2><p>不能直接调用线程中的run()方法，要调用线程的start()函数，才能实现多线程</p>
 <p>一个线程只能启动一次，要不然就会报错误IllegalThreadStateException();</p>
 <p>实例：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
@@ -599,7 +761,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="基于Runable接口实现多线程"><a href="#基于Runable接口实现多线程" class="headerlink" title="基于Runable接口实现多线程"></a>基于Runable接口实现多线程</h2><p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713200419002.png" alt="Runable实现多线程"></p>
+<h2 id="基于Runable接口实现多线程"><a href="#基于Runable接口实现多线程" class="headerlink" title="基于Runable接口实现多线程"></a>基于Runable接口实现多线程</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220713200419002.png" alt="Runable实现多线程"></p>
 <pre class="line-numbers language-none"><code class="language-none">Thread runable1=new Thread(new MyThread_R("线程R1"));
 runable1.start();<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
@@ -619,8 +781,8 @@ runable1.start();<span aria-hidden="true" class="line-numbers-rows"><span></span
 <p>多线程开发的本质上是多个线程可以进行同一资源的抢占</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Thread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713201232676.png" alt="Thread和Runable的关系"></p>
-<h2 id="多线程开发"><a href="#多线程开发" class="headerlink" title="多线程开发"></a>多线程开发</h2><p><img src="/2022/07/13/java-xue-xi-zhi-java-gao-ji/image-20220713205433269.png" alt="多线程开发"></p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220713201232676.png" alt="Thread和Runable的关系"></p>
+<h2 id="多线程开发"><a href="#多线程开发" class="headerlink" title="多线程开发"></a>多线程开发</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220713205433269.png" alt="多线程开发"></p>
 <h2 id="Callable接口实现多线程"><a href="#Callable接口实现多线程" class="headerlink" title="Callable接口实现多线程"></a>Callable接口实现多线程</h2><p>Runable接口有一个问题，就是线程结束之后无法获取一个返回值，jdk1.5之后就提出了java.util.concurrent.Callable,就解决了这一问题</p>
 <p>Callable定义的时候可以设置一个泛型，此泛型的类型就是返回数据的类型，这样的好处就是 可以避免一些安全隐患</p>
 <h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><h2 id="Runable和Callable的区别"><a href="#Runable和Callable的区别" class="headerlink" title="Runable和Callable的区别"></a>Runable和Callable的区别</h2><p>1、Runable是在jdk1.0的时候提出的多线程的实现接口，而Callable实在jdk1.5之后提出的</p>
