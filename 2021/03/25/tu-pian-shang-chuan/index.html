@@ -591,7 +591,8 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44737094/article/details/105970391">Python打包exe，以及解决闪退_Hi-King的博客-CSDN博客_python生成exe文件闪退</a></p>
 <p>第二种方法是<br>def get_resource_path(relative_path):<br>    if getattr(sys,”frozen”,False):<br>        base_path=sys._MEIPASS#获取临时资源<br>    else:<br>        base_path=os.path.abspath(“.”)#获取当前路径<br>    return os.path.join(base_path,relative_path)<br>img1_path=get_resource_path(os.path.join(“resources”,”1.png”))<br>img2_path = get_resource_path(os.path.join(“resources”, “2.png”))<br>mp3_path = get_resource_path(os.path.join(“resources”, “background.mp3”))<br>这就是程序打包时要是需要其他文件时要进行的操作<br>当然要提前趣导入<br>import sys</p>
 <p>打包第一步 pyi-makespec -F .py文件<br><img src="/2021/03/25/tu-pian-shang-chuan/c.jpg" alt="c.jpg"><br>更改.spec文件中的datas中的内容一般建议是设置成一样的不进行更改<br><img src="/2021/03/25/tu-pian-shang-chuan/e.jpg" alt="e.jpg"><br>第二部直接打包身份成的.spec文件 pyinstaller -F .spec文件<br><img src="/2021/03/25/tu-pian-shang-chuan/d.jpg" alt="d.jpg"></p>
-
+<h1 id="搭建的gitee图床"><a href="#搭建的gitee图床" class="headerlink" title="搭建的gitee图床"></a>搭建的gitee图床</h1><p>本地图片临时地址</p>
+<pre class="line-numbers language-note" data-language="note"><code class="language-note">..\\Typora\\typora-user-images<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
                 
             </div>
             <hr/>

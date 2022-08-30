@@ -582,7 +582,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>[TOC]</p>
-<h1 id="十大排序算法"><a href="#十大排序算法" class="headerlink" title="十大排序算法"></a>十大排序算法</h1><p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220705162319850.png" alt="稳定性，时间复杂度和空间复杂度"></p>
+<h1 id="十大排序算法"><a href="#十大排序算法" class="headerlink" title="十大排序算法"></a>十大排序算法</h1><p><img src="http://userlyz.gitee.io/imgs/imgs/image-20220705162319850.png" alt="稳定性，时间复杂度和空间复杂度"></p>
 <h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><p>比较相邻元素，如果前一个比后一个大，则交换他们</p>
 <p>冒泡排序还有一种优化算法，就是立一个 flag，当在一趟序列遍历中元素没有发生交换，则证明该序列已经有序。但是这种改进对于提升性能没有太大作用</p>
 <h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>在未排序的序列中找到最小的元素，存放到起始位置。再找其余最小的排到已排序列的末尾，直到所有元素都排序完毕；</p>
@@ -591,7 +591,7 @@
 <p>从头到尾扫描未排列序列，将扫描到的元素插入到有序序列的适当位置（相同时，插入到相等元素的后边）</p>
 <p>有一种优化算法–折半插入</p>
 <h2 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h2><p>希尔排序又称递减增量排序算法，是非稳定排序算法</p>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220705174535956.png" alt="希尔排序过程"></p>
+<p><img src="http://userlyz.gitee.io/imgs/imgs/image-20220705174535956.png" alt="希尔排序过程"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">shell_demo2</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> list<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//希尔排序</span>
     <span class="token keyword">int</span> skip<span class="token operator">=</span>list<span class="token punctuation">.</span>length<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
     <span class="token keyword">do</span> <span class="token punctuation">{</span>
@@ -608,7 +608,7 @@
     <span class="token keyword">return</span> list<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220705174838503.png" alt="归并排序的实现过程"></p>
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><p><img src="http://userlyz.gitee.io/imgs/imgs/image-20220705174838503.png" alt="归并排序的实现过程"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">sort</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a<span class="token punctuation">,</span><span class="token keyword">int</span> low<span class="token punctuation">,</span><span class="token keyword">int</span> high<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>low<span class="token operator">+</span>high<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>low<span class="token operator">&lt;</span>high<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -649,7 +649,13 @@
 
 
 
-<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p>从数列中挑出一个元素，作为基准；重新排列数列，所有比基准小的摆放在基准前面，所有比基准大的元素摆到基准后边（相同的数字可以放在任意一边）；递归的把小于基准值元素的子序列和大于基准元素的字序列进行排序</p>
+<h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><strong>快速排序时间复杂度：</strong></p>
+<p> 最好的时间复杂度和平均时间复杂度就是O(nlogn); </p>
+<p>正常情况下是递归log<sub>2</sub>n次，每次遍历的最坏时间复杂度是n，所以平均时间复杂度是O(nlogn)；</p>
+<p> 最好的时间复杂度就是每次都划分的很均匀；时间复杂度就是O(nlogn)； </p>
+<p>最坏的时间复杂度是O(n^2),这种情况就是原先的数据就是排序好，这样每次只能位移一个数据， 每次划分的子序列只比上一次划分少一个记录，注意两一个为空。</p>
+<p>从数列中挑出一个元素，作为基准；重新排列数列，所有比基准小的摆放在基准前面，所有比基准大的元素摆到基准后边（相同的数字可以放在任意一边）；递归的把小于基准值元素的子序列和大于基准元素的字序列进行排序</p>
+<p><img src="/2022/07/02/java-xue-xi-zhi-suan-fa/%E6%A1%8C%E9%9D%A2/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-08-26%20090831.png" alt="快速排序的部分过程"></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span><span class="token keyword">int</span> arr<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token keyword">int</span> left<span class="token punctuation">,</span> <span class="token keyword">int</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token comment">//quick_sort(list, 0, list.length - 1)</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>left <span class="token operator">&lt;</span> right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span> partitionindex <span class="token operator">=</span> <span class="token function">partition</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -876,8 +882,10 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h2 id="排序算法的衍生问题"><a href="#排序算法的衍生问题" class="headerlink" title="排序算法的衍生问题"></a>排序算法的衍生问题</h2><p>归并排序和快速排序，都使用了分治算法；分治算法就是将原来的问题分割成同等结构的问题，之后将子问题逐个解决，原问题也就得到了解决</p>
-<h1 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><h2 id="折半查找（二分查找）"><a href="#折半查找（二分查找）" class="headerlink" title="折半查找（二分查找）"></a>折半查找（二分查找）</h2><p><strong>说明：元素必须是有序的，如果是无序的则要先进行排序操作</strong></p>
-<p>复杂度分析 ：最坏情况下log<del>2</del>(n+1);期望时间复杂度O(log<del>2</del>n) </p>
+<h1 id="查找算法"><a href="#查找算法" class="headerlink" title="查找算法"></a>查找算法</h1><h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序遍历查找</p>
+<h2 id="折半查找（二分查找）"><a href="#折半查找（二分查找）" class="headerlink" title="折半查找（二分查找）"></a>折半查找（二分查找）</h2><p><strong>说明：元素必须是有序的，如果是无序的则要先进行排序操作</strong></p>
+<p>复杂度分析 ：最坏情况下log<sub>2</sub>(n+1);期望时间复杂度O(log<sub>2</sub>n)    ;;(测试 log<del>2</del>n)</p>
+<p><strong>下代码是查找小于等于t的最接近的值，若要查找t,则需要将5-8拆成两个if  ,else if</strong></p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token class-name">BinarySearch</span><span class="token punctuation">(</span><span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> nums<span class="token punctuation">,</span><span class="token class-name">T</span> t<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">int</span> left<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token keyword">int</span> right<span class="token operator">=</span>nums<span class="token punctuation">.</span>length<span class="token punctuation">;</span><span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">while</span><span class="token punctuation">(</span>left<span class="token operator">&lt;=</span>right<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -1423,7 +1431,7 @@
 
 <h2 id="基础堆排序"><a href="#基础堆排序" class="headerlink" title="基础堆排序"></a>基础堆排序</h2><p>①基础堆排序，建立大根堆或者小根堆之后②最大元素跟最后一个元素换位置之后count-1,③然后从最后一个非叶子节点向上比较向左依次比较④重新建立大根堆和小根堆；重复上述②③④动作，直到堆中的元素全部取出</p>
 <h2 id="优化堆排序"><a href="#优化堆排序" class="headerlink" title="优化堆排序"></a>优化堆排序</h2><p>主要是将上述的第三步，改成了比较少数，跟改变值有分支关系的就行了，例如:62和17交换位置之后，只需要给更改节点到最下边叶子节点的值就可以了，但是基础堆排序就需要遍历整个非叶子节点，重新建堆，减少了比较次数</p>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220712130442131.png" alt="image-20220712130442131"></p>
+<p><img src="http://userlyz.gitee.io/imgs/imgs/image-20220712130442131.png" alt="image-20220712130442131"></p>
 <h2 id="索引堆及其优化"><a href="#索引堆及其优化" class="headerlink" title="索引堆及其优化"></a>索引堆及其优化</h2><p>如果堆中存储的元素较大，那么进行交换就需要消耗大量的时间，这个时候就需要使用索引堆，堆中存储的是数组的索引，操作的也都是索引</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">protected</span> <span class="token class-name">T</span><span class="token punctuation">[</span><span class="token punctuation">]</span> data<span class="token punctuation">;</span>      <span class="token comment">// 最大索引堆中的数据</span>
 <span class="token keyword">protected</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> indexes<span class="token punctuation">;</span>    <span class="token comment">// 最大索引堆中的索引</span>
@@ -1566,7 +1574,7 @@
     <span class="token keyword">return</span> node<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h2 id="二分搜索树节点的插入"><a href="#二分搜索树节点的插入" class="headerlink" title="二分搜索树节点的插入"></a>二分搜索树节点的插入</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token class-name">Key</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<h2 id="二分搜索树节点的搜索"><a href="#二分搜索树节点的搜索" class="headerlink" title="二分搜索树节点的搜索"></a>二分搜索树节点的搜索</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token class-name">Key</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">return</span> <span class="token function">search</span><span class="token punctuation">(</span>root<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token keyword">private</span> <span class="token keyword">boolean</span> <span class="token function">search</span><span class="token punctuation">(</span><span class="token class-name">Node</span> node<span class="token punctuation">,</span><span class="token class-name">Key</span> key<span class="token punctuation">)</span><span class="token punctuation">{</span>
