@@ -1163,7 +1163,8 @@ while((len = fis.read(b)) != -1){
 <li>void  store(OutputStream out,String comments) <strong>将此属性列表（key和value）写入Properties表中，亦适用于使用load(InputStream)方法加载到Properties表中的格式输出流</strong></li>
 <li>void  store(Writer writer,String comments)  <strong>使用load(Reader)方法的格式输出到输出字符流</strong></li>
 </ul>
-<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h2 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h2><blockquote>
+<h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><p>方式一：</p>
+<h2 id="进程概念"><a href="#进程概念" class="headerlink" title="进程概念"></a>进程概念</h2><blockquote>
 <p><strong>进程：</strong>进程值正在运行的程序。确切的说，当一个程序加载到内存中运行的时候，即变成了一个进程，<strong>进程时处于运行过程中的程序，具有一定的独立功能</strong></p>
 <p><strong>线程：</strong> <strong>线程时进程的一个执行单元</strong>，负责当前进程中程序的运行 <strong>一个进程至少有一个线程，可以有多个线程的</strong></p>
 <p><strong>总结： 一个程序至少有一个进程，一个进程中可以包含多个线程</strong></p>
@@ -1313,6 +1314,11 @@ runable1.start();<span aria-hidden="true" class="line-numbers-rows"><span></span
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://gitee.com/userlyz/imgs/raw/master/imgs/image-20220830222923344.png" alt="设置线程池的属性"></p>
+<h1 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h1><blockquote>
+<p>序列化操作的对象必须实现Serializable接口</p>
+<p>读取末尾 抛出EOFException</p>
+<p>序列化流没有续写：：增删改必须 全部读取，修改后，再覆盖</p>
+</blockquote>
 <h1 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h1><h2 id="Runable和Callable的区别"><a href="#Runable和Callable的区别" class="headerlink" title="Runable和Callable的区别"></a>Runable和Callable的区别</h2><p>1、Runable是在jdk1.0的时候提出的多线程的实现接口，而Callable实在jdk1.5之后提出的</p>
 <p>2、java.long.Runable接口中只提供了一个run()方法，并且没有返回值，就无法判断该线程是否已经结束</p>
 <p>3、java.util.concurrent.Callable接口提供了call()方法，可以有返回值</p>
@@ -1821,7 +1827,7 @@ runable1.start();<span aria-hidden="true" class="line-numbers-rows"><span></span
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2019-2022</span>
+                <span id="year">2019-2023</span>
             
             <span id="year">2019</span>
             <a href="/about" target="_blank">毛豆不逗比</a>

@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2022-08-16T09:33:42.559Z</updated>
+  <updated>2022-11-04T10:04:12.608Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,65 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>kubernetes学习</title>
+    <link href="http://userlyz.github.io/2022/11/04/kubernetes-xue-xi/"/>
+    <id>http://userlyz.github.io/2022/11/04/kubernetes-xue-xi/</id>
+    <published>2022-11-04T10:04:12.000Z</published>
+    <updated>2022-11-04T10:04:12.608Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://userlyz.github.io/2022/11/04/minio-ji-qun-da-jian/"/>
+    <id>http://userlyz.github.io/2022/11/04/minio-ji-qun-da-jian/</id>
+    <published>2022-11-04T10:00:09.141Z</published>
+    <updated>2022-11-04T10:03:19.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>java项目之瑞吉外卖</title>
+    <link href="http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/"/>
+    <id>http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/</id>
+    <published>2022-09-27T01:13:14.000Z</published>
+    <updated>2022-10-30T02:18:56.141Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@&lt;/p&gt;
+&lt;h1 id=&quot;准备工作：项目创建&quot;&gt;&lt;a href=&quot;#准备工作：项目创建&quot; class=&quot;headerlink&quot; title=&quot;准备工作：项目创建&quot;&gt;&lt;/a&gt;准备工作：项目创建&lt;/h1&gt;&lt;p&gt;1、创建maven项目&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="javaee项目" scheme="http://userlyz.github.io/tags/javaee%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>Java学习之迭代器</title>
@@ -118,7 +177,7 @@
     <link href="http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/"/>
     <id>http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/</id>
     <published>2022-07-13T11:19:10.831Z</published>
-    <updated>2022-08-30T14:34:37.849Z</updated>
+    <updated>2023-02-13T13:06:01.795Z</updated>
     
     
       
@@ -420,77 +479,6 @@
     
     
     <category term="android开发" scheme="http://userlyz.github.io/tags/android%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mybatis学习及上传git</title>
-    <link href="http://userlyz.github.io/2022/01/19/spring-mybatis-xue-xi/"/>
-    <id>http://userlyz.github.io/2022/01/19/spring-mybatis-xue-xi/</id>
-    <published>2022-01-19T12:51:54.000Z</published>
-    <updated>2022-07-02T01:09:01.969Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;database下的pom.xml添加&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-xml&quot; data-language=&quot;xml&quot;&gt;&lt;code class=&quot;language-xml&quot;&gt;&lt;span class=&quot;token</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring项目创建</title>
-    <link href="http://userlyz.github.io/2022/01/17/spring-xiang-mu-chuang-jian/"/>
-    <id>http://userlyz.github.io/2022/01/17/spring-xiang-mu-chuang-jian/</id>
-    <published>2022-01-17T00:55:47.000Z</published>
-    <updated>2022-07-02T01:09:04.049Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;项目搭建&quot;&gt;&lt;a href=&quot;#项目搭建&quot; class=&quot;headerlink&quot; title=&quot;项目搭建&quot;&gt;&lt;/a&gt;项目搭建&lt;/h1&gt;&lt;p&gt;啥都不选，直接next&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>云计算学习1</title>
-    <link href="http://userlyz.github.io/2022/01/14/yun-ji-suan-xue-xi-1/"/>
-    <id>http://userlyz.github.io/2022/01/14/yun-ji-suan-xue-xi-1/</id>
-    <published>2022-01-14T02:42:55.000Z</published>
-    <updated>2022-07-02T01:09:12.373Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;vlan技术&quot;&gt;&lt;a href=&quot;#vlan技术&quot; class=&quot;headerlink&quot; title=&quot;vlan技术&quot;&gt;&lt;/a&gt;vlan技术&lt;/h1&gt;&lt;h2 id=&quot;PVID&quot;&gt;&lt;a href=&quot;#PVID&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="云计算认证" scheme="http://userlyz.github.io/tags/%E4%BA%91%E8%AE%A1%E7%AE%97%E8%AE%A4%E8%AF%81/"/>
     
   </entry>
   
