@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2022-11-04T10:04:12.608Z</updated>
+  <updated>2023-07-21T12:54:23.068Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -15,6 +15,217 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试题</title>
+    <link href="http://userlyz.github.io/2023/07/20/mian-shi-ti/"/>
+    <id>http://userlyz.github.io/2023/07/20/mian-shi-ti/</id>
+    <published>2023-07-20T13:05:54.000Z</published>
+    <updated>2023-07-21T12:54:23.068Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;spring的事务传播机制是什么？&quot;&gt;&lt;a href=&quot;#spring的事务传播机制是什么？&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java学习" scheme="http://userlyz.github.io/tags/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>消息中间件</title>
+    <link href="http://userlyz.github.io/2023/07/20/xiao-xi-zhong-jian-jian/"/>
+    <id>http://userlyz.github.io/2023/07/20/xiao-xi-zhong-jian-jian/</id>
+    <published>2023-07-20T01:15:50.000Z</published>
+    <updated>2023-07-20T07:57:56.363Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;消息中间件&lt;/p&gt;
+&lt;p&gt;RabbitMq  ActiveMQ RocketMQ  kafka&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/userlyz/imgs/raw/master/img/202307200921677.png&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java学习" scheme="http://userlyz.github.io/tags/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>多线程</title>
+    <link href="http://userlyz.github.io/2023/07/15/duo-xian-cheng/"/>
+    <id>http://userlyz.github.io/2023/07/15/duo-xian-cheng/</id>
+    <published>2023-07-15T09:17:34.000Z</published>
+    <updated>2023-07-20T01:05:24.471Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://gitee.com/userlyz/imgs/raw/master/img/202307200905672.png&quot; alt=&quot;image-20230720090522505&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>微信支付/支付宝支付</title>
+    <link href="http://userlyz.github.io/2023/07/13/wei-xin-zhi-fu-zhi-fu-bao-zhi-fu/"/>
+    <id>http://userlyz.github.io/2023/07/13/wei-xin-zhi-fu-zhi-fu-bao-zhi-fu/</id>
+    <published>2023-07-13T14:10:21.000Z</published>
+    <updated>2023-07-15T13:54:16.933Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;微信支付&quot;&gt;&lt;a href=&quot;#微信支付&quot; class=&quot;headerlink&quot; title=&quot;微信支付&quot;&gt;&lt;/a&gt;微信支付&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java学习" scheme="http://userlyz.github.io/tags/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis学习</title>
+    <link href="http://userlyz.github.io/2023/07/13/redis-xue-xi/"/>
+    <id>http://userlyz.github.io/2023/07/13/redis-xue-xi/</id>
+    <published>2023-07-13T13:54:02.000Z</published>
+    <updated>2023-07-13T13:57:00.462Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java学习" scheme="http://userlyz.github.io/tags/Java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue学习</title>
+    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/"/>
+    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/</id>
+    <published>2023-07-05T11:33:52.000Z</published>
+    <updated>2023-07-10T13:26:19.374Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Vue动态路由加载&quot;&gt;&lt;a href=&quot;#Vue动态路由加载&quot; class=&quot;headerlink&quot; title=&quot;Vue动态路由加载&quot;&gt;&lt;/a&gt;Vue动态路由加载&lt;/h1&gt;&lt;pre class=&quot;line-numbers language-js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue学习" scheme="http://userlyz.github.io/tags/Vue%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习总结</title>
+    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/"/>
+    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/</id>
+    <published>2023-07-05T11:29:33.000Z</published>
+    <updated>2023-07-06T01:30:17.467Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;0705&quot;&gt;&lt;a href=&quot;#0705&quot; class=&quot;headerlink&quot; title=&quot;0705&quot;&gt;&lt;/a&gt;0705&lt;/h1&gt;&lt;p&gt;1、安装redis(&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="学习总结" scheme="http://userlyz.github.io/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java项目之众筹项目</title>
+    <link href="http://userlyz.github.io/2023/06/28/java-xiang-mu-zhi-zhong-chou-xiang-mu/"/>
+    <id>http://userlyz.github.io/2023/06/28/java-xiang-mu-zhi-zhong-chou-xiang-mu/</id>
+    <published>2023-06-28T12:04:31.000Z</published>
+    <updated>2023-06-28T12:18:43.466Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;23-6-28&quot;&gt;&lt;a href=&quot;#23-6-28&quot; class=&quot;headerlink&quot; title=&quot;23-6-28&quot;&gt;&lt;/a&gt;23-6-28&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;完成：&lt;/p&gt;
+&lt;p&gt;​       </summary>
+        
+      
+    
+    
+    
+    
+    <category term="java项目" scheme="http://userlyz.github.io/tags/java%E9%A1%B9%E7%9B%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java学习之问题总结</title>
+    <link href="http://userlyz.github.io/2023/02/23/java-xue-xi-zhi-wen-ti-zong-jie/"/>
+    <id>http://userlyz.github.io/2023/02/23/java-xue-xi-zhi-wen-ti-zong-jie/</id>
+    <published>2023-02-23T03:12:03.000Z</published>
+    <updated>2023-07-01T07:22:27.266Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@&lt;/p&gt;
+&lt;h1 id=&quot;Java基础&quot;&gt;&lt;a href=&quot;#Java基础&quot; class=&quot;headerlink&quot; title=&quot;Java基础&quot;&gt;&lt;/a&gt;Java基础&lt;/h1&gt;&lt;h1 id=&quot;Java-web&quot;&gt;&lt;a href=&quot;#Java-web&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>kubernetes学习</title>
@@ -55,7 +266,7 @@
     <link href="http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/"/>
     <id>http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/</id>
     <published>2022-09-27T01:13:14.000Z</published>
-    <updated>2022-10-30T02:18:56.141Z</updated>
+    <updated>2023-06-28T12:04:32.632Z</updated>
     
     
       
@@ -71,7 +282,7 @@
     
     
     
-    <category term="javaee项目" scheme="http://userlyz.github.io/tags/javaee%E9%A1%B9%E7%9B%AE/"/>
+    <category term="java项" scheme="http://userlyz.github.io/tags/java%E9%A1%B9/"/>
     
   </entry>
   
@@ -266,219 +477,6 @@
     
     
     <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Django学习</title>
-    <link href="http://userlyz.github.io/2022/06/17/django-xue-xi/"/>
-    <id>http://userlyz.github.io/2022/06/17/django-xue-xi/</id>
-    <published>2022-06-17T01:14:53.000Z</published>
-    <updated>2022-07-02T01:08:53.839Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;下载完成django&lt;/p&gt;
-&lt;h1 id=&quot;创建项目&quot;&gt;&lt;a href=&quot;#创建项目&quot; class=&quot;headerlink&quot; title=&quot;创建项目&quot;&gt;&lt;/a&gt;创建项目&lt;/h1&gt;&lt;p&gt;创建项目&lt;/p&gt;
-&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    
-    <category term="python Django学习" scheme="http://userlyz.github.io/tags/python-Django%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unity学习之模拟驾考</title>
-    <link href="http://userlyz.github.io/2022/04/21/unity-xue-xi-zhi-mo-ni-jia-kao/"/>
-    <id>http://userlyz.github.io/2022/04/21/unity-xue-xi-zhi-mo-ni-jia-kao/</id>
-    <published>2022-04-21T07:30:54.000Z</published>
-    <updated>2022-07-25T11:28:45.040Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;@&lt;/p&gt;
-&lt;p&gt;这一部分待续&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Unity学习" scheme="http://userlyz.github.io/tags/Unity%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue学习</title>
-    <link href="http://userlyz.github.io/2022/04/09/vue-xue-xi/"/>
-    <id>http://userlyz.github.io/2022/04/09/vue-xue-xi/</id>
-    <published>2022-04-09T08:24:21.000Z</published>
-    <updated>2022-07-02T01:09:05.960Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h1&gt;&lt;pre class=&quot;line-numbers</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee" scheme="http://userlyz.github.io/tags/javaee/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unity3d之塔防游戏</title>
-    <link href="http://userlyz.github.io/2022/03/19/unity3d-zhi-ta-fang-you-xi/"/>
-    <id>http://userlyz.github.io/2022/03/19/unity3d-zhi-ta-fang-you-xi/</id>
-    <published>2022-03-19T07:13:03.000Z</published>
-    <updated>2022-07-02T01:09:05.964Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;学习地址&quot;&gt;&lt;a href=&quot;#学习地址&quot; class=&quot;headerlink&quot; title=&quot;学习地址&quot;&gt;&lt;/a&gt;学习地址&lt;/h1&gt;&lt;p&gt; &lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Unity3d" scheme="http://userlyz.github.io/tags/Unity3d/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unity3d开发_课本</title>
-    <link href="http://userlyz.github.io/2022/03/14/unity3d-kai-fa-ke-ben/"/>
-    <id>http://userlyz.github.io/2022/03/14/unity3d-kai-fa-ke-ben/</id>
-    <published>2022-03-14T12:44:52.000Z</published>
-    <updated>2022-07-02T01:09:04.361Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;第四章游戏脚本&quot;&gt;&lt;a href=&quot;#第四章游戏脚本&quot; class=&quot;headerlink&quot; title=&quot;第四章游戏脚本&quot;&gt;&lt;/a&gt;第四章游戏脚本&lt;/h1&gt;&lt;h2 id=&quot;使用OnGUI显示FPS&quot;&gt;&lt;a href=&quot;#使用OnGUI显示FPS&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Unity3d" scheme="http://userlyz.github.io/tags/Unity3d/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Unity3d开发</title>
-    <link href="http://userlyz.github.io/2022/03/05/unity3d-kai-fa/"/>
-    <id>http://userlyz.github.io/2022/03/05/unity3d-kai-fa/</id>
-    <published>2022-03-05T08:57:55.000Z</published>
-    <updated>2022-07-02T01:09:05.898Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;初识&quot;&gt;&lt;a href=&quot;#初识&quot; class=&quot;headerlink&quot; title=&quot;初识&quot;&gt;&lt;/a&gt;初识&lt;/h1&gt;&lt;p&gt;学习地址总结&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Unity3d" scheme="http://userlyz.github.io/tags/Unity3d/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring-web</title>
-    <link href="http://userlyz.github.io/2022/02/06/spring-web-xue-xi/"/>
-    <id>http://userlyz.github.io/2022/02/06/spring-web-xue-xi/</id>
-    <published>2022-02-06T13:11:52.000Z</published>
-    <updated>2022-07-02T01:09:02.681Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;项目创建过程&quot;&gt;&lt;a href=&quot;#项目创建过程&quot; class=&quot;headerlink&quot; title=&quot;项目创建过程&quot;&gt;&lt;/a&gt;项目创建过程&lt;/h1&gt;&lt;p&gt;添加依赖关系&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-xml&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring数据库连接</title>
-    <link href="http://userlyz.github.io/2022/01/27/spring-shu-ju-ku-lian-jie/"/>
-    <id>http://userlyz.github.io/2022/01/27/spring-shu-ju-ku-lian-jie/</id>
-    <published>2022-01-27T11:52:03.000Z</published>
-    <updated>2022-07-02T01:09:02.630Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;数据库连接操作&quot;&gt;&lt;a href=&quot;#数据库连接操作&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="javaee学习" scheme="http://userlyz.github.io/tags/javaee%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android开发</title>
-    <link href="http://userlyz.github.io/2022/01/24/android-kai-fa-1/"/>
-    <id>http://userlyz.github.io/2022/01/24/android-kai-fa-1/</id>
-    <published>2022-01-24T06:31:40.000Z</published>
-    <updated>2022-07-02T01:08:53.511Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;项目创建&quot;&gt;&lt;a href=&quot;#项目创建&quot; class=&quot;headerlink&quot; title=&quot;项目创建&quot;&gt;&lt;/a&gt;项目创建&lt;/h1&gt;&lt;h1 id=&quot;项目文件的功能&quot;&gt;&lt;a href=&quot;#项目文件的功能&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="android开发" scheme="http://userlyz.github.io/tags/android%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
