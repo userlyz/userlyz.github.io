@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2023-07-21T12:54:23.068Z</updated>
+  <updated>2023-08-02T14:36:47.210Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -17,11 +17,68 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>nacos2.2.0+nginx1.14.1-三台集群搭建</title>
+    <link href="http://userlyz.github.io/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/"/>
+    <id>http://userlyz.github.io/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/</id>
+    <published>2023-08-02T12:45:53.000Z</published>
+    <updated>2023-08-02T14:36:47.210Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot; title=&quot;步骤&quot;&gt;&lt;/a&gt;步骤&lt;/h1&gt;&lt;h2 id=&quot;安装java-jdk&quot;&gt;&lt;a href=&quot;#安装java-jdk&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>cloud学习</title>
+    <link href="http://userlyz.github.io/2023/07/28/cloud-xue-xi/"/>
+    <id>http://userlyz.github.io/2023/07/28/cloud-xue-xi/</id>
+    <published>2023-07-28T01:10:12.000Z</published>
+    <updated>2023-07-28T07:51:48.171Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;八、熔断机制&quot;&gt;&lt;a href=&quot;#八、熔断机制&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微服务</title>
+    <link href="http://userlyz.github.io/2023/07/24/wei-fu-wu/"/>
+    <id>http://userlyz.github.io/2023/07/24/wei-fu-wu/</id>
+    <published>2023-07-24T01:10:15.000Z</published>
+    <updated>2023-07-24T01:10:15.230Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>面试题</title>
     <link href="http://userlyz.github.io/2023/07/20/mian-shi-ti/"/>
     <id>http://userlyz.github.io/2023/07/20/mian-shi-ti/</id>
     <published>2023-07-20T13:05:54.000Z</published>
-    <updated>2023-07-21T12:54:23.068Z</updated>
+    <updated>2023-07-29T03:36:29.070Z</updated>
     
     
       
@@ -404,79 +461,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>java学习之算法2</title>
-    <link href="http://userlyz.github.io/2022/07/11/java-xue-xi-zhi-suan-fa-er/"/>
-    <id>http://userlyz.github.io/2022/07/11/java-xue-xi-zhi-suan-fa-er/</id>
-    <published>2022-07-11T11:28:18.000Z</published>
-    <updated>2022-08-18T08:57:43.862Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;@&lt;/p&gt;
-&lt;h1 id=&quot;字符串比较&quot;&gt;&lt;a href=&quot;#字符串比较&quot; class=&quot;headerlink&quot; title=&quot;字符串比较&quot;&gt;&lt;/a&gt;字符串比较&lt;/h1&gt;&lt;h3 id=&quot;BF算法即为暴力破解算法&quot;&gt;&lt;a href=&quot;#BF算法即为暴力破解算法&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之算法</title>
-    <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/"/>
-    <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-suan-fa/</id>
-    <published>2022-07-02T02:42:03.000Z</published>
-    <updated>2022-09-11T13:39:08.532Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h1 id=&quot;十大排序算法&quot;&gt;&lt;a href=&quot;#十大排序算法&quot; class=&quot;headerlink&quot; title=&quot;十大排序算法&quot;&gt;&lt;/a&gt;十大排序算法&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java学习之基础</title>
-    <link href="http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/"/>
-    <id>http://userlyz.github.io/2022/07/02/java-xue-xi-zhi-ji-chu/</id>
-    <published>2022-07-02T02:09:20.000Z</published>
-    <updated>2022-08-29T11:23:56.672Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;p&gt;菜鸟教程学习笔记&lt;a href=&quot;https://www.runoob.com/&quot;&gt;菜鸟教程&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;Java的数据类型&quot;&gt;&lt;a href=&quot;#Java的数据类型&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="面试题, 毛豆人很逗">
+    <meta name="keywords" content="cloud学习, 毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>面试题 | 毛豆人很逗</title>
+    <title>cloud学习 | 毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">面试题</h1>
+                    <h1 class="description center-align post-title">cloud学习</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">Java学习</span>
+                            <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">java学习</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-20
+                    2023-07-28
                 </div>
                 
 
@@ -581,190 +581,95 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="spring的事务传播机制是什么？"><a href="#spring的事务传播机制是什么？" class="headerlink" title="spring的事务传播机制是什么？"></a>spring的事务传播机制是什么？</h1><p>在Spring中，事务的传播机制定义了在多个事务方法之间如何传播事务。当一个方法调用另一个方法时，如果被调用方法需要事务支持，那么事务的传播机制决定了是否使用调用方的事务或创建一个新的事务。</p>
-<p>Spring定义了多种事务传播机制，以下是其中一些常见的：</p>
-<ol>
-<li>REQUIRED（默认）：如果当前没有事务，就创建一个新的事务；如果当前已经存在事务，就加入到当前事务中。</li>
-<li>REQUIRES_NEW：每次调用该方法都会创建一个新的事务，如果当前已经存在事务，则挂起当前事务。</li>
-<li>SUPPORTS：如果当前有事务，就加入到当前事务中，如果没有事务，就以非事务的方式执行。</li>
-<li>NOT_SUPPORTED：以非事务方式执行，如果当前存在事务，则挂起当前事务。</li>
-<li>MANDATORY：当前必须存在事务，否则抛出异常。</li>
-<li>NEVER：当前必须不存在事务，否则抛出异常。</li>
-<li>NESTED：嵌套事务，如果当前有事务，则嵌套在当前事务中，如果没有事务，则创建一个新的事务。</li>
-</ol>
-<p>Spring的事务传播机制允许我们在不同层级的方法之间进行事务管理，以保证数据的一致性和完整性。通过合理的选择事务传播机制，我们可以灵活地管理事务边界，从而确保业务逻辑的正确执行。</p>
-<h1 id="b树、b-树、红黑树有什么区别"><a href="#b树、b-树、红黑树有什么区别" class="headerlink" title="b树、b+树、红黑树有什么区别"></a>b树、b+树、红黑树有什么区别</h1><p>B树、B+树和红黑树都是常见的自平衡二叉查找树，用于在数据库和文件系统等数据结构中进行索引操作。它们在实现上有一些区别，下面是它们的主要区别：</p>
-<ol>
-<li>B树：<ul>
-<li>B树是一种多叉树，每个节点可以有多个子节点，通常在实现中有一个上限，即节点的最大子节点数目。</li>
-<li>每个节点除了包含关键字（key）和对应的值（value）外，还包含了指向子节点的指针。</li>
-<li>B树适用于在磁盘等外存储设备上进行索引操作，因为每个节点可以存储多个关键字，从而减少了磁盘I/O次数，提高了查询效率。</li>
-<li>B树的节点分裂和合并操作相对较复杂。</li>
-</ul>
-</li>
-<li>B+树：<ul>
-<li>B+树是B树的变体，也是一种多叉树结构，但与B树不同，B+树的内部节点不存储数据，只存储关键字。</li>
-<li>所有的数据都存储在叶子节点上，叶子节点之间通过链表连接，形成一个有序的数据列表。</li>
-<li>B+树在查询过程中只需要遍历叶子节点即可，查询效率更高。</li>
-<li>B+树适用于数据库索引等场景，常用于支持范围查询。</li>
-</ul>
-</li>
-<li>红黑树：<ul>
-<li>红黑树是一种二叉查找树，每个节点上都有一个额外的存储位表示节点的颜色，可以是红色或黑色。</li>
-<li>红黑树满足以下性质：<ol>
-<li>节点是红色或黑色。</li>
-<li>根节点是黑色。</li>
-<li>所有叶子节点（NIL节点）是黑色。</li>
-<li>如果一个节点是红色，其子节点必须是黑色。</li>
-<li>从任意节点到其每个叶子节点的所有路径上，黑色节点的数量必须相同。</li>
-</ol>
-</li>
-<li>红黑树在插入和删除操作后需要通过旋转和重新着色来维持平衡。</li>
-</ul>
-</li>
-</ol>
-<p>总结：B树和B+树适用于外存储设备上的索引操作，B树适用于点查询，而B+树适用于范围查询。红黑树适用于内存中的索引操作，它通过保持平衡性来保证在各种操作下的较稳定的性能。</p>
-<h1 id="mybits-二级缓存"><a href="#mybits-二级缓存" class="headerlink" title="mybits 二级缓存"></a>mybits 二级缓存</h1><p>MyBatis是一个开源的Java持久层框架，它提供了多种缓存机制来提高数据库查询性能。其中，二级缓存是MyBatis的一个重要特性，用于缓存查询结果，避免频繁地访问数据库，从而提高查询效率。</p>
-<p>二级缓存是基于Mapper级别的缓存，可以跨越SqlSession的生命周期，在不同的SqlSession之间共享缓存数据。当一个Mapper的查询结果被缓存后，下次再执行相同的查询时，MyBatis会直接从缓存中获取结果，而不会再去执行数据库查询操作，从而节省了数据库访问时间。</p>
-<p>MyBatis的二级缓存默认是基于内存的缓存实现，可以通过配置不同的缓存实现来支持分布式缓存等场景。常见的二级缓存实现有：</p>
-<ul>
-<li>PerpetualCache：默认的基于内存的缓存实现。</li>
-<li>Ehcache：支持分布式缓存的实现，可以将缓存数据放置在内存或者磁盘上。</li>
-<li>RedisCache：使用Redis作为缓存存储，支持分布式环境下的缓存共享。</li>
-</ul>
-<p>需要注意的是，虽然二级缓存可以提高查询性能，但也有一些需要注意的点：</p>
-<ul>
-<li>缓存数据的更新和失效：当数据发生变化时，需要手动刷新缓存或者设置合理的缓存失效时间，避免数据不一致的问题。</li>
-<li>缓存的内存管理：缓存数据存放在内存中，如果缓存数据过多，可能会导致内存溢出的问题。因此，需要合理设置缓存大小和淘汰策略。</li>
-</ul>
-<p>总体来说，MyBatis的二级缓存是一个非常有用的功能，可以在适当的场景下显著提升数据库查询性能。但在使用时需要根据具体情况进行配置和管理，避免潜在的缓存问题。</p>
-<h1 id="0721考试"><a href="#0721考试" class="headerlink" title="0721考试"></a>0721考试</h1><ol>
-<li>MySql 数据的隔离级别有以下四种：<ul>
-<li>READ UNCOMMITTED（读未提交）：允许一个事务读取另一个事务未提交的数据，存在脏读、不可重复读和幻读问题。</li>
-<li>READ COMMITTED（读已提交）：一个事务在提交后，另一个事务才能读取其数据。可以解决脏读问题，但仍可能出现不可重复读和幻读问题。</li>
-<li>REPEATABLE READ（可重复读）：一个事务在整个过程中多次读取同一数据会保持一致。可以解决脏读和不可重复读问题，但仍可能出现幻读问题。</li>
-<li>SERIALIZABLE（串行化）：最高的隔离级别，每个事务都必须等待其他事务完成后才能执行。可以避免脏读、不可重复读和幻读，但会降低并发性能。</li>
-</ul>
-</li>
-<li>MySql中的回表是指在使用非聚集索引进行查询时，MySQL需要通过索引找到对应的行，并进一步通过主键索引或聚集索引获取完整的行数据。这个过程中需要”回”到原始数据表中去获取缺失的数据列。</li>
-<li>SQL优化包括以下几个方面：<ul>
-<li>选择合适的索引：根据查询的条件和频率选择合适的索引来加快查询速度。</li>
-<li>避免全表扫描：尽量使用索引或优化查询条件，避免对整张表进行全表扫描。</li>
-<li>减少查询次数：通过合并多个查询或使用JOIN等操作来减少查询次数。</li>
-<li>优化查询语句：使用合适的SQL语句，避免使用SELECT *，只查询所需的列。</li>
-<li>适当拆分大表：将大表拆分为多个小表，减少查询的数据量。</li>
-<li>缓存结果：对于频繁的查询，可以将结果缓存在缓存中，避免频繁查询数据库。</li>
-</ul>
-</li>
-<li>冒泡排序的实现：</li>
-</ol>
-<pre class="line-numbers language-none"><code class="language-none">javaCopy codepublic void bubbleSort(int[] arr) {
-    int n = arr.length;
-    for (int i = 0; i &lt; n - 1; i++) {
-        for (int j = 0; j &lt; n - i - 1; j++) {
-            if (arr[j] &gt; arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="八、熔断机制"><a href="#八、熔断机制" class="headerlink" title="八、熔断机制"></a>八、熔断机制</h1><blockquote>
+<p>熔断机制是对雪崩效应的一种微服务链路保护机制。当链路的某个微服务出错不可用或者响应时间太长时，会进行服务的降级，进而熔断该节点微服务的调用，快读返回错误的响应信息  </p>
+<p>当检测到该节点微服务调用响应正常后，恢复调用链路</p>
+</blockquote>
+<h1 id="GateWay新一代网关"><a href="#GateWay新一代网关" class="headerlink" title="GateWay新一代网关"></a>GateWay新一代网关</h1><blockquote>
+<p>路由  </p>
+<p>断言 </p>
+<p>过滤</p>
+</blockquote>
+<p>作用</p>
+<p>可以实现   反向代理、鉴权、流量控制、熔断、日志监控等功能</p>
+<h2 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281507544.png" alt="动态路由设置"></p>
+<p><strong>注意：</strong></p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
+  port: 9527
 
-<p>5.冒泡排序的时间复杂度是O(n^2)。计算方法是，对于长度为n的数组，最坏情况下需要进行n-1次比较，n-2次比较，…，1次比较，共进行(n-1) + (n-2) + … + 1次比较，即等差数列求和，结果为 (n-1) * n / 2，所以时间复杂度是O(n^2)。</p>
-<p>6.Spring是一个完整的Java开发框架，提供了依赖注入（DI）、面向切面编程（AOP）、事务管理、MVC框架等功能。Spring Boot是基于Spring的快速开发框架，旨在简化Spring应用程序的构建和部署过程，提供了自动配置和默认值，让开发者能够更轻松地启动一个生产就绪的Spring应用程序。</p>
-<p>7.SpringBoot自动装配原理是通过Starter、自动配置类和条件注解实现的。它通过分析项目依赖和配置信息，自动选择和应用合适的自动配置类，完成Bean的装配和配置。</p>
-<p>8.循环依赖是指在Spring容器中，两个或多个Bean之间相互引用，形成了循环的依赖关系。为了解决循环依赖，可以使用构造器注入或使用@Lazy注解。构造器注入可以保证Bean在被实例化时就已经得到了所需的依赖。@Lazy注解可以延迟Bean的实例化，从而避免循环依赖问题。</p>
-<p>9.MySQL主从复制搭建步骤包括：</p>
-<ul>
-<li>确保MySQL已安装并配置正确。</li>
-<li>在主服务器上开启二进制日志，并设置server_id。</li>
-<li>创建用于复制的用户，并授权REPLICATION SLAVE权限。</li>
-<li>备份主服务器数据。</li>
-<li>在从服务器上设置server_id，并配置连接主服务器的信息。</li>
-<li>同步主从服务器状态。</li>
-<li>启动从服务器复制进程。</li>
-</ul>
-<p>10.Redis缓存击穿是指在高并发情况下，一个热点数据缓存过期后，大量请求同时访问数据库，造成数据库压力过大，导致系统性能下降。缓存击穿可以通过设置热点数据的永不过期或设置较长的过期时间来解决。</p>
-<p>11.缓存雪崩是指缓存中大量数据在同一时间失效或过期，导致大量请求直接访问数据库，给数据库造成巨大压力，引起系统性能下降或崩溃。缓存雪崩可以通过在设置缓存过期时间时采用随机时间，或使用多级缓存来解决。</p>
-<p>12.缓存穿透是指当一个请求查询一个不存在于缓存和数据库中的数据时，这个请求会穿透缓存直接访问数据库，导致缓存无效，频繁访问数据库，增加数据库负担。缓存穿透可以通过使用布隆过滤器等技术，在缓存层或应用层进行数据校验，过滤掉不存在的数据请求，从而解决。</p>
-<p>13.MyBatis的一级缓存是指在同一个SqlSession中，执行相同的SQL语句时，查询结果会缓存在内存中，下次再执行相同的SQL语句时，会从缓存中获取结果，而不再去数据库查询。一级缓存是默认开启的，其生命周期是与SqlSession绑定的。</p>
-<p>14.MyBatis的二级缓存是指多个SqlSession之间可以共享的缓存，它可以跨越多个SqlSession，需要手动配置启用和配置。二级缓存的作用域是Mapper级别的，由MyBatis的整个SqlSessionFactory来管理。</p>
-<p>15.Spring的事务传播机制是指在多个事务方法调用时，事务应该如何传播和合并。Spring定义了多个事务传播行为，如REQUIRED、SUPPORTS、MANDATORY、REQUIRES_NEW等。例如，REQUIRED表示当前方法必须运行在事务中，如果已经有一个事务在运行，则加入该事务，如果没有事务，则创建一个新事务。</p>
-<p>Spring定义了多种事务传播机制，以下是其中一些常见的：</p>
-<ol>
-<li>REQUIRED（默认）：如果当前没有事务，就创建一个新的事务；如果当前已经存在事务，就加入到当前事务中。</li>
-<li>REQUIRES_NEW：每次调用该方法都会创建一个新的事务，如果当前已经存在事务，则挂起当前事务。</li>
-<li>SUPPORTS：如果当前有事务，就加入到当前事务中，如果没有事务，就以非事务的方式执行。</li>
-<li>NOT_SUPPORTED：以非事务方式执行，如果当前存在事务，则挂起当前事务。</li>
-<li>MANDATORY：当前必须存在事务，否则抛出异常。</li>
-<li>NEVER：当前必须不存在事务，否则抛出异常。</li>
-<li>NESTED：嵌套事务，如果当前有事务，则嵌套在当前事务中，如果没有事务，则创建一个新的事务。</li>
-</ol>
-<p>16.Redis被设计为单线程的主要原因是为了避免多线程带来的线程安全问题，简化实现并提高性能。Redis使用单线程的事件循环模型，所有的请求都由一个线程处理，这样避免了多线程之间的竞争和同步开销。此外，Redis的主要瓶颈通常是CPU性能，而不是多线程的并发处理能力。</p>
-<p>17.select * from —where name like ‘%王%’ 会引起全表扫描。因为LIKE ‘%王%’的模糊查询无法使用索引，所以MySQL会对表中的每一行都进行模糊匹配，导致全表扫描。</p>
-<p>18.select * from —where name like ‘王%’ 不会引起全表扫描。这种情况下，MySQL可以使用name列的前缀索引，加快查询速度，不会进行全表扫描。</p>
-<p>19.MySql使用B树索引和哈希索引。B树索引用于普通查找和范围查找，适用于数据分布较为均匀的情况。哈希索引适用于等值查找，适用于数据分布较为离散的情况，但不支持范围查找。</p>
-<p>20.红黑树、B树和B+树是数据库索引中常用的树状数据结构：</p>
-<ul>
-<li>红黑树是一种自平衡的二叉查找树，用于实现哈希索引，适合于在内存中使用，查询性能较高。</li>
-<li>B树是一种多路搜索树，用于实现普通索引，适合于磁盘存储，支持随机查找和范围查找。</li>
-<li>B+树是在B树的基础上优化而来，只有叶子节点存储数据，适合于数据库索引，查询性能更稳定，支持顺序查找和范围查找。</li>
-</ul>
-<h1 id="0722"><a href="#0722" class="headerlink" title="0722"></a>0722</h1><h2 id="作业"><a href="#作业" class="headerlink" title="作业"></a>作业</h2><p>1、如何设计一个能够支持高并发的系统</p>
-<p>2、sprintboot+redis</p>
-<p>3、rabbitmq 剩余 整合springboot</p>
-<p>4、es</p>
-<p>锁</p>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307221505646.png" alt="image-20230722150502373"></p>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307221505768.png" alt="image-20230722150544531"></p>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307221507132.png" alt="image-20230722150714872"></p>
-<h1 id="0729"><a href="#0729" class="headerlink" title="0729"></a>0729</h1><h2 id="1、什么是回表，怎么减少回表的次数"><a href="#1、什么是回表，怎么减少回表的次数" class="headerlink" title="1、什么是回表，怎么减少回表的次数"></a>1、什么是回表，怎么减少回表的次数</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307291042561.png" alt="image-20230729104203184"></p>
-<h2 id="2、什么是排他锁和共享锁"><a href="#2、什么是排他锁和共享锁" class="headerlink" title="2、什么是排他锁和共享锁"></a>2、什么是排他锁和共享锁</h2><ol>
-<li><p><strong>排他锁（Exclusive Lock）</strong>： 排他锁也称为写锁，它是一种独占锁，当一个事务持有了某个数据对象的排他锁时，其他事务无法同时持有该数据对象的任何锁，包括共享锁和排他锁。排他锁保证了数据的独占性，即在一个事务修改数据时，其他事务无法读取或修改该数据，直到当前事务释放锁。</p>
-<p>排他锁用于保证数据的一致性和完整性，防止并发更新导致数据不一致的情况。但是，排他锁可能会导致并发性降低，因为多个事务无法同时访问相同的数据。</p>
-</li>
-<li><p><strong>共享锁（Shared Lock）</strong>： 共享锁也称为读锁，它是一种共享锁，多个事务可以同时持有相同数据对象的共享锁，但是无法持有排他锁。共享锁用于实现并发读取，即多个事务可以同时读取相同的数据，而不会对数据造成影响。</p>
-<p>共享锁适用于读多写少的场景，多个事务可以同时读取数据，提高了并发性。但是，共享锁可能会导致读取的数据是过去的数据，因为多个事务可以同时读取相同的数据，即使其中某些事务已经对数据进行了修改。</p>
-</li>
-</ol>
-<p>综合来说，排他锁和共享锁是数据库管理并发访问的重要手段。通过适当地使用这两种锁类型，可以平衡并发性和数据一致性之间的关系，保障数据库在多个事务同时进行读写操作时的正确性和效率。</p>
-<h2 id="3、什么是脏读、幻读、不可重复读"><a href="#3、什么是脏读、幻读、不可重复读" class="headerlink" title="3、什么是脏读、幻读、不可重复读"></a>3、什么是脏读、幻读、不可重复读</h2><ol>
-<li><strong>脏读（Dirty Read）</strong>： 脏读指的是一个事务读取了另一个事务未提交的数据。当一个事务读取了另一个事务所做的更新，而这个更新后来由于某些原因被回滚，那么读取到的数据实际上是无效的，是”脏”的。脏读可能导致数据的不一致性，因为读取到的数据可能最终不会被提交。</li>
-<li><strong>幻读（Phantom Read）</strong>： 幻读指的是一个事务在读取数据时，另一个事务插入了新的数据，导致第一个事务读取到了之前不存在的数据。幻读通常发生在范围查询（Range Query）中，当第一个事务读取一批数据时，另一个事务在该批数据范围内插入了新的数据，导致第一个事务再次读取时发现有新增的”幻影”数据。</li>
-<li><strong>不可重复读（Non-repeatable Read）</strong>： 不可重复读指的是一个事务在读取数据后，另一个事务对这些数据进行了修改，导致第一个事务再次读取时发现数据已经发生了变化。不可重复读可能导致数据的一致性问题，因为事务在读取数据时得到的结果并不一致。</li>
-</ol>
-<p>这些问题都是由于数据库事务并发访问时可能引发的隔离性问题。数据库系统采用事务隔离级别来控制这些问题的出现概率，常见的事务隔离级别有四种：读未提交（Read Uncommitted）、读已提交（Read Committed）、可重复读（Repeatable Read）和串行化（Serializable）。不同的隔离级别对应不同的数据一致性和并发性能权衡，开发者需要根据业务需求选择适合的隔离级别。</p>
-<h2 id="4、为什么大厂不建议使用多表join"><a href="#4、为什么大厂不建议使用多表join" class="headerlink" title="4、为什么大厂不建议使用多表join"></a>4、为什么大厂不建议使用多表join</h2><ol>
-<li><strong>性能问题</strong>： 多表join涉及多个表的数据连接操作，如果表中的数据量很大，join操作可能会导致性能下降。数据库的性能在大厂中尤为重要，对于高并发和大数据量的应用来说，频繁的多表join会增加数据库的负担，影响整体的性能。</li>
-<li><strong>维护问题</strong>： 多表join增加了数据库查询的复杂性，使得SQL语句变得复杂难懂，不易于维护和调试。当数据库中的表结构变更时，涉及join的查询语句可能需要进行调整，这对开发人员来说增加了工作量。</li>
-<li><strong>水平扩展问题</strong>： 多表join操作在大规模的水平扩展时可能会变得更加困难。在水平扩展时，需要保持数据的一致性，而join操作跨越多个节点将增加数据同步和维护的复杂性。</li>
-<li><strong>NoSQL趋势</strong>： 随着NoSQL数据库的兴起，越来越多的大厂在一些特定场景下选择了NoSQL解决方案。NoSQL数据库在某些查询场景下更具优势，而不是使用传统的关系型数据库，并且NoSQL数据库一般不支持join操作。</li>
-</ol>
-<p>虽然大厂不建议频繁使用多表join，但并不意味着join完全不可用。在一些复杂查询场景下，使用多表join是合理的选择，但需要注意合理设计数据库表结构、建立合适的索引，避免不必要的join操作。同时，也可以考虑使用缓存、数据冗余、分库分表等技术来优化查询性能，以减少多表join的使用频率。总之，合理使用多表join是需要权衡利弊的，要结合具体场景进行选择和优化。</p>
-<h2 id="5、索引失效的问题如何排查"><a href="#5、索引失效的问题如何排查" class="headerlink" title="5、索引失效的问题如何排查"></a>5、索引失效的问题如何排查</h2><ol>
-<li><strong>检查查询语句</strong>： 首先检查查询语句是否正确，并且是否使用了索引列作为查询条件。确保查询语句的条件与索引的列匹配，以便数据库可以正确选择并使用索引。</li>
-<li><strong>使用EXPLAIN命令</strong>： 在MySQL等数据库中，可以使用EXPLAIN命令来查看查询计划，看是否使用了索引。执行<code>EXPLAIN SELECT ...</code>命令，可以查看查询的执行计划，包括使用了哪些索引以及执行的顺序。</li>
-<li><strong>检查索引列是否被修改</strong>： 如果索引列的值在查询时被修改了，那么索引可能会失效。例如，在WHERE条件中使用了函数或表达式对索引列进行操作，会导致索引无法使用。</li>
-<li><strong>统计信息是否准确</strong>： 数据库优化器使用统计信息来估算索引的选择性，从而决定是否使用索引。确保统计信息是最新的、准确的，以保证优化器能够正确选择索引。</li>
-<li><strong>注意数据类型转换</strong>： 确保查询条件中的数据类型与索引列的数据类型相匹配，避免因数据类型转换而导致索引失效。</li>
-<li><strong>避免使用不等于操作符（&lt;&gt;, !=）</strong>： 在某些数据库中，不等于操作符可能导致索引失效，建议使用等于操作符（=）代替不等于操作符。</li>
-<li><strong>检查是否存在列组合索引</strong>： 如果查询条件中的多个列可以组合在一起使用索引，可以考虑创建列组合索引，以提高查询性能。</li>
-<li><strong>使用FORCE INDEX（MySQL）或 HINTS（Oracle）</strong>： 有些数据库支持使用FORCE INDEX或HINTS等提示来强制指定使用某个索引，可以在特定情况下用于解决索引失效的问题。</li>
-</ol>
-<p>以上排查方法可以帮助定位索引失效的原因。需要根据具体数据库和查询场景来选择适合的优化方法，以提高查询性能并避免索引失效问题。</p>
-<h2 id="6、Redis支持哪几种数据类型"><a href="#6、Redis支持哪几种数据类型" class="headerlink" title="6、Redis支持哪几种数据类型"></a>6、Redis支持哪几种数据类型</h2><ul>
-<li><strong>String（字符串）</strong>： String是最基本的数据类型，在Redis中，String类型可以存储任意类型的数据，例如字符串、整数和浮点数等。</li>
-<li><strong>Hash（哈希）</strong>： Hash是一个键值对的集合，类似于Java中的Map。在Redis中，Hash适合存储对象的属性和值。</li>
-<li><strong>List（列表）</strong>： List是一个有序的字符串列表，可以在列表的两端进行插入和删除操作。Redis的List类型是一个双向链表。</li>
-<li><strong>Set（集合）</strong>： Set是一个无序的字符串集合，集合中的元素是唯一的，不允许重复。</li>
-<li><strong>Sorted Set（有序集合）</strong>： Sorted Set是一个有序的集合，其中的元素以分数（score）来排序。集合中的元素是唯一的，但每个元素可以关联一个分数。</li>
-<li><strong>Bitmap（位图）</strong>： Bitmap是一个特殊的数据类型，它是一个由二进制位组成的字符串。Bitmap可以用于记录某个事件在某个时间点是否发生。</li>
-<li><strong>HyperLogLog（基数估计）</strong>： HyperLogLog是一种基数估计算法，用于估计集合中不重复元素的数量，占用空间很小。</li>
-<li><strong>Geospatial（地理空间索引）</strong>： Redis支持存储和查询地理空间数据，如经纬度坐标。</li>
-</ul>
-<p>除了上述主要数据类型，Redis还有一些其他的数据类型和扩展功能，如Pub/Sub（发布/订阅）、Lua脚本执行、多个数据库的支持等。Redis的灵活性和丰富的数据类型使得它成为一个功能强大的缓存、消息队列、数据存储等多用途的工具。</p>
-<h2 id="7、如何用Redisson实现分布式锁"><a href="#7、如何用Redisson实现分布式锁" class="headerlink" title="7、如何用Redisson实现分布式锁"></a>7、如何用Redisson实现分布式锁</h2><h2 id="8、BeanFactory和FactoryBean的关系"><a href="#8、BeanFactory和FactoryBean的关系" class="headerlink" title="8、BeanFactory和FactoryBean的关系"></a>8、BeanFactory和FactoryBean的关系</h2><h2 id="9、Autowired和Resource的关系"><a href="#9、Autowired和Resource的关系" class="headerlink" title="9、Autowired和Resource的关系"></a>9、Autowired和Resource的关系</h2><h2 id="10-、Spring是如何解决循环依赖的"><a href="#10-、Spring是如何解决循环依赖的" class="headerlink" title="10 、Spring是如何解决循环依赖的"></a>10 、Spring是如何解决循环依赖的</h2><h2 id="11、Spring中如何开启事务"><a href="#11、Spring中如何开启事务" class="headerlink" title="11、Spring中如何开启事务"></a>11、Spring中如何开启事务</h2><h2 id="12、Spring中用到了那些设计模式"><a href="#12、Spring中用到了那些设计模式" class="headerlink" title="12、Spring中用到了那些设计模式"></a>12、Spring中用到了那些设计模式</h2><h2 id="13、什么是MVC"><a href="#13、什么是MVC" class="headerlink" title="13、什么是MVC"></a>13、什么是MVC</h2><h2 id="14、定时任务的公式是？"><a href="#14、定时任务的公式是？" class="headerlink" title="14、定时任务的公式是？"></a>14、定时任务的公式是？</h2><h2 id="15、线程池的7个参数是什么？"><a href="#15、线程池的7个参数是什么？" class="headerlink" title="15、线程池的7个参数是什么？"></a>15、线程池的7个参数是什么？</h2><h2 id="16、分布式ID生成方案"><a href="#16、分布式ID生成方案" class="headerlink" title="16、分布式ID生成方案"></a>16、分布式ID生成方案</h2><h2 id="17、Ribbon和Nginx的区别是什么"><a href="#17、Ribbon和Nginx的区别是什么" class="headerlink" title="17、Ribbon和Nginx的区别是什么"></a>17、Ribbon和Nginx的区别是什么</h2><h2 id="18、-什么是zuul网关，有什么用"><a href="#18、-什么是zuul网关，有什么用" class="headerlink" title="18、 什么是zuul网关，有什么用"></a>18、 什么是zuul网关，有什么用</h2><h2 id="19-、什么是springcloud-，有哪些组件"><a href="#19-、什么是springcloud-，有哪些组件" class="headerlink" title="19 、什么是springcloud ，有哪些组件"></a>19 、什么是springcloud ，有哪些组件</h2><h2 id="20、Hystrix和Sentinel的区别是什么"><a href="#20、Hystrix和Sentinel的区别是什么" class="headerlink" title="20、Hystrix和Sentinel的区别是什么"></a>20、Hystrix和Sentinel的区别是什么</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+spring:
+  application:
+    name: cloud-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: payment_route1
+          uri: lb://CLOUD-PAYMENT-SERVICE # Matches /payment/get/**
+          predicates:
+            - Path=/payment/get/**
+
+        - id: payment_route2
+          uri: lb://CLOUD-PAYMENT-SERVICE # Matches /payment/lb/**
+          predicates:
+            - Path=/payment/lb/**
+            # After 属性表示什么时间之后才可以访问
+            #- After=2023-07-28T15:16:37.485+08:00[Asia/Shanghai]
+            # cookie中必须有值，值必须是zzyy
+            #- Cookie=username,zzyy
+            # 表示请求头必须有这个属性，且该属性值必须是整数
+            #- Header=X-Request-Id, \d+  # 请求头要有X-Request-Id属性并且值为整数的正则表达式
+
+eureka:
+  instance:
+    hostname: cloud-gateway-service
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+# Ribbon configuration for the cloud-payment-service
+cloud-payment-service:
+  ribbon:
+    ReadTimeout: 5000
+    ConnectTimeout: 5000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281530431.png" alt="属性解释"></p>
+<p>运行结果：  </p>
+<p>Cookie<img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281531429.png" alt="Cookie配置"></p>
+<p>Hander属性</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281531668.png" alt="Header属性"></p>
+<h2 id="Gateway的Filter"><a href="#Gateway的Filter" class="headerlink" title="Gateway的Filter"></a>Gateway的Filter</h2><p>创建Filter类</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyLogGateWayFilter</span> <span class="token keyword">implements</span> <span class="token class-name">GlobalFilter</span><span class="token punctuation">,</span> <span class="token class-name">Ordered</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token class-name">Mono</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Void</span><span class="token punctuation">&gt;</span></span> <span class="token function">filter</span><span class="token punctuation">(</span><span class="token class-name">ServerWebExchange</span> exchange<span class="token punctuation">,</span> <span class="token class-name">GatewayFilterChain</span> chain<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"*******全局过滤*********"</span><span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">String</span> username<span class="token operator">=</span>exchange<span class="token punctuation">.</span><span class="token function">getRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getQueryParams</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getFirst</span><span class="token punctuation">(</span><span class="token string">"username"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>username<span class="token operator">==</span><span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"用户名为空，非法用户"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            exchange<span class="token punctuation">.</span><span class="token function">getResponse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setStatusCode</span><span class="token punctuation">(</span><span class="token class-name">HttpStatus</span><span class="token punctuation">.</span>NOT_ACCEPTABLE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> exchange<span class="token punctuation">.</span><span class="token function">getResponse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setComplete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> chain<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>exchange<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果请求地址中有username属性，则正常访问，如果没有则返回406错误</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281550812.png" alt="控制台输出"></p>
+<h2 id="分布式配置中心"><a href="#分布式配置中心" class="headerlink" title="分布式配置中心"></a>分布式配置中心</h2><blockquote>
+<p>每一个</p>
+</blockquote>
+<p>配置文件优先级</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202307281551533.png" alt="配置文件优先级"></p>
+<p>@</p>
+
                 
             </div>
             <hr/>
@@ -790,7 +695,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2023/07/20/mian-shi-ti/">http://userlyz.github.io/2023/07/20/mian-shi-ti/</a>
+                    <a href="http://userlyz.github.io/2023/07/28/cloud-xue-xi/">http://userlyz.github.io/2023/07/28/cloud-xue-xi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,8 +733,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">Java学习</span>
+                                <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">java学习</span>
                                 </a>
                             
                         </div>
@@ -1003,13 +908,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/24/wei-fu-wu/">
+                <a href="/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="微服务">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="nacos2.2.0+nginx1.14.1-三台集群搭建">
                         
-                        <span class="card-title">微服务</span>
+                        <span class="card-title">nacos2.2.0+nginx1.14.1-三台集群搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1020,7 +925,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-02
                         </span>
                         <span class="publish-author">
                             
@@ -1040,13 +945,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/07/20/xiao-xi-zhong-jian-jian/">
+                <a href="/2023/07/24/wei-fu-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="消息中间件">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="微服务">
                         
-                        <span class="card-title">消息中间件</span>
+                        <span class="card-title">微服务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1057,7 +962,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-24
                             </span>
                         <span class="publish-author">
                             
@@ -1066,14 +971,6 @@
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">Java学习</span>
-                    </a>
-                    
                 </div>
                 
             </div>
