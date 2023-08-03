@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="学习总结, 毛豆人很逗">
+    <meta name="keywords" content="Sentinel熔断与限流, 毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学习总结 | 毛豆人很逗</title>
+    <title>Sentinel熔断与限流 | 毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学习总结</h1>
+                    <h1 class="description center-align post-title">Sentinel熔断与限流</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">学习总结</span>
+                            <a href="/tags/cloud/">
+                                <span class="chip bg-color">cloud</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-05
+                    2023-08-03
                 </div>
                 
 
@@ -581,11 +581,295 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="0705"><a href="#0705" class="headerlink" title="0705"></a>0705</h1><p>1、安装redis(<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_42700766/article/details/118081581">https://blog.csdn.net/qq_42700766/article/details/118081581</a>) </p>
-<p>2、后台运行  nohup  查看进程 ps -ef 博客文档太多怎么办 hexo new 标题 -p /后端/test.md（<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40251892/article/details/107590794%EF%BC%89">https://blog.csdn.net/weixin_40251892/article/details/107590794）</a></p>
-<p> 3、防火墙开放端口firewall-cmd –zone=public –permanent –add-port=PORT/tcp   关闭防火墙端口 firewall-cmd –zone=public –remove-port=80/tcp –permanent(<a target="_blank" rel="noopener" href="https://www.cnblogs.com/suhq/p/13539287.html">https://www.cnblogs.com/suhq/p/13539287.html</a>)</p>
-<p>@</p>
+                <h1 id="Sentinel"><a href="#Sentinel" class="headerlink" title="Sentinel"></a>Sentinel</h1><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308030921131.png" alt="主要特征"></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">firewall-cmd --zone<span class="token operator">=</span>public --permanent --add-port<span class="token operator">=</span><span class="token number">8080</span>/tcp
+firewall-cmd --zone<span class="token operator">=</span>public --permanent --add-port<span class="token operator">=</span><span class="token number">8719</span>/tcp
+firewall-cmd --zone<span class="token operator">=</span>public --permanent --add-port<span class="token operator">=</span><span class="token number">8720</span>/tcp
+firewall-cmd --reload
+firewall-cmd --list-all
 
+java -jar sentinel-dashboard-1.8.1.jar
+<span class="token comment"># 后台启动</span>
+<span class="token function">nohup</span> java -jar sentinel-dashboard-1.8.1.jar
+<span class="token comment"># 官网说可以用</span>
+
+-Dserver.port<span class="token operator">=</span><span class="token number">8480</span> <span class="token comment"># 指定控制台的端口为8480</span>
+ 
+-Dcsp.sentinel.dashboard.server<span class="token operator">=</span>localhost:8480 <span class="token comment"># 指定要被哪个控制台监控（这里指定的是自己监控自己）</span>
+ 
+-Dproject.name<span class="token operator">=</span>sentinel-dashboard <span class="token comment"># 指定实例名称（名称会在控制台左侧以菜单显示）</span>
+ 
+-Dsentinel.dashboard.auth.username<span class="token operator">=</span>sentinel <span class="token comment"># 设置登录的帐号为：sentinel</span>
+ 
+-Dsentinel.dashboard.auth.password<span class="token operator">=</span><span class="token number">123456</span> <span class="token comment"># 设置登录的密码为：123456</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我这个sentinel是部署在服务器端的</p>
+<blockquote>
+<p>sentinel部署到本地会好一点，端口可以直接访问，部署到服务器端，Sentinel访问本地找不到，我这里做了内网穿透；<strong>可以用，好使</strong></p>
+</blockquote>
+<p>映射地图</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>本地端口</th>
+<th>服务器映射端口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>127.0.0.1:8401</td>
+<td>101.200.40.242:18401</td>
+</tr>
+<tr>
+<td></td>
+<td>127.0.0.1:8719</td>
+<td>101.200.40.242:18719</td>
+</tr>
+</tbody></table>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><h2 id="规则简介"><a href="#规则简介" class="headerlink" title="规则简介"></a>规则简介</h2><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031102398.png" alt="image-20230803110228279"></p>
+<p>application.yml</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">server:
+  port: 8401
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 101.200.40.242:18848
+    sentinel:
+      transport:
+        dashboard: 101.200.40.242:8080
+        port: 8719
+        clientIp: 101.200.40.242:18719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 101.200.40.242:18848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>SentinelMain8401.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@SpringBootApplication</span>
+<span class="token annotation punctuation">@EnableDiscoveryClient</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SentinelMain8401</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">SentinelMain8401</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span>args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>FlowLimitController.java</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FlowLimitController</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/testA"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"-------------testA"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/testB"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t"</span><span class="token operator">+</span><span class="token string">".....testB"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token string">"-----------testB"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="配置规则"><a href="#配置规则" class="headerlink" title="配置规则"></a>配置规则</h2><h3 id="QPS限流"><a href="#QPS限流" class="headerlink" title="QPS限流"></a>QPS限流</h3><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031057291.png" alt="image-20230803105759196"></p>
+<table>
+<thead>
+<tr>
+<th>正常</th>
+<th>限流</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031056174.png" alt="image-20230803105627020"></td>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031056279.png" alt="image-20230803105611151"></td>
+</tr>
+</tbody></table>
+<h3 id="线程限流"><a href="#线程限流" class="headerlink" title="线程限流"></a>线程限流</h3><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031105607.png" alt="image-20230803110557535"></p>
+<h3 id="关联限流"><a href="#关联限流" class="headerlink" title="关联限流"></a>关联限流</h3><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031105071.png" alt="image-20230803110502971"></p>
+<p>通过postman 设置20个线程每0.3秒访问一下testB；然后testA就会被限流</p>
+<p>设置postman</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031129094.png" alt="image-20230803112905941"></p>
+<p>访问testA</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031126223.png" alt="image-20230803112608987"></p>
+<h3 id="流控-预热"><a href="#流控-预热" class="headerlink" title="流控 预热"></a>流控 预热</h3><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031130734.png" alt="image-20230803113039606"></p>
+<h3 id="排队等待"><a href="#排队等待" class="headerlink" title="排队等待"></a>排队等待</h3><p><img src="C:/Users/14174/AppData/Roaming/Typora/typora-user-images/image-20230803113333716.png" alt="image-20230803113333716"></p>
+<h3 id="Sentinel降级"><a href="#Sentinel降级" class="headerlink" title="Sentinel降级"></a>Sentinel降级</h3><h4 id="RT"><a href="#RT" class="headerlink" title="RT"></a>RT</h4><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031139453.png" alt="image-20230803113943236"></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">-Dcsp.sentinel.statistic.max.rt<span class="token operator">=</span>XXX<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>jmeter设置</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031202642.png" alt="image-20230803120212494"></td>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031202632.png" alt="image-20230803120244455"></td>
+</tr>
+</tbody></table>
+<p>控制台输出</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031200810.png" alt="image-20230803120040219"></p>
+<p>浏览器输出</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031201089.png"></p>
+<p>关闭jemter10个线程之后，可以正常访问</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031203721.png" alt="image-20230803120349613"></p>
+<h4 id="异常比例"><a href="#异常比例" class="headerlink" title="异常比例"></a>异常比例</h4><p>更改controller中的方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/testD"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testD</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">try</span><span class="token punctuation">{</span>
+        <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> age<span class="token operator">=</span><span class="token number">10</span><span class="token operator">/</span><span class="token number">0</span><span class="token punctuation">;</span>
+    log<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">"testD异常比例"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token string">"----------testD"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>设置降级规则</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031403812.png" alt="image-20230803140344057"></p>
+<p>开启jmeter</p>
+<p>访问浏览器</p>
+<p><img src="C:/Users/14174/AppData/Roaming/Typora/typora-user-images/image-20230803140552408.png" alt="image-20230803140552408"></p>
+<h4 id="异常比数"><a href="#异常比数" class="headerlink" title="异常比数"></a>异常比数</h4><p>添加配置</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031407398.png" alt="image-20230803140724257"></p>
+<p>访问超过五次就会报错</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031410842.png" alt="image-20230803141055737"></p>
+<h3 id="Sentinel-热点-key"><a href="#Sentinel-热点-key" class="headerlink" title="Sentinel 热点 key"></a>Sentinel 热点 key</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/testHotKey"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"testHotKey"</span><span class="token punctuation">,</span>blockHandler <span class="token operator">=</span> <span class="token string">"deal_testHotKey"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">testHotKey</span><span class="token punctuation">(</span>
+    <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"p1"</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token class-name">String</span> p1<span class="token punctuation">,</span>
+    <span class="token annotation punctuation">@RequestParam</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"p2"</span><span class="token punctuation">,</span>required <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token class-name">String</span> p2
+<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"----------------testHotKey"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">deal_testHotKey</span><span class="token punctuation">(</span><span class="token class-name">String</span> p1<span class="token punctuation">,</span> <span class="token class-name">String</span> p2<span class="token punctuation">,</span> <span class="token class-name">BlockException</span> exception<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">"----------------deal_testHotKey"</span><span class="token punctuation">;</span><span class="token comment">//sentinel 系统默认的提示 Blocked by Sentinel (flow limiting)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>添加配置</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031419033.png" alt="image-20230803141900860"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031420715.png" alt="image-20230803142032614"></td>
+<td><img src="C:/Users/14174/AppData/Roaming/Typora/typora-user-images/image-20230803142015199.png" alt="image-20230803142015199"></td>
+</tr>
+</tbody></table>
+<h4 id="当参数为5的时候，限流阈值为200"><a href="#当参数为5的时候，限流阈值为200" class="headerlink" title="当参数为5的时候，限流阈值为200"></a>当参数为5的时候，限流阈值为200</h4><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031424607.png" alt="image-20230803142449431"></p>
+<table>
+<thead>
+<tr>
+<th>当参数不为5时，多次点击</th>
+<th>参数时5时，多次点击</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031425971.png" alt="image-20230803142557877"></td>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031426125.png" alt="image-20230803142631042"></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意：</p>
+<p>​    @SentinelResource</p>
+<p>​    处理的是sentinel控制台配置的违规情况，有回调方法配置的兜底处理</p>
+<p>运行时异常 @SentinelResource是不管</p>
+</blockquote>
+<h3 id="Sentinel-系统规则"><a href="#Sentinel-系统规则" class="headerlink" title="Sentinel 系统规则"></a>Sentinel 系统规则</h3><p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031431395.png" alt="image-20230803143139227"></p>
+<h3 id="Sentinel-Resource-配置"><a href="#Sentinel-Resource-配置" class="headerlink" title="Sentinel Resource 配置"></a>Sentinel Resource 配置</h3><h4 id="按资源名称限流-后续处理"><a href="#按资源名称限流-后续处理" class="headerlink" title="按资源名称限流+后续处理"></a>按资源名称限流+后续处理</h4><p>创建新的controller</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>
+<span class="token annotation punctuation">@Slf4j</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RateLimitController</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/byResource"</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"byResource"</span><span class="token punctuation">,</span>blockHandler <span class="token operator">=</span> <span class="token string">"handleException"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">byResource</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token string">"按资源名称限流测试OK"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Payment</span><span class="token punctuation">(</span><span class="token number">2023L</span><span class="token punctuation">,</span><span class="token string">"serial001"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">handleException</span><span class="token punctuation">(</span><span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">444</span><span class="token punctuation">,</span>e<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getCanonicalName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"\t 服务不可用"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>访问/byResource</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031439917.png" alt="image-20230803143942794"></p>
+<p>配置流控规则</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031442048.png" alt="image-20230803144206876"></p>
+<p>限流</p>
+<p><img src="C:/Users/14174/AppData/Roaming/Typora/typora-user-images/image-20230803144253860.png" alt="image-20230803144253860"></p>
+<h4 id="按url地址限流-后续处理"><a href="#按url地址限流-后续处理" class="headerlink" title="按url地址限流+后续处理"></a>按url地址限流+后续处理</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"/rateLimit/byUrl"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"byUrl"</span><span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">byUrl</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token string">"按URL地址限流测试OK"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Payment</span><span class="token punctuation">(</span><span class="token number">2023L</span><span class="token punctuation">,</span><span class="token string">"serial002"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>访问/rateLimit/byUrl</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031446532.png" alt="image-20230803144638423"></p>
+<p>添加配置</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031448892.png" alt="image-20230803144809705"></p>
+<p>再次访问，并多次刷新；能访问到和不能访问</p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031448435.png" alt="image-20230803144856348"></p>
+<h3 id="自定义限流处理逻辑"><a href="#自定义限流处理逻辑" class="headerlink" title="自定义限流处理逻辑"></a>自定义限流处理逻辑</h3><p>创建CustomerBlockHandler类用于自定义限流处理逻辑</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomerBlockHandler</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">handlerEXception</span><span class="token punctuation">(</span><span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">444</span><span class="token punctuation">,</span><span class="token string">"自定义限流处理信息1   -----1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">CommonResult</span> <span class="token function">handlerEXception2</span><span class="token punctuation">(</span><span class="token class-name">BlockException</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">444</span><span class="token punctuation">,</span><span class="token string">"自定义限流处理信息2   ------2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"rateLimit/customerBlockHandler"</span><span class="token punctuation">)</span>
+<span class="token annotation punctuation">@SentinelResource</span><span class="token punctuation">(</span>value <span class="token operator">=</span><span class="token string">"customerBlockHandler"</span><span class="token punctuation">,</span>
+                  blockHandlerClass <span class="token operator">=</span> <span class="token class-name">CustomerBlockHandler</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span><span class="token comment">//指定处理方法类型</span>
+                  blockHandler <span class="token operator">=</span> <span class="token string">"handlerEXception"</span><span class="token comment">//指定处理方法函数</span>
+                 <span class="token punctuation">)</span>
+<span class="token keyword">public</span> <span class="token class-name">CommonResult</span> <span class="token function">customerBlockHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CommonResult</span><span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token string">"客户自定义限流处理逻辑"</span><span class="token punctuation">,</span><span class="token keyword">new</span> <span class="token class-name">Payment</span><span class="token punctuation">(</span><span class="token number">2023L</span><span class="token punctuation">,</span><span class="token string">"serial003"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>访问/rateLimit/customerBlockHandler</p>
+<p>添加配置</p>
+<p><img src="C:/Users/14174/AppData/Roaming/Typora/typora-user-images/image-20230803150017356.png" alt="image-20230803150017356"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031459890.png" alt="image-20230803145925760"></td>
+<td><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031459192.png" alt="image-20230803145941074"></td>
+</tr>
+</tbody></table>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
                 
             </div>
             <hr/>
@@ -611,7 +895,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/">http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/</a>
+                    <a href="http://userlyz.github.io/2023/08/03/sentinel-rong-duan-yu-xian-liu/">http://userlyz.github.io/2023/08/03/sentinel-rong-duan-yu-xian-liu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -649,8 +933,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">学习总结</span>
+                                <a href="/tags/cloud/">
+                                    <span class="chip bg-color">cloud</span>
                                 </a>
                             
                         </div>
@@ -824,13 +1108,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/07/05/xue-xi-0705-vue-xue-xi/">
+                <a href="/2023/08/03/fen-bu-shi-shi-wu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Vue学习">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="分布式事务">
                         
-                        <span class="card-title">Vue学习</span>
+                        <span class="card-title">分布式事务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -841,7 +1125,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-03
                         </span>
                         <span class="publish-author">
                             
@@ -854,8 +1138,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">Vue学习</span>
+                    <a href="/tags/cloud/">
+                        <span class="chip bg-color">cloud</span>
                     </a>
                     
                 </div>
@@ -869,13 +1153,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/06/28/java-xiang-mu-zhi-zhong-chou-xiang-mu/">
+                <a href="/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="java项目之众筹项目">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="nacos2.2.0+nginx1.14.1-三台集群搭建">
                         
-                        <span class="card-title">java项目之众筹项目</span>
+                        <span class="card-title">nacos2.2.0+nginx1.14.1-三台集群搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -886,7 +1170,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-06-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-02
                             </span>
                         <span class="publish-author">
                             
@@ -899,8 +1183,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E9%A1%B9%E7%9B%AE/">
-                        <span class="chip bg-color">java项目</span>
+                    <a href="/tags/cloud/">
+                        <span class="chip bg-color">cloud</span>
                     </a>
                     
                 </div>

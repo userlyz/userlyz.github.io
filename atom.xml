@@ -6,7 +6,7 @@
   <link href="http://userlyz.github.io/atom.xml" rel="self"/>
   
   <link href="http://userlyz.github.io/"/>
-  <updated>2023-08-02T14:36:47.210Z</updated>
+  <updated>2022-11-04T10:03:19.071Z</updated>
   <id>http://userlyz.github.io/</id>
   
   <author>
@@ -17,11 +17,103 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://userlyz.github.io/2023/08/03/minio-ji-qun-da-jian/"/>
+    <id>http://userlyz.github.io/2023/08/03/minio-ji-qun-da-jian/</id>
+    <published>2023-08-03T07:06:22.696Z</published>
+    <updated>2022-11-04T10:03:19.071Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://userlyz.github.io/2023/08/03/java-xue-xi-zhi-java-gao-ji/"/>
+    <id>http://userlyz.github.io/2023/08/03/java-xue-xi-zhi-java-gao-ji/</id>
+    <published>2023-08-03T07:06:22.543Z</published>
+    <updated>2023-02-13T13:06:01.795Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;[TOC]&lt;/p&gt;
+&lt;h1 id=&quot;IO-Input-amp-amp-Output&quot;&gt;&lt;a href=&quot;#IO-Input-amp-amp-Output&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>分布式事务</title>
+    <link href="http://userlyz.github.io/2023/08/03/fen-bu-shi-shi-wu/"/>
+    <id>http://userlyz.github.io/2023/08/03/fen-bu-shi-shi-wu/</id>
+    <published>2023-08-03T07:03:17.000Z</published>
+    <updated>2023-08-03T07:17:47.244Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Seata&quot;&gt;&lt;a href=&quot;#Seata&quot; class=&quot;headerlink&quot; title=&quot;Seata&quot;&gt;&lt;/a&gt;Seata&lt;/h1&gt;&lt;p&gt;在数据库中存储数据        创建seata数据库&lt;/p&gt;
+&lt;pre class=&quot;line-numbers</summary>
+        
+      
+    
+    
+    
+    
+    <category term="cloud" scheme="http://userlyz.github.io/tags/cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sentinel熔断与限流</title>
+    <link href="http://userlyz.github.io/2023/08/03/sentinel-rong-duan-yu-xian-liu/"/>
+    <id>http://userlyz.github.io/2023/08/03/sentinel-rong-duan-yu-xian-liu/</id>
+    <published>2023-08-03T01:10:19.000Z</published>
+    <updated>2023-08-03T07:22:37.019Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Sentinel&quot;&gt;&lt;a href=&quot;#Sentinel&quot; class=&quot;headerlink&quot; title=&quot;Sentinel&quot;&gt;&lt;/a&gt;Sentinel&lt;/h1&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    
+    <category term="cloud" scheme="http://userlyz.github.io/tags/cloud/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nacos2.2.0+nginx1.14.1-三台集群搭建</title>
     <link href="http://userlyz.github.io/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/"/>
     <id>http://userlyz.github.io/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/</id>
     <published>2023-08-02T12:45:53.000Z</published>
-    <updated>2023-08-02T14:36:47.210Z</updated>
+    <updated>2023-08-03T07:28:33.941Z</updated>
     
     
       
@@ -34,6 +126,8 @@
     
     
     
+    
+    <category term="cloud" scheme="http://userlyz.github.io/tags/cloud/"/>
     
   </entry>
   
@@ -191,8 +285,8 @@
   
   <entry>
     <title>Vue学习</title>
-    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/"/>
-    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/</id>
+    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705/vue-xue-xi/"/>
+    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705/vue-xue-xi/</id>
     <published>2023-07-05T11:33:52.000Z</published>
     <updated>2023-07-10T13:26:19.374Z</updated>
     
@@ -214,8 +308,8 @@
   
   <entry>
     <title>学习总结</title>
-    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/"/>
-    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705-xue-xi-zong-jie/</id>
+    <link href="http://userlyz.github.io/2023/07/05/xue-xi-0705/xue-xi-zong-jie/"/>
+    <id>http://userlyz.github.io/2023/07/05/xue-xi-0705/xue-xi-zong-jie/</id>
     <published>2023-07-05T11:29:33.000Z</published>
     <updated>2023-07-06T01:30:17.467Z</updated>
     
@@ -298,27 +392,6 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://userlyz.github.io/2022/11/04/minio-ji-qun-da-jian/"/>
-    <id>http://userlyz.github.io/2022/11/04/minio-ji-qun-da-jian/</id>
-    <published>2022-11-04T10:00:09.141Z</published>
-    <updated>2022-11-04T10:03:19.071Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>java项目之瑞吉外卖</title>
     <link href="http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/"/>
     <id>http://userlyz.github.io/2022/09/27/java-xiang-mu-zhi-rui-ji-wai-mai/</id>
@@ -387,80 +460,6 @@
     
     
     <category term="java面试题" scheme="http://userlyz.github.io/tags/java%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java面试题</title>
-    <link href="http://userlyz.github.io/2022/08/08/java-mian-shi-ti/"/>
-    <id>http://userlyz.github.io/2022/08/08/java-mian-shi-ti/</id>
-    <published>2022-08-08T03:05:26.000Z</published>
-    <updated>2022-08-18T08:57:00.177Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1e34y1J7ve&quot;&gt;视频地址&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;java基础&quot;&gt;&lt;a href=&quot;#java基础&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>力扣做题笔记</title>
-    <link href="http://userlyz.github.io/2022/07/28/li-kou-zuo-ti-bi-ji/"/>
-    <id>http://userlyz.github.io/2022/07/28/li-kou-zuo-ti-bi-ji/</id>
-    <published>2022-07-28T08:08:43.000Z</published>
-    <updated>2022-07-30T02:34:59.692Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h1 id=&quot;做题记录&quot;&gt;&lt;a href=&quot;#做题记录&quot; class=&quot;headerlink&quot; title=&quot;做题记录&quot;&gt;&lt;/a&gt;做题记录&lt;/h1&gt;&lt;p&gt;从基础简单的题开始&lt;/p&gt;
-&lt;h1 id=&quot;简单题&quot;&gt;&lt;a href=&quot;#简单题&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="java学习" scheme="http://userlyz.github.io/tags/java%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/"/>
-    <id>http://userlyz.github.io/2022/07/13/java-xue-xi-zhi-java-gao-ji/</id>
-    <published>2022-07-13T11:19:10.831Z</published>
-    <updated>2023-02-13T13:06:01.795Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;hr&gt;
-&lt;hr&gt;
-&lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h1 id=&quot;IO-Input-amp-amp-Output&quot;&gt;&lt;a href=&quot;#IO-Input-amp-amp-Output&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
     
   </entry>
   

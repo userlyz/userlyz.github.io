@@ -539,9 +539,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/cloud/">
+                                <span class="chip bg-color">cloud</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -639,25 +643,25 @@ java -version<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 </tr>
 </thead>
 <tbody><tr>
-<td>Nacos_ali_1：101.*.*.242（nacos）</td>
+<td>Nacos_ali_1：101.200.40.242（nacos）</td>
 <td>8848</td>
 <td>9848</td>
 <td>9849</td>
 </tr>
 <tr>
-<td>Nacos_ali_2：49.*.*2.36(naocs)</td>
+<td>Nacos_ali_2：49.232.522.36(naocs)</td>
 <td>8848</td>
 <td>9848</td>
 <td>9849</td>
 </tr>
 <tr>
-<td>Nacos_qq_1：121.*.*.66(nacos)</td>
+<td>Nacos_qq_1：121.41.171.66(nacos)</td>
 <td>8848</td>
 <td>9848</td>
 <td>9849</td>
 </tr>
 <tr>
-<td>Nginx：101.*.*.242（nginx)</td>
+<td>Nginx：101.200.40.242（nginx)</td>
 <td>18848</td>
 <td>19848</td>
 <td>19849</td>
@@ -684,7 +688,7 @@ java -version<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <p>随便找一台已经运行的服务器可以看出</p>
 <p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308022200497.png" alt="image-20230802220033372"></p>
 <h3 id="接下来就是最坑的nginx对已经安装Nacos服务的进行负载均衡"><a href="#接下来就是最坑的nginx对已经安装Nacos服务的进行负载均衡" class="headerlink" title="接下来就是最坑的nginx对已经安装Nacos服务的进行负载均衡"></a>接下来就是最坑的nginx对已经安装Nacos服务的进行负载均衡</h3><blockquote>
-<p><strong>我这个并没有设置raft</strong></p>
+<p><strong>我这个并没有设置raft,后边添加了raft,也不知道配好了没，添不添加raft，nginx都可以负载均衡，等后边有时间在测试一下</strong></p>
 <p>粘贴代码的时候注意进行*的替换</p>
 <p>坑点:</p>
 <ol>
@@ -693,7 +697,7 @@ java -version<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 <li>gRPC 端口： gRPC 是一种高性能、开源的 RPC 框架，它支持多种编程语言，并且在 Nacos 中被用于内部节点之间的通信。gRPC 端口用于 Nacos 各个节点之间进行高效的、二进制的通信，如节点注册、心跳等。</li>
 </ol>
 </blockquote>
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308022211744.png" alt="image-20230802221122622"></p>
+<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308022211744.png" alt="官网截图"></p>
 <pre class="line-numbers language-conf" data-language="conf"><code class="language-conf">user nginx;
 worker_processes auto;
 error_log /var/log/nginx/error.log;
@@ -779,6 +783,10 @@ stream {
 <h2 id="2、-nginx配置文件问题"><a href="#2、-nginx配置文件问题" class="headerlink" title="2、 nginx配置文件问题"></a>2、 nginx配置文件问题</h2><p>用的nacos2.2.0没有想到引入了新的raft和grpc协议，要多开放几个节点</p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/padazala/p/17353132.html">Nginx + Nacos2.x集群配置 - 二先森 - 博客园 (cnblogs.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://nacos.io/zh-cn/docs/v2/upgrading/2.0.0-compatibility.html">Nacos 2.0.0 兼容性文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_35040959/article/details/126126865">Nacos 原理 Jraft Distro Grpc 持续跟新中…_nacos jraft_不学会Ⅳ的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/whgk/p/14616247.html">Nacos 2.0 正式发布，性能提升了 10 倍！！ - 有梦想的老王 - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21046665/article/details/120722942">超高性能rpc框架之gRPC 快速整合gRPC+nacos+springCloud_nacos grpc_川哟的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.aliyun.com/article/780680">支持 gRPC 长链接，深度解读 Nacos 2.0 架构设计及新模型-阿里云开发者社区 (aliyun.com)</a></p>
 <h1 id=""><a href="#" class="headerlink" title=""></a></h1>
                 
             </div>
@@ -842,7 +850,11 @@ stream {
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/cloud/">
+                                    <span class="chip bg-color">cloud</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -1010,18 +1022,17 @@ stream {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/">
+                <a href="/2023/08/03/sentinel-rong-duan-yu-xian-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="nacos2.2.0+nginx1.14.1-三台集群搭建">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Sentinel熔断与限流">
                         
-                        <span class="card-title">nacos2.2.0+nginx1.14.1-三台集群搭建</span>
+                        <span class="card-title">Sentinel熔断与限流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1031,9 +1042,9 @@ stream {
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-03
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1042,7 +1053,14 @@ stream {
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/cloud/">
+                        <span class="chip bg-color">cloud</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

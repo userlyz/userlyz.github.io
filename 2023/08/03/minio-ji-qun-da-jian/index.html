@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue学习, 毛豆人很逗">
+    <meta name="keywords" content="毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue学习 | 毛豆人很逗</title>
+    <title>毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue学习</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -539,13 +539,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Vue%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">Vue学习</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -557,7 +553,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-07-05
+                    2023-08-03
                 </div>
                 
 
@@ -581,208 +577,87 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Vue动态路由加载"><a href="#Vue动态路由加载" class="headerlink" title="Vue动态路由加载"></a>Vue动态路由加载</h1><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
-<span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router'</span>
-<span class="token keyword">import</span> Login <span class="token keyword">from</span> <span class="token string">'../views/Login'</span>
-<span class="token keyword">import</span> index <span class="token keyword">from</span> <span class="token string">'../views/Index.vue'</span>
-<span class="token keyword">import</span> userShow <span class="token keyword">from</span> <span class="token string">'../views/user/show.vue'</span>
-<span class="token keyword">import</span> userBack <span class="token keyword">from</span> <span class="token string">'../views/user/back.vue'</span>
-<span class="token keyword">import</span> userShowBackBook <span class="token keyword">from</span> <span class="token string">'../views/user/ShowBackBook'</span>
-<span class="token keyword">import</span> userShowReserveBook <span class="token keyword">from</span> <span class="token string">'../views/user/ShowReserveBook'</span>
-<span class="token keyword">import</span> adminShow <span class="token keyword">from</span> <span class="token string">'../views/admin/Show'</span>
-<span class="token keyword">import</span> adminBackBooks <span class="token keyword">from</span> <span class="token string">'../views/admin/BackBooks'</span>
-<span class="token keyword">import</span> adminShowREserveBook <span class="token keyword">from</span> <span class="token string">'../views/admin/ShowReserveBook'</span>
-<span class="token keyword">import</span> sysadminShowUser <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/ShowUser'</span>
-<span class="token keyword">import</span> sysadminShow <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/Show'</span>
-<span class="token keyword">import</span> sortFindAll <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/sortFindAll'</span>
-<span class="token keyword">import</span> Book <span class="token keyword">from</span> <span class="token string">'../views/user/book'</span>
-<span class="token keyword">import</span> addUser <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/addUser'</span>
-<span class="token keyword">import</span> sysAdminBook <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/add'</span>
-<span class="token keyword">import</span> addSort <span class="token keyword">from</span> <span class="token string">'../views/sysadmin/addSort'</span>
+                <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Pv411679M/?is_story_h5=false&amp;p=1&amp;share_from=ugc&amp;share_medium=iphone&amp;share_plat=ios&amp;share_session_id=9BE3E6D5-E6BC-4A40-AC2A-B2F821AA5E80&amp;share_source=QQ&amp;share_tag=s_i&amp;timestamp=1667534094&amp;unique_k=z1tzNID">MINIO系列之二：部署MINIO4节点分布式服务并用nginx做Web负载均衡_哔哩哔哩_bilibili</a></p>
+<pre class="line-numbers language-note" data-language="note"><code class="language-note">下载minioe
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
 
-Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span>
+查看minio等级
+minio --version
 
-<span class="token keyword">const</span> routes <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/login'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'login'</span><span class="token punctuation">,</span>
-    hidden<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> Login
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-<span class="token keyword">const</span> navUser <span class="token operator">=</span> <span class="token punctuation">{</span>
-  path<span class="token operator">:</span> <span class="token string">'/user'</span><span class="token punctuation">,</span>
-  name<span class="token operator">:</span> <span class="token string">'书籍管理'</span><span class="token punctuation">,</span>
-  component<span class="token operator">:</span> index<span class="token punctuation">,</span>
-  redirect<span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
-  children<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/userShow'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'书籍查询'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> userShow
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/user/back'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'书籍借阅'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> userBack
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/user/showBackBook'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'书籍归还'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> userShowBackBook
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/user/ShowReserveBook'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'书籍预定'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> userShowReserveBook
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/book'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'book'</span><span class="token punctuation">,</span>
-      hidden<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> Book
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">const</span> navAdmin <span class="token operator">=</span> <span class="token punctuation">{</span>
-  path<span class="token operator">:</span> <span class="token string">'/admin'</span><span class="token punctuation">,</span>
-  name<span class="token operator">:</span> <span class="token string">'书籍处理'</span><span class="token punctuation">,</span>
-  component<span class="token operator">:</span> index<span class="token punctuation">,</span>
-  redirect<span class="token operator">:</span> <span class="token string">'/admin/show'</span><span class="token punctuation">,</span>
-  children<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/admin/show'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'借书处理'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> adminShow
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/admin/backBooks'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'归还处理'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> adminBackBooks
-    <span class="token punctuation">}</span><span class="token punctuation">,</span>
-    <span class="token punctuation">{</span>
-      path<span class="token operator">:</span> <span class="token string">'/admin/ShowReserveBook'</span><span class="token punctuation">,</span>
-      name<span class="token operator">:</span> <span class="token string">'预定处理'</span><span class="token punctuation">,</span>
-      component<span class="token operator">:</span> adminShowREserveBook
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">const</span> navSysAdmin <span class="token operator">=</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'系统管理'</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> index<span class="token punctuation">,</span>
-    redirect<span class="token operator">:</span> <span class="token string">'/index'</span><span class="token punctuation">,</span>
-    children<span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/sysadminShowUser'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token string">'用户管理'</span><span class="token punctuation">,</span>
-        component<span class="token operator">:</span> sysadminShowUser
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/sysadminShow'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token string">'书籍管理'</span><span class="token punctuation">,</span>
-        component<span class="token operator">:</span> sysadminShow
-      <span class="token punctuation">}</span><span class="token punctuation">,</span>
-      <span class="token punctuation">{</span>
-        path<span class="token operator">:</span> <span class="token string">'/sortFindAll'</span><span class="token punctuation">,</span>
-        name<span class="token operator">:</span> <span class="token string">'类别管理'</span><span class="token punctuation">,</span>
-        component<span class="token operator">:</span> sortFindAll
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/addUser'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'添加用户'</span><span class="token punctuation">,</span>
-    hidden<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> addUser
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/sysAdminBook'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'添加用户'</span><span class="token punctuation">,</span>
-    hidden<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> sysAdminBook
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    path<span class="token operator">:</span> <span class="token string">'/addSort'</span><span class="token punctuation">,</span>
-    name<span class="token operator">:</span> <span class="token string">'添加分类'</span><span class="token punctuation">,</span>
-    hidden<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    component<span class="token operator">:</span> addSort
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
+firewall-cmd --permanent --zone=public --add-port=9000/tcp
+firewall-cmd --reload
+firewall-cmd --list-all
 
-<span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  mode<span class="token operator">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>
-  base<span class="token operator">:</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">BASE_URL</span><span class="token punctuation">,</span>
-  routes
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">var</span> userRole <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span><span class="token string">'userRole'</span><span class="token punctuation">)</span>
-<span class="token function">alert</span><span class="token punctuation">(</span>userRole<span class="token punctuation">)</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>userRole <span class="token operator">===</span> <span class="token string">'user'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>navUser<span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userRole <span class="token operator">===</span> <span class="token string">'admin'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>navAdmin<span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>userRole <span class="token operator">===</span> <span class="token string">'sysAdmin'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  router<span class="token punctuation">.</span><span class="token function">addRoutes</span><span class="token punctuation">(</span>navSysAdmin<span class="token punctuation">)</span>
-<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'没有用户权限信息'</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-<span class="token comment">// 登录拦截器</span>
-router<span class="token punctuation">.</span><span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">to<span class="token punctuation">,</span> <span class="token keyword">from</span><span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>to<span class="token punctuation">.</span>path <span class="token operator">!==</span> <span class="token string">'/login'</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>userRole<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token function">next</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> router
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-vue" data-language="vue"><code class="language-vue">&lt;!-- eslint-disable vue/multi-word-component-names --&gt;
-&lt;template&gt;
-    &lt;div&gt;
-        &lt;el-container style="height: 500px; border: 1px solid #eee"&gt;
-            &lt;el-aside width="200px" style="background-color: rgb(238, 241, 246)"&gt;
-                &lt;el-menu router&gt;
-                    &lt;el-submenu
-                        v-bind="item"
-                        :key="item"
-                        v-for="item in $router.options.routes"
-                        :index="item.path"
-                    &gt;
-                        &lt;template slot="title"&gt;
-                            &lt;i class="el-icon-setting"&gt;&lt;/i&gt;
-                            {{item.name}}
-                        &lt;/template&gt;
-                        &lt;el-menu-item
-                            :key="item2"
-                            v-for="item2 in item.children"
-                            :index="item2.path"
-                        &gt;{{item2.name}}&lt;/el-menu-item&gt;
-                    &lt;/el-submenu&gt;
-                &lt;/el-menu&gt;
-            &lt;/el-aside&gt;
-            &lt;el-container&gt;
-                &lt;el-header style="text-align: right; font-size: 12px"&gt;
-                    &lt;el-dropdown&gt;
-                        &lt;i class="el-icon-setting" style="margin-right: 15px"&gt;&lt;/i&gt;
-                        &lt;el-dropdown-menu slot="dropdown"&gt;
-                            &lt;el-dropdown-item&gt;查看&lt;/el-dropdown-item&gt;
-                            &lt;el-dropdown-item&gt;新增&lt;/el-dropdown-item&gt;
-                            &lt;el-dropdown-item&gt;删除&lt;/el-dropdown-item&gt;
-                        &lt;/el-dropdown-menu&gt;
-                    &lt;/el-dropdown&gt;
-                    &lt;span&gt;王小虎&lt;/span&gt;
 
-                &lt;/el-header&gt;
-                &lt;el-main&gt;
-                    &lt;router-view&gt;&lt;/router-view&gt;
-                &lt;/el-main&gt;
-            &lt;/el-container&gt;
-        &lt;/el-container&gt;
-    &lt;/div&gt;
-&lt;/template&gt;
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+vi /etc/hosts
+192.168.1.101 minio-node-101
+192.168.1.102 minio-node-102
+192.168.1.103 minio-node-103
+192.168.1.104 minio-node-104
+
+hostnamectl set-hostname minio-node-101
+
+
+测试hosts的连通性
+ping minio-node-1
+
+修改系统最大文件数
+echo "* soft nofile 65535" &gt;&gt; /etc/security/limits.conf
+echo "* hard nofile 65535" &gt;&gt; /etc/security/limits.conf
+
+
+步骤二
+1、每台虚拟机创建四个存储目录用于提供存储空间
+*这下一步之前需要看问题 ①
+mkdir /data/data1 /data/data2 /data/data3 /data/data4
+chmod 777 /data/data1
+chmod 777 /data/data2
+chmod 777 /data/data3
+chmod 777 /data/data4
+
+2、设置自定义密钥
+export MINIO_ACCESS_KEY=minio2022
+export MINIO_SECRET_KEY=test123lyz
+3、在每台虚拟机上运行下列命令启动多节点分布式环境
+minio server http://minio-node-{101...104}/data/data{1...4}
+4、客户端程序mc简单测试
+mc  config host add minio http://mminio-node-1:9000 minio2022 test123lyz
+mc mb minio/media  #创建桶
+mc cp ~/Downloads/BatFriend.mp4 minio/media #上传mp4
+mc ls minio/media # 上传结果
+
+
+
+步骤三
+配置nginx负载均衡，指定8088端口访问：
+1、安装nginx并在防火墙打开8088端口：
+	
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>1，不能在根目录</p>
+<pre class="line-numbers language-none"><code class="language-none">启动报错
+Drive `http://minio-node-104:9000/opt/data4` is part of root drive, will not be used (*errors.errorString)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>现在的 minio 版本强制要求不使用 root 根目录的磁盘。源码增加强制限制的时间是 Commits on Feb 13, 2022 (Always check for root disks unless MINIO_CI_CD is set)。因此要使得集群部署成功必须使用挂载非 root 盘的目录。</p>
+</blockquote>
+<p>问题提出：</p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/knshsg/blog/5559386">https://my.oschina.net/knshsg/blog/5559386</a></p>
+<p>问题拟解决：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50464560/article/details/115714884">(3条消息) 详解VMware虚拟机中添加新硬盘并挂载的方法_J0hnson666的博客-CSDN博客_虚拟机挂载硬盘</a></p>
+<pre class="line-numbers language-note" data-language="note"><code class="language-note">fdisk -l
+fdisk /dev/sdb
+m n 在设置那一部分全部直接点击回车，
+点完之后等下次需要输入m获取帮助的 输入w
+格式化：mkfs -t ext3 /dev/sdb1
+挂载 mkdir /data &amp;&amp; mount /dev/sdb1  /data
+自动挂载 vim /etc/fstab
+/dev/sdb1    /media（这个挂载的目录你自己设置即可）   ext3  defaults    0    1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -813,7 +688,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/">http://userlyz.github.io/2023/07/05/xue-xi-0705-vue-xue-xi/</a>
+                    <a href="http://userlyz.github.io/2023/08/03/minio-ji-qun-da-jian/">http://userlyz.github.io/2023/08/03/minio-ji-qun-da-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -850,11 +725,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Vue%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">Vue学习</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -1022,62 +893,18 @@ router<span class="token punctuation">.</span><span class="token function">befor
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/07/13/redis-xue-xi/">
+                <a href="/2023/08/03/minio-ji-qun-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="redis学习">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">redis学习</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            毛豆不逗比
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">Java学习</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/07/05/xue-xi-0705-xue-xi-zong-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="学习总结">
-                        
-                        <span class="card-title">学习总结</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1088,7 +915,7 @@ router<span class="token punctuation">.</span><span class="token function">befor
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-03
                             </span>
                         <span class="publish-author">
                             
@@ -1098,13 +925,43 @@ router<span class="token punctuation">.</span><span class="token function">befor
                         </span>
                     </div>
                 </div>
+
                 
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/">
-                        <span class="chip bg-color">学习总结</span>
-                    </a>
-                    
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/08/03/java-xue-xi-zhi-java-gao-ji/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            毛豆不逗比
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
