@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="分布式事务, 毛豆人很逗">
+    <meta name="keywords" content="minio安装及集群部署, 毛豆人很逗">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>分布式事务 | 毛豆人很逗</title>
+    <title>minio安装及集群部署 | 毛豆人很逗</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -420,12 +420,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">分布式事务</h1>
+                    <h1 class="description center-align post-title">minio安装及集群部署</h1>
                 </div>
             </div>
         </div>
@@ -541,8 +541,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/cloud/">
-                                <span class="chip bg-color">cloud</span>
+                            <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                <span class="chip bg-color">java学习</span>
                             </a>
                         
                     </div>
@@ -557,7 +557,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-08-03
+                    2023-07-28
                 </div>
                 
 
@@ -581,78 +581,92 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Seata"><a href="#Seata" class="headerlink" title="Seata"></a>Seata</h1><p>在数据库中存储数据        创建seata数据库</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> global_table<span class="token punctuation">;</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> global_table <span class="token punctuation">(</span>
-    xid <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    transaction_id <span class="token keyword">bigint</span><span class="token punctuation">,</span>
-    <span class="token keyword">status</span> <span class="token keyword">tinyint</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    application_id <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    transaction_service_group <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    transaction_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    timeout <span class="token keyword">int</span><span class="token punctuation">,</span>
-    begin_time <span class="token keyword">bigint</span><span class="token punctuation">,</span>
-    application_data <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    gmt_create <span class="token keyword">datetime</span><span class="token punctuation">,</span>
-    gmt_modified <span class="token keyword">datetime</span><span class="token punctuation">,</span>
-    <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>xid<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">key</span> idx_gmt_modified_status <span class="token punctuation">(</span>gmt_modified<span class="token punctuation">,</span> <span class="token keyword">status</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">key</span> idx_transaction_id <span class="token punctuation">(</span>transaction_id<span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> branch_table<span class="token punctuation">;</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> branch_table <span class="token punctuation">(</span>
-    branch_id <span class="token keyword">bigint</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    xid <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    transaction_id <span class="token keyword">bigint</span> <span class="token punctuation">,</span>
-    resource_group_id <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    resource_id <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    lock_key <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    branch_type <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    <span class="token keyword">status</span> <span class="token keyword">tinyint</span><span class="token punctuation">,</span>
-    client_id <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    application_data <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    gmt_create <span class="token keyword">datetime</span><span class="token punctuation">,</span>
-    gmt_modified <span class="token keyword">datetime</span><span class="token punctuation">,</span>
-    <span class="token keyword">primary</span> <span class="token keyword">key</span> <span class="token punctuation">(</span>branch_id<span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">key</span> idx_xid <span class="token punctuation">(</span>xid<span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Pv411679M/?is_story_h5=false&amp;p=1&amp;share_from=ugc&amp;share_medium=iphone&amp;share_plat=ios&amp;share_session_id=9BE3E6D5-E6BC-4A40-AC2A-B2F821AA5E80&amp;share_source=QQ&amp;share_tag=s_i&amp;timestamp=1667534094&amp;unique_k=z1tzNID">MINIO系列之二：部署MINIO4节点分布式服务并用nginx做Web负载均衡_哔哩哔哩_bilibili</a></p>
+<pre class="line-numbers language-note" data-language="note"><code class="language-note">下载minioe
+wget https://dl.min.io/server/minio/release/linux-amd64/minio
 
-<span class="token keyword">drop</span> <span class="token keyword">table</span> <span class="token keyword">if</span> <span class="token keyword">exists</span> lock_table<span class="token punctuation">;</span>
-<span class="token keyword">create</span> <span class="token keyword">table</span> lock_table <span class="token punctuation">(</span>
-    row_key <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">128</span><span class="token punctuation">)</span> <span class="token operator">not</span> <span class="token boolean">null</span><span class="token punctuation">,</span>
-    xid <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">96</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    transaction_id long <span class="token punctuation">,</span>
-    branch_id long<span class="token punctuation">,</span>
-    resource_id <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">256</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    table_name <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    pk <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">36</span><span class="token punctuation">)</span> <span class="token punctuation">,</span>
-    gmt_create <span class="token keyword">datetime</span> <span class="token punctuation">,</span>
-    gmt_modified <span class="token keyword">datetime</span><span class="token punctuation">,</span>
-    <span class="token keyword">primary</span> <span class="token keyword">key</span><span class="token punctuation">(</span>row_key<span class="token punctuation">)</span>
-<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+查看minio等级
+minio --version
 
-<p><img src="https://gitee.com/userlyz/imgs/raw/master/img/202308031517171.png" alt="image-20230803151743057"></p>
-<h2 id="Seata数据库准备"><a href="#Seata数据库准备" class="headerlink" title="Seata数据库准备"></a>Seata数据库准备</h2><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> seata_order<span class="token punctuation">;</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> seata_storage<span class="token punctuation">;</span>
-<span class="token keyword">CREATE</span> <span class="token keyword">DATABASE</span> seata_account<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+firewall-cmd --permanent --zone=public --add-port=9000/tcp
+firewall-cmd --reload
+firewall-cmd --list-all
 
-<p>在seata_order库下创建t_order表</p>
-<pre class="line-numbers language-sql" data-language="sql"><code class="language-sql"><span class="token keyword">create</span> <span class="token keyword">table</span> t_order<span class="token punctuation">(</span>
-    <span class="token string">'id'</span> <span class="token keyword">BIGINT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>
-    <span class="token string">'user_id'</span> <span class="token keyword">BIGINT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'用户id'</span><span class="token punctuation">,</span>
-    <span class="token string">'product_id'</span> <span class="token keyword">BIGINT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'产品id'</span><span class="token punctuation">,</span>
-    <span class="token string">'count'</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'数量'</span><span class="token punctuation">,</span>
-    <span class="token string">'money'</span> <span class="token keyword">DECIMAL</span><span class="token punctuation">(</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'金额'</span><span class="token punctuation">,</span>
-    <span class="token string">'status'</span> <span class="token keyword">INT</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">DEFAULT</span> <span class="token boolean">NULL</span> <span class="token keyword">COMMENT</span> <span class="token string">'订单状态：0：创建中；1：已完结'</span>
-<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span><span class="token operator">=</span><span class="token keyword">INNODB</span> <span class="token keyword">AUTO_INCREMENT</span><span class="token operator">=</span><span class="token number">7</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span><span class="token operator">=</span>utf8<span class="token punctuation">;</span>
 
-<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+vi /etc/hosts
+192.168.1.101 minio-node-101
+192.168.1.102 minio-node-102
+192.168.1.103 minio-node-103
+192.168.1.104 minio-node-104
+
+hostnamectl set-hostname minio-node-101
+
+
+测试hosts的连通性
+ping minio-node-1
+
+修改系统最大文件数
+echo "* soft nofile 65535" &gt;&gt; /etc/security/limits.conf
+echo "* hard nofile 65535" &gt;&gt; /etc/security/limits.conf
+
+
+步骤二
+1、每台虚拟机创建四个存储目录用于提供存储空间
+*这下一步之前需要看问题 ①
+mkdir /data/data1 /data/data2 /data/data3 /data/data4
+chmod 777 /data/data1
+chmod 777 /data/data2
+chmod 777 /data/data3
+chmod 777 /data/data4
+
+2、设置自定义密钥
+export MINIO_ACCESS_KEY=minio2022
+export MINIO_SECRET_KEY=test123lyz
+3、在每台虚拟机上运行下列命令启动多节点分布式环境
+minio server http://minio-node-{101...104}/data/data{1...4}
+4、客户端程序mc简单测试
+mc  config host add minio http://mminio-node-1:9000 minio2022 test123lyz
+mc mb minio/media  #创建桶
+mc cp ~/Downloads/BatFriend.mp4 minio/media #上传mp4
+mc ls minio/media # 上传结果
+
+
+
+步骤三
+配置nginx负载均衡，指定8088端口访问：
+1、安装nginx并在防火墙打开8088端口：
+	
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 
 
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>1，不能在根目录</p>
+<pre class="line-numbers language-none"><code class="language-none">启动报错
+Drive `http://minio-node-104:9000/opt/data4` is part of root drive, will not be used (*errors.errorString)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>现在的 minio 版本强制要求不使用 root 根目录的磁盘。源码增加强制限制的时间是 Commits on Feb 13, 2022 (Always check for root disks unless MINIO_CI_CD is set)。因此要使得集群部署成功必须使用挂载非 root 盘的目录。</p>
+</blockquote>
+<p>问题提出：</p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/knshsg/blog/5559386">https://my.oschina.net/knshsg/blog/5559386</a></p>
+<p>问题拟解决：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50464560/article/details/115714884">(3条消息) 详解VMware虚拟机中添加新硬盘并挂载的方法_J0hnson666的博客-CSDN博客_虚拟机挂载硬盘</a></p>
+<pre class="line-numbers language-note" data-language="note"><code class="language-note">fdisk -l
+fdisk /dev/sdb
+m n 在设置那一部分全部直接点击回车，
+点完之后等下次需要输入m获取帮助的 输入w
+格式化：mkfs -t ext3 /dev/sdb1
+挂载 mkdir /data &amp;&amp; mount /dev/sdb1  /data
+自动挂载 vim /etc/fstab
+/dev/sdb1    /media（这个挂载的目录你自己设置即可）   ext3  defaults    0    1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>@</p>
+
                 
             </div>
             <hr/>
@@ -678,7 +692,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://userlyz.github.io/2023/08/03/fen-bu-shi-shi-wu/">http://userlyz.github.io/2023/08/03/fen-bu-shi-shi-wu/</a>
+                    <a href="http://userlyz.github.io/2023/07/28/minio-ji-qun-da-jian/">http://userlyz.github.io/2023/07/28/minio-ji-qun-da-jian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,8 +730,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/cloud/">
-                                    <span class="chip bg-color">cloud</span>
+                                <a href="/tags/java%E5%AD%A6%E4%B9%A0/">
+                                    <span class="chip bg-color">java学习</span>
                                 </a>
                             
                         </div>
@@ -891,13 +905,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/08/08/miao-sha-xiang-mu/">
+                <a href="/2023/08/02/nacos2-2-0-nginx1-14-1-san-tai-ji-qun-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="秒杀项目">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="nacos2.2.0+nginx1.14.1-三台集群搭建">
                         
-                        <span class="card-title">秒杀项目</span>
+                        <span class="card-title">nacos2.2.0+nginx1.14.1-三台集群搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -908,7 +922,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-08-02
                         </span>
                         <span class="publish-author">
                             
@@ -921,8 +935,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E9%A1%B9%E7%9B%AE/">
-                        <span class="chip bg-color">java项目</span>
+                    <a href="/tags/cloud/">
+                        <span class="chip bg-color">cloud</span>
                     </a>
                     
                 </div>
@@ -936,13 +950,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/08/03/sentinel-rong-duan-yu-xian-liu/">
+                <a href="/2023/07/28/cloud-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Sentinel熔断与限流">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="cloud学习">
                         
-                        <span class="card-title">Sentinel熔断与限流</span>
+                        <span class="card-title">cloud学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -953,7 +967,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-08-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-28
                             </span>
                         <span class="publish-author">
                             
